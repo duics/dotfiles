@@ -244,12 +244,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;; (push '(other . "bsd") c-default-style)
-  ;; (add-hook 'js2-mode-hook
-  ;;           (defun my-js2-mode-setup ()
-  ;;             (flycheck-mode t)
-  ;;             (when (executable-find "eslint")
-  ;;               (flycheck-select-checker 'javascript-eslint))))
+  ;; Use eslint with webmode
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (flycheck-add-mode 'javascript-eslint 'web-mode)
+              ))
   )
 
 (defun dotspacemacs/user-config ()
@@ -259,11 +258,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; For web-mode with riotjs tag files
+  ;; Use web-mode with riotjs tag files
   (add-to-list 'auto-mode-alist '("\\.tag\\'" . web-mode))
 
-  ;; Use eslint with webmode
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
+  ;; Make auto-complete more aggressive
   (setq-default dotspacemacs-configuration-layers
                 '((auto-completion :variables
                                    auto-completion-enable-snippets-in-popup t)))
@@ -289,9 +287,6 @@ you should place your code here."
   ;; Enable tabs/spaces based on existing indentation
   (dtrt-indent-mode 1)
   )
-
-;; (with-eval-after-load 'web-mode
-;;   (flycheck-add-mode 'javascript-eslint 'web-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
