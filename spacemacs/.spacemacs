@@ -33,7 +33,9 @@ values."
      org
      eyebrowse
      ;; spell-checking
-     c-c++
+     (c-c++ :variables c-c++-enable-clang-support t
+            c-c++-default-mode-for-headers 'c++-mode)
+     elixir
      react
      syntax-checking
      version-control
@@ -43,7 +45,9 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(web-mode
-                                      dtrt-indent)
+                                      dtrt-indent
+                                      google-c-style
+                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -249,6 +253,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
             (lambda ()
               (flycheck-add-mode 'javascript-eslint 'web-mode)
               ))
+  (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++14"
+                                            flycheck-clang-include-path '("./include"))))
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
   )
 
 (defun dotspacemacs/user-config ()
@@ -261,6 +269,7 @@ you should place your code here."
   ;; Use web-mode with riotjs tag files
   (add-to-list 'auto-mode-alist '("\\.tag\\'" . web-mode))
 
+
   ;; Make auto-complete more aggressive
   (setq-default dotspacemacs-configuration-layers
                 '((auto-completion :variables
@@ -268,11 +277,10 @@ you should place your code here."
   (setq-default dotspacemacs-configuration-layers
                 '((auto-completion :variables
                                    auto-completion-enable-help-tooltip t)))
-  (global-company-mode)
+  ;; (global-company-mode)
 
+  ;; Minor tweaks
   (setq-default
-   ;; C++ stuff
-   c-default-style "stroustrup"
    ;; js2-mode
    js-indent-level 2
    js2-basic-offset 2
@@ -285,7 +293,7 @@ you should place your code here."
    )
 
   ;; Enable tabs/spaces based on existing indentation
-  (dtrt-indent-mode 1)
+  ;; (dtrt-indent-mode 1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -295,6 +303,9 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ruby-end alchemist elixir-mode flycheck-google-cpplint flymake-cursor google-c-style flymake-google-cpplint flymake-easy zonokai-theme zenburn-theme zen-and-art-theme ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme subatomic256-theme subatomic-theme stekene-theme spacemacs-theme spaceline powerline spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smooth-scrolling smeargle slim-mode seti-theme scss-mode sass-mode reverse-theme restart-emacs rainbow-delimiters railscasts-theme purple-haze-theme professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el pastels-on-dark-theme paradox hydra spinner page-break-lines orgit organic-green-theme org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme neotree naquadah-theme mustang-theme move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow macrostep lush-theme lorem-ipsum linum-relative light-soap-theme leuven-theme less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jbeans-theme jazz-theme jade-mode ir-black-theme inkpot-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation heroku-theme hemisu-theme help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag hc-zenburn-theme haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md gandalf-theme flycheck-pos-tip flycheck pkg-info epl flx-ido flx flatui-theme flatland-theme firebelly-theme fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight espresso-theme emmet-mode elisp-slime-nav dtrt-indent dracula-theme django-theme disaster diff-hl define-word darktooth-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-web web-completion-data company-tern s dash-functional tern company-statistics company-quickhelp pos-tip company-c-headers company colorsarenice-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cmake-mode clues-theme clean-aindent-mode clang-format cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bracketed-paste birds-of-paradise-plus-theme badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed dash apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup quelpa package-build use-package which-key bind-key bind-map evil sublime-themes)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

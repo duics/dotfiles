@@ -25,10 +25,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Lokaltog/vim-easymotion'
-
-" Vim sessions
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 Plugin 'scrooloose/syntastic'
 " Plugin 'KabbAmine/zeavim.vim'
@@ -50,15 +50,21 @@ Plugin 'heavenshell/vim-jsdoc'
 
 " Plugin 'klen/python-mode'
 " Plugin 'adlawson/vim-sorcerer'
-Plugin 'morhetz/gruvbox'
+Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'mileszs/ack.vim'
 
 " Plugin 'lervag/vimtex'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'majutsushi/tagbar'
 Plugin 'a.vim'
+Plugin 'DoxygenToolkit.vim'
+
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 " Plugin 'hsanson/vim-android'
 
@@ -82,23 +88,23 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 if has('gui_running')
     " set guifont=Sauce\ Code\ Powerline:h9:cANSI
-    set guifont=Cousine\ for\ Powerline\ 9
+    set guifont=mononoki\ 11
     set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar
     set t_Co=256
 endif
-colorscheme gruvbox
+colorscheme deep-space
 set background=dark
 
 " python mode settings
-let g:pymode_python = 'python3'
-let g:pymode_rope = 0
-let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
-let g:pymode_lint_checkers = ['pylint', 'pep8']
-let g:pymode_rope_lookup_project = 0
+" let g:pymode_python = 'python3'
+" let g:pymode_rope = 0
+" let g:pymode_lint = 1
+" let g:pymode_lint_on_write = 1
+" let g:pymode_lint_checkers = ['pylint', 'pep8']
+" let g:pymode_rope_lookup_project = 0
 
 " 80 column
 set colorcolumn=80
@@ -136,8 +142,21 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_enable_signs = 1
+" let g:syntastic_cpp_check_header = 1
+" let g:syntastic_cpp_auto_refresh_includes = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_auto_jump = 1
+let g:syntastic_enable_balloons = 1
+" let g:syntastic_cpp_checkers = ['gcc']
+" let g:syntastic_cpp_compiler = 'g++'
+" let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -Weverything'
+" let g:syntastic_cpp_include_dirs = [ 
+"             \ '/opt/boost_1_55_0',
+"             \ '/opt/cryptopp-5.6.2',
+"             \ '/opt/llvm_install/include/llvm',
+"             \ '/opt/llvm_install/include/clang' ]
 
 "Strictly necessary for Powerline
 set encoding=utf-8
@@ -145,7 +164,6 @@ set nobackup
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:gitgutter_realtime = 0
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
@@ -179,14 +197,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Mapping for easy-clip
 nnoremap gm m
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
 
 set hlsearch
-
-" create a HLNext (from http://www.youtube.com/watch?v=aHm36-na4-4)
+" set HLNext (from http://www.youtube.com/watch?v=aHm36-na4-4)
 nnoremap <silent> n n:call HLNext(0.2)<cr>
 nnoremap <silent> N N:call HLNext(0.2)<cr>
 highlight WhiteOnRed ctermbg=white guibg=red
@@ -219,7 +232,37 @@ autocmd BufReadPre *.tag let b:javascript_lib_use_underscore = 1
 
 " YCM config for C++
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+" let g:ycm_enable_diagnostic_signs = 1
+" let g:ycm_enable_diagnostic_highlighting = 1
+" let g:ycm_always_populate_location_list = 1
+" let g:ycm_open_loclist_on_ycm_diags = 1 "default 1
+
+set cino=N-s
+
+" Enhanced keyboard mappings
+"
+" in normal mode F2 will save the file
+nmap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, enters insert again
+imap <F2> <ESC>:w<CR>i
+" switch between header/source with F4
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+" recreate tags file with F5
+map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
+" create doxygen comment
+map <F6> :Dox<CR>
+" build using makeprg with <F7>
+map <F7> :make<CR>
+" build using makeprg with <S-F7>
+map <S-F7> :make clean all<CR>
+" goto definition with F12
+map <F12> <C-]>
+
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
+" Doxygen config
+let g:DoxygenToolkit_authorName="Max Salminen"
 
 " Tagbar config
 nmap <F8> :TagbarToggle<CR>
-let g:session_autosave = 'no'
