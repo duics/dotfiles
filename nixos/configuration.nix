@@ -19,7 +19,7 @@
     pulseaudio.support32Bit = true; # This might be needed for Steam games
   };
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "miso"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Select internationalisation properties.
@@ -42,12 +42,12 @@
     firefox
     chromium
     mpv
-    spotify
     qbittorrent
     git
     fish
     keepass
     dropbox-cli
+    elixir
   ];
 
   fonts = {
