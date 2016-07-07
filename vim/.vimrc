@@ -55,7 +55,7 @@ Plugin 'mileszs/ack.vim'
 
 " Plugin 'lervag/vimtex'
 
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'majutsushi/tagbar'
@@ -65,6 +65,7 @@ Plugin 'DoxygenToolkit.vim'
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'larrylv/ycm-elixir'
 
 " Plugin 'hsanson/vim-android'
 
@@ -130,6 +131,8 @@ set complete-=i
 set smarttab
 syntax on
 set number
+set backupdir=./.backup,.,/tmp
+set directory=.,./.backup,/tmp
 
 set clipboard^=unnamed,unnamedplus
 set t_Co=256
