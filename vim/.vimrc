@@ -22,7 +22,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -31,7 +30,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 Plugin 'scrooloose/syntastic'
-" Plugin 'KabbAmine/zeavim.vim'
 
 Plugin 'suan/vim-instant-markdown'
 Plugin 'godlygeek/tabular'
@@ -44,12 +42,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
-" Plugin 'maksimr/vim-jsbeautify'
 Plugin 'heavenshell/vim-jsdoc'
-" Plugin 'nicklasos/vim-jsx-riot'
 
-" Plugin 'klen/python-mode'
-" Plugin 'adlawson/vim-sorcerer'
 Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'mileszs/ack.vim'
 
@@ -147,19 +141,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_enable_signs = 1
-" let g:syntastic_cpp_check_header = 1
-" let g:syntastic_cpp_auto_refresh_includes = 1
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_auto_jump = 1
-let g:syntastic_enable_balloons = 1
-" let g:syntastic_cpp_checkers = ['gcc']
-" let g:syntastic_cpp_compiler = 'g++'
-" let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -Weverything'
-" let g:syntastic_cpp_include_dirs = [ 
-"             \ '/opt/boost_1_55_0',
-"             \ '/opt/cryptopp-5.6.2',
-"             \ '/opt/llvm_install/include/llvm',
-"             \ '/opt/llvm_install/include/clang' ]
 
 "Strictly necessary for Powerline
 set encoding=utf-8
@@ -241,25 +224,6 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.p
 " let g:ycm_open_loclist_on_ycm_diags = 1 "default 1
 
 set cino=N-s
-
-" Enhanced keyboard mappings
-"
-" in normal mode F2 will save the file
-nmap <F2> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-imap <F2> <ESC>:w<CR>i
-" switch between header/source with F4
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-" recreate tags file with F5
-map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
-" create doxygen comment
-map <F6> :Dox<CR>
-" build using makeprg with <F7>
-map <F7> :make<CR>
-" build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
-" goto definition with F12
-map <F12> <C-]>
 
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger

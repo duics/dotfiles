@@ -102,7 +102,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(junio
+   dotspacemacs-themes '(spacegray
                          spacemacs-dark
                          spacemacs-light
                          solarized-light
@@ -268,7 +268,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Use web-mode with riotjs tag files
   (add-to-list 'auto-mode-alist '("\\.tag\\'" . web-mode))
-
+  (setq powerline-default-separator 'utf-8)
+  (setq powerline-default-separator 'arrow-fade)
 
   ;; Make auto-complete more aggressive
   (setq-default dotspacemacs-configuration-layers
