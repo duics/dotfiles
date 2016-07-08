@@ -1,0 +1,10 @@
+[InfoWidgetPlugin]
+InfoWidgetPluginEnabled=true
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAABqoAAAN0AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAHgBUAG8AcgByAGUAbgB0AHMAVABvAG8AbABCAGEAcgEAAAIJ/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[downloads]
+oldTorrentsImported=true
+tempDir=file:///home/ceduic/.kde/share/apps/ktorrent/

@@ -1,0 +1,36 @@
+Sat Jun 18 11:15:18 2016: Qt Debug: ktorrent(2230)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+Sat Jun 18 11:15:18 2016: Bound to ::
+Sat Jun 18 11:15:18 2016: Cannot bind to port 0.0.0.0:6881 : Address already in use
+Sat Jun 18 11:15:18 2016: Bound to TCP port 6881
+Sat Jun 18 11:15:18 2016: Cannot open /home/ceduic/.kde/share/apps/ktorrent/groups : No such file or directory
+Sat Jun 18 11:15:18 2016: Failed to open /home/ceduic/.kde/share/apps/ktorrent/magnets : No such file or directory
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "MediaPlayerPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "SearchPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "ZeroconfPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "ScriptingPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "DownloadOrderPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "InfoWidgetPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "BandwidthSchedulerPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "LogViewerPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "ScanFolderPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "StatsPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "SyndicationPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "UPnPPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "MagnetGeneratorPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "IPFilterPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "ShutdownPlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found 0 offers for "WebInterfacePlugin"
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KLibrary) kde4Factory: The library "/nix/store/0bpj2fxmd41r8mb1c6as8k7ab9fccqir-user-environment/lib/kde4/ktinfowidgetplugin.so" does not offer a qt_plugin_instance function.
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+Sat Jun 18 11:15:19 2016: Downloading GeoIP database: http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+Sat Jun 18 11:15:19 2016: Started update timer
+Sat Jun 18 11:15:19 2016: Suppressing sleep
+Sat Jun 18 11:15:19 2016: Qt Warning: QPainter::begin: Paint device returned engine == 0, type: 2
+Sat Jun 18 11:15:19 2016: Qt Warning: QPainter::end: Painter not active, aborted
+Sat Jun 18 11:15:19 2016: Qt Debug: ktorrent(2230)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+Sat Jun 18 11:15:19 2016: No torrents to migrate found 
+Sat Jun 18 11:15:19 2016: Stopped update timer
+Sat Jun 18 11:15:19 2016: Stopped suppressing sleep
+Sat Jun 18 11:15:19 2016: GeoIP database downloaded, decompressing ...  
+Sat Jun 18 11:15:19 2016: GeoIP database decompressed, opening ...  
+Sat Jun 18 11:31:24 2016: Qt Warning: ktorrent: Fatal IO error: client killed
