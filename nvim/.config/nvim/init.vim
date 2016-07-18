@@ -1,59 +1,29 @@
-"*****************************************************************************
-"" NeoBundle core
-"*****************************************************************************
-if has('vim_starting')
-  set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
-endif
-
-let neobundle_readme=expand('~/.config/nvim/bundle/neobundle.vim/README.md')
+call plug#begin('~/.vim/plugged')
 
 let g:vim_bootstrap_langs = "javascript,elixir"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
-if !filereadable(neobundle_readme)
-  echo "Installing NeoBundle..."
-  echo ""
-  silent !mkdir -p ~/.config/nvim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim/
-  let g:not_finsh_neobundle = "yes"
-
-  " Run shell script if exist on custom select language
-endif
-
-" Required:
-call neobundle#begin(expand('~/.config/nvim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-"*****************************************************************************
-"" NeoBundle install packages
-"*****************************************************************************
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs.git'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'vim-scripts/CSApprox'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'svermeulen/vim-easyclip'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle "Yggdroot/indentLine"
-NeoBundle 'Shougo/vimproc.vim', {
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs.git'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/grep.vim'
+Plug 'vim-scripts/CSApprox'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'jiangmiao/auto-pairs'
+Plug 'svermeulen/vim-easyclip'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/syntastic'
+Plug "Yggdroot/indentLine"
+Plug 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
       \     'cygwin' : 'make -f make_cygwin.mak',
@@ -63,57 +33,47 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 
 "" Vim-Session
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
 if v:version >= 703
-  NeoBundle 'Shougo/vimshell.vim'
+  Plug 'Shougo/vimshell.vim'
 endif
 
 if v:version >= 704
   "" Snippets
-  NeoBundle 'FelikZ/ctrlp-py-matcher'
+  Plug 'FelikZ/ctrlp-py-matcher'
 endif
 
-NeoBundle 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
-NeoBundle 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 "" Color
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'rakr/vim-two-firewatch'
-NeoBundle 'zeis/vim-kolor'
-NeoBundle 'Lokaltog/vim-distinguished'
+Plug 'w0ng/vim-hybrid'
+Plug 'rakr/vim-two-firewatch'
+Plug 'zeis/vim-kolor'
+Plug 'Lokaltog/vim-distinguished'
 
 "" Vim-Bootstrap Updater by sherzberg
-NeoBundle 'avelino/vim-bootstrap-updater'
+Plug 'avelino/vim-bootstrap-updater'
 
 "" Custom bundles
 "" Javascript Bundle
-NeoBundle 'jelera/vim-javascript-syntax'
+Plug 'jelera/vim-javascript-syntax'
 
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'carlosgaldino/elixir-snippets'
-NeoBundle 'slashmili/alchemist.vim'
-
-"" Include user's extra bundle
-if filereadable(expand("~/.config/nvim/local_bundles.vim"))
-  source ~/.config/nvim/local_bundles.vim
-endif
-
-call neobundle#end()
+Plug 'elixir-lang/vim-elixir'
+Plug 'carlosgaldino/elixir-snippets'
+Plug 'slashmili/alchemist.vim'
 
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 "*****************************************************************************
 "" Basic Setup
