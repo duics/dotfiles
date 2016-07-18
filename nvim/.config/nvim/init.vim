@@ -4,7 +4,6 @@ let g:vim_bootstrap_langs = "javascript,elixir"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs.git'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -22,54 +21,41 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-easyclip'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug "Yggdroot/indentLine"
-Plug 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+Plug 'Yggdroot/indentLine'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
-if v:version >= 703
-  Plug 'Shougo/vimshell.vim'
-endif
-
-if v:version >= 704
-  "" Snippets
-  Plug 'FelikZ/ctrlp-py-matcher'
-endif
+Plug 'Shougo/vimshell.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 
 Plug 'honza/vim-snippets'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
+
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 "" Color
 Plug 'w0ng/vim-hybrid'
+Plug 'Lokaltog/vim-distinguished'
 Plug 'rakr/vim-two-firewatch'
 Plug 'zeis/vim-kolor'
-Plug 'Lokaltog/vim-distinguished'
 
-"" Vim-Bootstrap Updater by sherzberg
-Plug 'avelino/vim-bootstrap-updater'
-
-"" Custom bundles
-"" Javascript Bundle
+"" Javascript
 Plug 'jelera/vim-javascript-syntax'
 
+"" Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'carlosgaldino/elixir-snippets'
 Plug 'slashmili/alchemist.vim'
+
+call plug#end()
 
 " Required:
 filetype plugin indent on
@@ -440,6 +426,5 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 set background=dark " or light if you prefer the light version
 " let g:hybrid_custom_term_colors = 1
 " let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-" colorscheme kolor
 colorscheme distinguished
 " let g:airline_theme='base16' " if you have Airline installed and want the associated theme
