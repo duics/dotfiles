@@ -23,6 +23,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'mileszs/ack.vim'
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
@@ -287,7 +288,9 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
+  let g:ackprg = 'ag --vimgrep'
 endif
+nnoremap <Leader>a :Ack!<Space>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
