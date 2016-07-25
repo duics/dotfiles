@@ -19,9 +19,9 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-easyclip'
+Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 "" Vim-Session
@@ -235,7 +235,7 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 "" Git
-noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>gw :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
@@ -259,6 +259,12 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <C-Insert> :tabnew<CR>
 nnoremap <C-Delete> :tabclose<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
@@ -428,3 +434,4 @@ set background=dark " or light if you prefer the light version
 " let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 colorscheme distinguished
 " let g:airline_theme='base16' " if you have Airline installed and want the associated theme
+"
