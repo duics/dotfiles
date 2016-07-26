@@ -137,6 +137,9 @@ set scrolloff=3
 "" Status bar
 set laststatus=2
 
+"" Color column
+set colorcolumn=80
+
 "" Use modeline overrides
 set modeline
 set modelines=10
