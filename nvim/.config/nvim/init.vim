@@ -24,6 +24,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'mileszs/ack.vim'
+Plug[in] 'janko-m/vim-test'
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
@@ -263,6 +264,12 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <C-Insert> :tabnew<CR>
 nnoremap <C-Delete> :tabclose<CR>
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
