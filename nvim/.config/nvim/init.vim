@@ -24,7 +24,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'mileszs/ack.vim'
-Plug[in] 'janko-m/vim-test'
+Plug 'janko-m/vim-test'
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
