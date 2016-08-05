@@ -9,7 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -31,7 +31,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 Plug 'Shougo/vimshell.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
 
 Plug 'honza/vim-snippets'
 
@@ -104,6 +103,8 @@ set noswapfile
 set fileformats=unix,dos,mac
 set showcmd
 set shell=/bin/sh
+set rtp+=~/.fzf
+nnoremap <C-p> :FZF<cr>
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
@@ -286,25 +287,11 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-"" ctrlp.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn))$'
-let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 1
-
 " The Silver Searcher
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
   let g:ackprg = 'ag --vimgrep'
 endif
 nnoremap <Leader>a :Ack!<Space>
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
 " Mapping for easy-clip
 nnoremap gm m
