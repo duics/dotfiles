@@ -290,6 +290,7 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " The Silver Searcher
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+	let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 endif
 nnoremap <Leader>a :Ack!<Space>
 
