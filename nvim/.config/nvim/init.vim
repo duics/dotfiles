@@ -24,7 +24,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'mileszs/ack.vim'
-Plug 'janko-m/vim-test'
 Plug 'kassio/neoterm'
 
 "" Vim-Session
@@ -229,12 +228,6 @@ nnoremap <leader>tl :tabnext<CR>
 " inoremap <C-tab>   <Esc>:tabnext<CR>i
 " inoremap <C-t>     <Esc>:tabnew<CR>
 
-nmap <silent> <leader>rt :TestNearest<CR>
-nmap <silent> <leader>rT :TestFile<CR>
-nmap <silent> <leader>ra :TestSuite<CR>
-nmap <silent> <leader>rl :TestLast<CR>
-nmap <silent> <leader>rg :TestVisit<CR>
-
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -387,20 +380,24 @@ colorscheme distinguished
 " let g:airline_theme='base16' " if you have Airline installed and want the associated theme
 
 " NEOTERM conf
-"
-let g:neoterm_position = 'horizontal'
-let g:neoterm_automap_keys = ',tt'
+
+let g:neoterm_position = 'vertical'
+let g:neoterm_automap_keys = '<leader>tt'
+
+nnoremap <silent> <f10> :TREPLSendFile<cr>
+nnoremap <silent> <f9> :TREPLSend<cr>
+vnoremap <silent> <f9> :TREPLSend<cr>
 
 " run set test lib
-nnoremap <silent> ,rt :call neoterm#test#run('all')<cr>
-nnoremap <silent> ,rf :call neoterm#test#run('file')<cr>
-nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
-nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
+nnoremap <silent> <leader>ra :call neoterm#test#run('all')<cr>
+nnoremap <silent> <leader>rf :call neoterm#test#run('file')<cr>
+nnoremap <silent> <leader>rt :call neoterm#test#run('current')<cr>
+nnoremap <silent> <leader>rr :call neoterm#test#rerun()<cr>
 
 " Useful maps
 " hide/close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> <leader>tq :call neoterm#close()<cr>
 " clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
+nnoremap <silent> <leader>tc :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
+nnoremap <silent> <leader>tk :call neoterm#kill()<cr>
