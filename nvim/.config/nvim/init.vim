@@ -229,11 +229,11 @@ nnoremap <leader>tl :tabnext<CR>
 " inoremap <C-tab>   <Esc>:tabnext<CR>i
 " inoremap <C-t>     <Esc>:tabnew<CR>
 
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <leader>rt :TestNearest<CR>
+nmap <silent> <leader>rT :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rl :TestLast<CR>
+nmap <silent> <leader>rg :TestVisit<CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
