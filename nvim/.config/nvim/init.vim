@@ -20,7 +20,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-easyclip'
 Plug 'junegunn/vim-easy-align'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'mileszs/ack.vim'
@@ -376,6 +376,7 @@ colorscheme distinguished
 
 let g:neoterm_position = 'vertical'
 let g:neoterm_automap_keys = '<leader>tt'
+let g:neoterm_close_when_tests_succeed = 1
 
 nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
