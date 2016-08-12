@@ -10,6 +10,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'dyng/ctrlsf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -23,6 +24,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
 Plug 'mileszs/ack.vim'
 Plug 'kassio/neoterm'
 
@@ -241,7 +243,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 	let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 endif
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :CtrlSF<Space>
 
 " Mapping for easy-clip
 nnoremap gm m
