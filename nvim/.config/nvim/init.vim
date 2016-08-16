@@ -4,6 +4,7 @@ let g:vim_bootstrap_langs = "javascript,elixir"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -173,6 +174,17 @@ let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 map <C-e> :NERDTreeToggle<CR>
@@ -188,6 +200,7 @@ let g:vimshell_prompt =  '$ '
 autocmd BufEnter * :syntax sync fromstart
 
 set autoread
+au CursorHold * checktime
 
 "*****************************************************************************
 "" Mappings
