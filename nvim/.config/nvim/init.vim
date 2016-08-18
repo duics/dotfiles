@@ -1,8 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-let g:vim_bootstrap_langs = "javascript,elixir"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-commentary'
@@ -155,10 +152,7 @@ set titleold="Terminal"
 set titlestring=%F
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
-
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
+set statusline+=%{fugitive#statusline()}
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
@@ -262,13 +256,16 @@ nnoremap <Leader>a :CtrlSF<Space>
 nnoremap gm m
 
 " syntastic
-let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_always_populate_loc_list=1
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
 
 " Tagbar
 " nmap <silent> <F4> :TagbarToggle<CR>
