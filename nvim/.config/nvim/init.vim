@@ -7,6 +7,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
+Plug 'neomake/neomake'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'vim-airline/vim-airline'
@@ -50,6 +51,7 @@ Plug 'zeis/vim-kolor'
 
 "" Javascript
 Plug 'jelera/vim-javascript-syntax'
+Plug 'mattn/emmet-vim'
 
 "" Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -407,3 +409,9 @@ nnoremap <silent> <leader>tq :call neoterm#close()<cr>
 nnoremap <silent> <leader>tc :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> <leader>tk :call neoterm#kill()<cr>
+
+let g:neomake_elixir_enabled_makers = ['credo', 'elixir']
+let g:neomake_open_list = 2
+let g:neomake_list_height = 4
+let g:neomake_serialize = 1
+autocmd! BufWritePost * Neomake
