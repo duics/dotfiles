@@ -13,8 +13,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'sheerun/vim-polyglot'
-Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
@@ -52,6 +50,8 @@ Plug 'zeis/vim-kolor'
 "" Javascript
 Plug 'jelera/vim-javascript-syntax'
 Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
+Plug 'isRuslan/vim-es6'
 
 "" Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -322,10 +322,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
-
-"" Custom configs
-
-let g:javascript_enable_domhtmlcss = 1
 
 "" Include user's local vim config
 if filereadable(expand("~/.config/nvim/local_init.vim"))
