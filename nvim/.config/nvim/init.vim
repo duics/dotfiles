@@ -122,6 +122,9 @@ set ruler
 set number
 
 let no_buffers_menu=1
+" Visualize whitespace
+set listchars=tab:>>,trail:␣,extends:>,precedes:<
+set list
 
 set mousemodel=popup
 set t_Co=256
@@ -411,3 +414,8 @@ let g:neomake_open_list = 2
 let g:neomake_list_height = 4
 let g:neomake_serialize = 1
 autocmd! BufWritePost * Neomake
+
+" Language specific confs
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype scss setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
