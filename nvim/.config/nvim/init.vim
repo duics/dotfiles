@@ -409,7 +409,7 @@ nnoremap <silent> <leader>tc :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> <leader>tk :call neoterm#kill()<cr>
 
-let g:neomake_elixir_enabled_makers = ['credo', 'elixir']
+let g:neomake_elixir_enabled_makers = ['credo']
 let g:neomake_open_list = 2
 let g:neomake_list_height = 4
 let g:neomake_serialize = 1
