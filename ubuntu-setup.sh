@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade
 
 # Install devel packages
-sudo apt install build-essential python-dev libclang-dev git
+sudo apt install build-essential python-dev libclang-dev git silversearcher-ag
 
 # Install fish
 sudo apt install fish
