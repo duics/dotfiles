@@ -5,15 +5,15 @@ set expandtab
 set smarttab
 
 "" Save swapfiles to own dir
+set nobackup
 set swapfile
-set dir=~/.vim/tmp
+set directory=/var/tmp,/tmp
 
 "" Map leader to space
 let mapleader = "\<Space>"
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>b :bn<CR>
 
 "" Clean highlight
 nnoremap <silent> <leader><space> :noh<cr>
@@ -44,3 +44,15 @@ nnoremap <C-p> :FZF<cr>
 " Mapping for easy-clip
 nnoremap gm m
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" The Silver Searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+	let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+endif
+nnoremap <Leader>a :CtrlSF<Space>
