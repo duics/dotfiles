@@ -1,7 +1,12 @@
+"" Default indentation
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
+
+"" Save swapfiles to own dir
+set swapfile
+set dir=~/.vim/tmp
 
 "" Map leader to space
 let mapleader = "\<Space>"
@@ -24,11 +29,11 @@ noremap <Leader>sv :<C-u>vsplit<CR>
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-w>     :tabclose<CR>
+nnoremap <C-q>     :tabclose<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
-inoremap <C-w>     <Esc>:tabclose<CR>
+inoremap <C-q>     <Esc>:tabclose<CR>
 
 "" Set working directory
 nnoremap <leader>d :cd %:p:h<CR>
