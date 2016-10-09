@@ -1,5 +1,5 @@
 favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,libreoffice-writer.desktop,libreoffice-calc.desktop,pidgin.desktop,org.gnome.Software.desktop,exo-terminal-emulator.desktop,xfhelp4.desktop
-recent=exo-terminal-emulator.desktop,firefox.desktop,redshift-gtk.desktop,keepassx.desktop,gvim.desktop,software-properties-gtk.desktop,exo-file-manager.desktop,catfish.desktop,google-chrome.desktop,spotify.desktop
+recent=exo-terminal-emulator.desktop,exo-file-manager.desktop,firefox.desktop,redshift-gtk.desktop,keepassx.desktop,gvim.desktop,software-properties-gtk.desktop,catfish.desktop,google-chrome.desktop,spotify.desktop
 button-title=Applications Menu
 button-icon=xubuntu-logo-menu
 button-single-row=false
