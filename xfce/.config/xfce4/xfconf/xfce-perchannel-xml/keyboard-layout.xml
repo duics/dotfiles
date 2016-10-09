@@ -5,5 +5,8 @@
     <property name="XkbDisable" type="bool" value="false"/>
     <property name="XkbLayout" type="string" value="us,fi"/>
     <property name="XkbVariant" type="string" value=",classic"/>
+    <property name="XkbOptions" type="empty">
+      <property name="Group" type="string" value="grp:shifts_toggle"/>
+    </property>
   </property>
 </channel>
