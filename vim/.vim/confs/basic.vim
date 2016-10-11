@@ -4,6 +4,10 @@ set shiftwidth=2
 set expandtab
 set smarttab
 
+" Visualize whitespace
+set listchars=tab:>>,trail:␣,extends:>,precedes:<
+set list
+
 "" Save swapfiles to own dir
 set nobackup
 set swapfile
@@ -51,8 +55,11 @@ nnoremap <leader>d :cd %:p:h<CR>
 "" Ctrl-P
 nnoremap <C-p> :FZF<cr>
 
+"" Netrw
+let g:netrw_liststyle=1
+
 " Mapping for easy-clip
-nnoremap gm m
+" nnoremap gm m
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -63,6 +70,6 @@ nmap ga <Plug>(EasyAlign)
 " The Silver Searcher
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
-	let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+  let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 endif
 nnoremap <Leader>a :CtrlSF<Space>
