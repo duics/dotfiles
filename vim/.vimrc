@@ -9,7 +9,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
-Plug 'svermeulen/vim-easyclip'
 "" Autocomplete/linting
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
@@ -29,6 +28,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 "" Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 "" Elm
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
@@ -45,5 +45,3 @@ set background=dark
 let g:airline_powerline_fonts = 1
 colorscheme srcery
 set t_Co=256
-
-" let g:airline_theme='twofirewatch'
