@@ -7,6 +7,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 "" Autocomplete/linting
@@ -16,6 +17,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'ervandew/supertab'
 " Plug 'w0rp/ale'
 Plug 'scrooloose/syntastic'
+Plug 'janko-m/vim-test'
 "" Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'dyng/ctrlsf.vim'
@@ -45,3 +47,11 @@ set background=dark
 let g:airline_powerline_fonts = 1
 colorscheme srcery
 set t_Co=256
+
+
+"" TEMP
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>

@@ -4,6 +4,10 @@ set shiftwidth=2
 set expandtab
 set smarttab
 
+"" Line numbers
+set number
+set relativenumber
+
 "" Visualize whitespace
 set listchars=tab:>>,trail:␣,extends:>,precedes:<
 set list
@@ -76,3 +80,4 @@ nnoremap <Leader>a :CtrlSF<Space>
 
 "" Tests
 let test#filename_modifier = ':p'
+let test#strategy = 'vimproc'
