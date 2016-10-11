@@ -4,7 +4,7 @@ set shiftwidth=2
 set expandtab
 set smarttab
 
-" Visualize whitespace
+"" Visualize whitespace
 set listchars=tab:>>,trail:␣,extends:>,precedes:<
 set list
 
@@ -56,7 +56,7 @@ nnoremap <leader>d :cd %:p:h<CR>
 nnoremap <C-p> :FZF<cr>
 
 "" Netrw
-let g:netrw_liststyle=3
+let g:netrw_liststyle=1
 
 " Mapping for easy-clip
 " nnoremap gm m
@@ -73,3 +73,6 @@ if executable('ag')
   let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 endif
 nnoremap <Leader>a :CtrlSF<Space>
+
+"" Tests
+let test#filename_modifier = ':p'
