@@ -56,7 +56,7 @@ nnoremap <leader>d :cd %:p:h<CR>
 nnoremap <C-p> :FZF<cr>
 
 "" Netrw
-let g:netrw_liststyle=1
+let g:netrw_liststyle=3
 
 " Mapping for easy-clip
 " nnoremap gm m
