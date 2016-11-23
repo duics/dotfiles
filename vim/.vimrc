@@ -5,7 +5,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
@@ -19,7 +18,11 @@ Plug 'ervandew/supertab'
 Plug 'scrooloose/syntastic'
 Plug 'janko-m/vim-test'
 "" Search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 "" Style
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
@@ -29,12 +32,13 @@ Plug 'roosta/vim-srcery'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 "" Elixir
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 "" Elm
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug '~/.vim/confs/elm', { 'for': 'elm' }
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -50,8 +54,8 @@ set t_Co=256
 
 
 "" TEMP
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>

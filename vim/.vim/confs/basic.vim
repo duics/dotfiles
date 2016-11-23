@@ -1,3 +1,5 @@
+set colorcolumn=80
+
 "" Default indentation
 set tabstop=2
 set shiftwidth=2
@@ -34,10 +36,10 @@ noremap <Leader>sv :<C-u>vsplit<CR>
 " nnoremap <leader>tn :tabnew<CR>
 " nnoremap <leader>th :tabprevious<CR>
 " nnoremap <leader>tl :tabnext<CR>
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-k>     :tabprevious<CR>
+nnoremap <C-j>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-q>     :tabclose<CR>
+nnoremap <C-x>     :tabclose<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
@@ -56,11 +58,20 @@ noremap <Leader>gr :Gremove<CR>
 "" Set working directory
 nnoremap <leader>d :cd %:p:h<CR>
 
-"" Ctrl-P
-nnoremap <C-p> :FZF<cr>
+"" VimFiler
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_enable_auto_cd = 1
+nnoremap <C-e> :VimFilerExplorer -toggle<CR>
 
-"" Netrw
-let g:netrw_liststyle=1
+"" Ctrl-P
+let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" nnoremap <C-p> :FZF<cr>
+
 
 " Mapping for easy-clip
 " nnoremap gm m
@@ -75,9 +86,14 @@ nmap ga <Plug>(EasyAlign)
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
   let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore node_modules --ignore "priv/static"'
+  let g:ctrlp_use_caching = 0
 endif
 nnoremap <Leader>a :CtrlSF<Space>
 
 "" Tests
 let test#filename_modifier = ':p'
 let test#strategy = 'vimproc'
+let test#elixir#exunit#options = '--no-color'
