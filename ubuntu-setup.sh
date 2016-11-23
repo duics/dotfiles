@@ -10,3 +10,6 @@ chsh -s `which fish`
 
 # Install other packages
 sudo apt install qbittorrent redshift-gtk mpv
+
+# Move trackpoint conf to profile.d
+sudo ln -s ~/dotfiles/trackpoint-calibration.sh /etc/profile.d/trackpoint-calibration.sh

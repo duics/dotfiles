@@ -15,7 +15,7 @@
     <property name="double_click_time" type="empty"/>
     <property name="focus_delay" type="empty"/>
     <property name="focus_new" type="empty"/>
-    <property name="frame_opacity" type="empty"/>
+    <property name="frame_opacity" type="int" value="100"/>
     <property name="full_width_title" type="empty"/>
     <property name="maximized_offset" type="empty"/>
     <property name="mousewheel_rollup" type="empty"/>
@@ -70,13 +70,13 @@
     <property name="raise_with_any_button" type="bool" value="true"/>
     <property name="resize_opacity" type="int" value="100"/>
     <property name="snap_resist" type="bool" value="false"/>
-    <property name="sync_to_vblank" type="bool" value="false"/>
+    <property name="sync_to_vblank" type="bool" value="true"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="titleless_maximize" type="bool" value="true"/>
     <property name="toggle_workspaces" type="bool" value="false"/>
     <property name="unredirect_overlays" type="bool" value="true"/>
     <property name="wrap_cycle" type="bool" value="false"/>
-    <property name="wrap_layout" type="bool" value="true"/>
+    <property name="wrap_layout" type="bool" value="false"/>
     <property name="zoom_desktop" type="bool" value="true"/>
   </property>
 </channel>
