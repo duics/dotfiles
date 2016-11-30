@@ -25,6 +25,7 @@ Plug 'dyng/ctrlsf.vim'
 
 "" Lang
 Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 "" Theme
 Plug 'roosta/vim-srcery'
@@ -36,6 +37,8 @@ source $HOME/.config/nvim/confs/basic.vimrc
 source $HOME/.config/nvim/confs/statusline.vimrc
 
 let g:deoplete#enable_at_startup = 1
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 map <C-e> :NERDTreeToggle<CR>
 set termguicolors
