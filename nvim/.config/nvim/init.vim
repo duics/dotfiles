@@ -12,6 +12,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'ap/vim-css-color'
 
 "" Autocomplete/linting
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -24,7 +25,6 @@ Plug 'dyng/ctrlsf.vim'
 
 "" Lang
 Plug 'elixir-lang/vim-elixir'
-Plug 'skammer/vim-css-color'
 
 "" Theme
 Plug 'roosta/vim-srcery'
