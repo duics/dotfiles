@@ -32,6 +32,9 @@ nnoremap <silent> <leader><space> :noh<cr>
 noremap <Leader>sh :<C-u>split<CR>
 noremap <Leader>sv :<C-u>vsplit<CR>
 
+"" Terminal
+noremap <Leader>st :<C-u>vsplit<CR>:<C-u>terminal<CR>
+
 "" Tabs
 " nnoremap <leader>tn :tabnew<CR>
 " nnoremap <leader>th :tabprevious<CR>
@@ -45,16 +48,22 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-q>     <Esc>:tabclose<CR>
 
+"" Buffers
+noremap <Leader>bp :<C-u>bprevious<CR>
+noremap <Leader>bn :<C-u>bnext<CR>
+noremap <Leader>bd :<C-u>bd<CR>
+
+
 "" Git
-" noremap <Leader>gw :Gwrite<CR>
-" noremap <Leader>gc :Gcommit<CR>
-" noremap <Leader>gsh :Gpush<CR>
-" noremap <Leader>gll :Gpull<CR>
-" noremap <Leader>gs :Gstatus<CR>
-" noremap <Leader>gb :Gblame<CR>
-" noremap <Leader>gd :Gvdiff<CR>
-" noremap <Leader>gr :Gremove<CR>
-noremap <Leader>gs :Magit<CR>
+noremap <Leader>gw :Gwrite<CR>
+noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+" noremap <Leader>gs :Magit<CR>
 
 "" Set working directory
 nnoremap <leader>d :cd %:p:h<CR>
@@ -72,9 +81,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Snippets
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-_>"
+let g:UltiSnipsJumpForwardTrigger="<c-_>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " The Silver Searcher
 if executable('ag')
