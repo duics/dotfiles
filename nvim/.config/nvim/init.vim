@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ap/vim-css-color'
 Plug 'wellle/targets.vim'
+Plug 'mattn/emmet-vim'
 
 "" Autocomplete/linting
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
