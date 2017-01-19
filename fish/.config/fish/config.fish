@@ -10,6 +10,10 @@ set -q XDG_DATA_HOME
 source $OMF_PATH/init.fish
 source ~/.asdf/asdf.fish
 
+# Set path
+set -gx PATH ~/.bin $PATH
+
 # Aliases
 alias ..='cd ..'
 alias ...='cd ../..'
+alias xclip='xclip -selection c'
