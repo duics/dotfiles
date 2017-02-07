@@ -28,10 +28,6 @@ nnoremap <Leader>q :q<CR>
 "" Clean highlight
 nnoremap <silent> <leader><space> :noh<cr>
 
-"" Split
-noremap <Leader>sh :<C-u>split<CR>
-noremap <Leader>sv :<C-u>vsplit<CR>
-
 "" Terminal
 noremap <Leader>st :<C-u>vsplit<CR>:<C-u>terminal<CR>
 
@@ -70,9 +66,6 @@ nnoremap <leader>d :cd %:p:h<CR>
 
 "" Ctrl-P
 nnoremap <C-p> :FZF<cr>
-
-" Mapping for easy-clip
-nnoremap gm m
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
