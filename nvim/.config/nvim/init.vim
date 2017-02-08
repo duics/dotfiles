@@ -42,6 +42,8 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 set inccommand=split
+" Change cursor shape depending on mode
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '⨉'
