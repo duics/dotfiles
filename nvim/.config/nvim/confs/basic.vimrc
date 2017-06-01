@@ -31,6 +31,7 @@ nnoremap <silent> <leader><space> :noh<cr>
 "" Terminal
 noremap <Leader>tv :<C-u>vsplit<CR>:<C-u>terminal<CR>
 noremap <Leader>th :<C-u>split<CR>:<C-u>terminal<CR>
+tnoremap <Esc> <C-\><C-n>
 
 "" Tabs
 " nnoremap <leader>tn :tabnew<CR>
