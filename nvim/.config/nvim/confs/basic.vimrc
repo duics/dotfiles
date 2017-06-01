@@ -29,7 +29,8 @@ nnoremap <Leader>q :q<CR>
 nnoremap <silent> <leader><space> :noh<cr>
 
 "" Terminal
-noremap <Leader>st :<C-u>vsplit<CR>:<C-u>terminal<CR>
+noremap <Leader>tv :<C-u>vsplit<CR>:<C-u>terminal<CR>
+noremap <Leader>th :<C-u>split<CR>:<C-u>terminal<CR>
 
 "" Tabs
 " nnoremap <leader>tn :tabnew<CR>
@@ -65,7 +66,7 @@ noremap <Leader>gr :Gremove<CR>
 nnoremap <leader>d :cd %:p:h<CR>
 
 "" Ctrl-P
-nnoremap <C-p> :FZF<cr>
+nnoremap <Leader>pf :FZF<cr>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -74,8 +75,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Snippets
-let g:UltiSnipsExpandTrigger="<c-_>"
-let g:UltiSnipsJumpForwardTrigger="<c-_>"
+let g:UltiSnipsExpandTrigger="<m-/>"
+let g:UltiSnipsJumpForwardTrigger="<m-/>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " The Silver Searcher
@@ -87,4 +88,5 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore node_modules --ignore "priv/static"'
   let g:ctrlp_use_caching = 0
 endif
-nnoremap <Leader>a :CtrlSF<Space>
+
+nnoremap <Leader>sp :CtrlSF<Space>

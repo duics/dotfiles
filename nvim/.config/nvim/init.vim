@@ -26,7 +26,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'dyng/ctrlsf.vim'
 
 "" Lang
-Plug 'sheerun/vim-polyglot'
+Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
 "" Theme
@@ -54,6 +54,6 @@ let g:ale_lint_on_text_changed = 'never'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-map <C-e> :NERDTreeToggle<CR>
+map <Leader>pt :NERDTreeToggle<CR>
 set termguicolors
 colorscheme srcery
