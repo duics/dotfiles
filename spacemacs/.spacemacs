@@ -31,16 +31,19 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     yaml
      sql
      javascript
      elixir
      html
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;; (colors :variables colors-enable-nyan-cat-progress-bar t)
-     ivy
+     ;; ivy
+     helm
      auto-completion
      emacs-lisp
      git
+     shell
      ;; markdown
      ;; org
      ;; (shell :variables
@@ -133,8 +136,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Iosevka Term"
-                               :size 11
+   dotspacemacs-default-font '("Fantasque Sans Mono"
+                               :size 9
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -246,7 +249,7 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling t
+   dotspacemacs-smooth-scrolling nil
    ;; Control line numbers activation.
    ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
    ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
@@ -291,7 +294,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -314,6 +317,8 @@ you should place your code here."
   ;; (add-to-list 'spacemacs-indent-sensitive-modes 'elixir-mode)
   ;; (setq x-select-enable-clipboard nil)
   ;; (fset 'evil-visual-update-x-selection 'ignore)
+  ;; I want to disable pasting with formatting on C/C++ buffers
+  (add-to-list 'spacemacs-indent-sensitive-modes 'elixir-mode)
 
   ;; Indentation
   (setq-default
@@ -326,7 +331,17 @@ you should place your code here."
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
+   ;; Colors
+   system-uses-terminfo nil
    )
+
+   (cua-mode t)
+   (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+   (transient-mark-mode 1) ;; No region when it is not highlighted
+   (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+
+  ;; Workaround until next version of spacemacs
+  (require 'helm-bookmark)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -338,10 +353,10 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm helm-core counsel smartparens flycheck async js2-mode s alect-themes ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package toc-org tagedit sql-indent spaceline smex smeargle slim-mode scss-mode sass-mode restart-emacs request rainbow-delimiters pug-mode popwin persp-mode pcre2el paradox orgit org-bullets open-junk-file ob-elixir neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-hydra info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-pos-tip flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diff-hl define-word counsel-projectile company-web company-tern company-statistics column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
+    (hydra dash yaml-mode swiper ivy helm-themes helm-swoop helm-projectile helm-mode-manager helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag ace-jump-helm-line iedit goto-chg projectile org-plus-contrib xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors haml-mode fringe-helper git-gutter+ git-gutter magit magit-popup git-commit with-editor web-completion-data dash-functional tern yasnippet company elixir-mode auto-complete helm helm-core counsel smartparens flycheck async js2-mode s alect-themes ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package toc-org tagedit sql-indent spaceline smex smeargle slim-mode scss-mode sass-mode restart-emacs request rainbow-delimiters pug-mode popwin persp-mode pcre2el paradox orgit org-bullets open-junk-file ob-elixir neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-hydra info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-pos-tip flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diff-hl define-word counsel-projectile company-web company-tern company-statistics column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 89)) (:foreground "#ffffff" :background "#263238")))))
+ '(default ((t (:foreground "#bdbdb3" :background "gray13")))))
