@@ -174,31 +174,25 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+  status_command i3status
         position top
-
-        colors {
-            background #404552
-
-            focused_workspace #3685e2 #3685e2 #fafafa
-            active_workspace #5294e2 #5294e2 #fafafa
-            inactive_workspace #404552 #404552 #fafafa
-            urgent_workspace #ff5757 #ff5757 #fafafa
-        }
+  colors {
+    separator #444444
+    background #222222
+    statusline #666666
+    focused_workspace #d70a53 #d70a53 #ffffff
+    active_workspace #333333 #333333 #888888
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #eb709b #eb709b #ffffff
+  }
 }
 
 ### User
 
 # Keyboard layouts
-exec "setxkbmap -layout us,fi"
-exec "setxkbmap -option 'grp:alt_shift_toggle'"
+exec --no-startup-id "setxkbmap -layout us,fi -option grp:alt_shift_toggle"
 
 ########## Styling ##########
-
-client.focused #404552 #404552 #fafafa #ff5757 #666666
-client.focused_inactive #666666 #404552 #eeeeee #5294e2 #666666
-client.unfocused #404552 #484b52 #eeeeee #ff5757 #404552
-client.urgent #ff5757 #404552 #ffffff #555757 #404552
 client.background #404552
 
 exec --no-startup-id feh --bg-scale ~/Dropbox/Satunnaiset/Wallpaper++/foggy_forest.jpg
@@ -213,3 +207,8 @@ for_window [title="Preferences$"] floating enable
 smart_gaps on
 gaps inner 2
 gaps outer 0
+
+client.focused #d70a53 #d70a53 #ffffff #8c0333
+client.focused_inactive #333333 #333333 #888888 #333333
+client.unfocused #333333 #333333 #888888 #333333
+client.urgent #eb709b #eb709b #ffffff #eb709b
