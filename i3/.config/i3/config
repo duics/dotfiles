@@ -25,7 +25,7 @@ exec_always --no-startup-id feh --bg-fill ~/Dropbox/Satunnaiset/Wallpaper\ 4k/Ch
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ########## Keybindings ##########
-bindsym $mod+Shift+s exec i3lock # Easier locking
+bindsym $mod+Shift+s exec i3lock-fancy # Easier locking
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
