@@ -188,7 +188,7 @@ client.background #404552
 ########## i3-gaps integration ##########
 
 gaps inner 4
-gaps outer 6
+gaps outer 0
 
 for_window [class="^.*"] border pixel 0
 for_window [window_role="pop-up"] floating enable
