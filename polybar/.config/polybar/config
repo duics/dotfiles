@@ -7,7 +7,7 @@
 ;
 ;=====================================================
 [colors]
-background = #cc111111
+background = #90000000
 background-alt = #444
 foreground = #dfdfdf
 primary = #00ffff

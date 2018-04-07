@@ -21,7 +21,7 @@ exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 exec --no-startup-id dropbox start
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
-exec_always --no-startup-id feh --bg-fill ~/Dropbox/Satunnaiset/Wallpaper\ 4k/Chinese-Sail-Boat-And-Misty-Hong-Kong.jpg
+exec_always --no-startup-id feh --bg-fill ~/Dropbox/Satunnaiset/Wallpaper\ 2K/1424448872234.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ########## Keybindings ##########
