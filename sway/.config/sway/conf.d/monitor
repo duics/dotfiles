@@ -1,0 +1,6 @@
+output HDMI-A-2 pos 0,0 res 1920x1200
+output HDMI-A-1 pos 1920,0 res 1920x1200
+output eDP-1 disable
+
+output HDMI-A-2 bg ~/Dropbox/Satunnaiset/Wallpaper\ 4k/shanghai-2446326.jpg fill
+output HDMI-A-1 bg ~/Dropbox/Satunnaiset/Wallpaper\ 4k/shanghai-2446326.jpg fill
