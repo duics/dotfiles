@@ -18,12 +18,12 @@
 
        :completion
        (company          ; the ultimate code completion backend
-        +auto            ; as-you-type code completion
-        +childframe)     ; a nicer company UI (Emacs 26+ only)
-      ;helm              ; the *other* search engine for love and life
+        +auto)           ; as-you-type code completion
+      ;(helm             ; the *other* search engine for love and life
+      ; +fuzzy)          ; enable fuzzy search backend for helm
       ;ido               ; the other *other* search engine...
        (ivy              ; a search engine for love and life
-        +childframe)     ; uses childframes for popups (Emacs 26+ only)
+        +fuzzy)          ; enable fuzzy search backend for ivy
 
        :ui
        doom              ; what makes DOOM look the way it does
@@ -42,24 +42,27 @@
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
 
-       :tools
+       :emacs
        dired             ; making dired pretty [functional]
-       editorconfig      ; let someone else argue about tabs vs spaces
+       ediff             ; comparing files in Emacs
        electric-indent   ; smarter, keyword-based electric-indent
-      ;ein               ; tame Jupyter notebooks with emacs
        eshell            ; a consistent, cross-platform shell (WIP)
-      ;gist              ; interacting with github gists
        imenu             ; an imenu sidebar and searchable code index
+       term              ; terminals in Emacs
+
+       :tools
+       editorconfig      ; let someone else argue about tabs vs spaces
+      ;ein               ; tame Jupyter notebooks with emacs
+      ;gist              ; interacting with github gists
       ;macos             ; MacOS-specific commands
       ;make              ; run make tasks from Emacs
-       magit             ;
+      ;(magit +hub)      ;
       ;password-store    ; password manager for nerds
        pdf               ; pdf enhancements
       ;prodigy           ; FIXME managing external services & code builders
       ;rgb               ; creating color strings
        rotate-text       ; cycle region at point between text candidates
-       term              ; terminals in Emacs
-      ;tmux              ; an API for interacting with tmux
+       tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
 
        :lang
