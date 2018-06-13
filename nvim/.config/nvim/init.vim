@@ -11,7 +11,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ap/vim-css-color'
 Plug 'wellle/targets.vim'
 Plug 'mattn/emmet-vim'
@@ -24,6 +23,7 @@ Plug 'w0rp/ale'
 "" File finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'dyng/ctrlsf.vim'
+Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
 "" Lang
 Plug 'elixir-lang/vim-elixir'
@@ -53,6 +53,8 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_lint_on_text_changed = 'never'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+set shell=bash
 
 map <Leader>pt :NERDTreeToggle<CR>
 set termguicolors
