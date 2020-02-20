@@ -68,13 +68,12 @@ nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
 " set textwidth=80    " Text width maximum chars before wrapping
 " set noexpandtab     " Don't expand tabs to spaces.
-" set tabstop=2       " The number of spaces a tab is
-" set softtabstop=2   " While performing editing operations
-" set shiftwidth=2    " Number of spaces to use in auto(indent)
+set tabstop=2         " The number of spaces a tab is
+set softtabstop=2     " While performing editing operations
+set shiftwidth=2      " Number of spaces to use in auto(indent)
 " set smarttab        " Tab insert blanks according to 'shiftwidth'
 set autoindent        " Use same indenting on new lines
 set autoread          " Read file automatically if changed outside of nvim
-" set smartindent     " Smart autoindenting on new lines
 " set shiftround      " Round indent to multiple of 'shiftwidth'
 
 " set ignorecase      " Search ignoring case
@@ -88,6 +87,12 @@ set autoread          " Read file automatically if changed outside of nvim
 " set matchtime=1     " Tenths of a second to show the matching paren
 " set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 
+:set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 " set nowrap                      " No wrap by default
 " set linebreak                   " Break long lines at 'breakat'
 " set breakat=\ \	;:,!?           " Long lines break chars
@@ -107,7 +112,6 @@ set autoread          " Read file automatically if changed outside of nvim
 " set shortmess=aoOTI     " Shorten messages and don't show intro
 " set scrolloff=2         " Keep at least 2 lines above/below
 " set sidescrolloff=5     " Keep at least 5 lines left/right
-" set list                " Show hidden characters
 
 " set showtabline=2       " Always show the tabs line
 
@@ -117,7 +121,11 @@ set autoread          " Read file automatically if changed outside of nvim
 " set noequalalways       " Don't resize windows on split or close
 " set laststatus=2        " Always show a status line
 set colorcolumn=80      " Highlight the 80th character limit
-" set display=lastline
+" set display+=lastline
+"
+"" Visualize whitespace
+set listchars=tab:>>,trail:␣,extends:>,precedes:<
+set list
 
 if has('mac')
 	let g:clipboard = {
@@ -134,12 +142,12 @@ if has('mac')
 		\ }
 endif
 
-set undofile swapfile nobackup
-set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
-set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
-set backupdir=$VARPATH/backup/,$VARPATH,~/tmp,/var/tmp,/tmp
-set viewdir=$VARPATH/view/
-set nospell spellfile=$VIMPATH/spell/en.utf-8.add
+"" Save swapfiles to own dir
+set nobackup
+set swapfile
+set backupdir:
+set directory=/var/tmp,/tmp
+set backupdir=/var/tmp,/tmp
 
 
 " Enable 256 color terminal
