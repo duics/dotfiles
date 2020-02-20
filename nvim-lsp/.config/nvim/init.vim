@@ -120,7 +120,7 @@ set autoread          " Read file automatically if changed outside of nvim
 " set cmdwinheight=5      " Command-line lines
 " set noequalalways       " Don't resize windows on split or close
 " set laststatus=2        " Always show a status line
-set colorcolumn=80      " Highlight the 80th character limit
+" set colorcolumn=80      " Highlight the 80th character limit
 " set display+=lastline
 "
 "" Visualize whitespace
