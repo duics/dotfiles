@@ -229,8 +229,16 @@ nnoremap <leader>d :cd %:p:h<CR>
 
 
 "" Ctrl-P
-nnoremap <Leader>pf :<C-u>FZF<cr>
-nnoremap <Leader>sp :<C-u>CtrlSF<Space>
+nnoremap <Leader>sf :<C-u>FZF<cr>
+nnoremap <Leader>pf :<C-u>GFiles<cr>
+nnoremap <Leader>rg :<C-u>Rg<cr>
+
+nnoremap <Leader>ss :<C-u>Snippets<cr>
+nnoremap <Leader>sc :<C-u>Commits<cr>
+nnoremap <Leader>sr :<C-u>CtrlSF<Space>
+nnoremap <Leader>sh :<C-u>Helptags<Space>
+
+nnoremap <Leader>bb :<C-u>Buffers<cr>
 
 " All status line configuration goes here
 
