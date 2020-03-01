@@ -6,14 +6,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-sleuth'
-" Plug 'sheerun/vim-polyglot'
 
 " Git
 Plug 'sodapopcan/vim-twiggy'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'junegunn/gv.vim'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
@@ -22,7 +21,9 @@ Plug 'mattn/emmet-vim'
 
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'mattn/vim-lsp-settings'
+Plug 'sheerun/vim-polyglot'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
@@ -33,25 +34,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 " Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
-" On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 
 Plug 'editorconfig/editorconfig-vim'
-
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'Zabanaa/neuromancer.vim'
-Plug 'roosta/vim-srcery'
-
-"TS
-"Plug 'leafgarland/typescript-vim'
+Plug 'ajmwagar/vim-deus'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 " Initialize plugin system
 call plug#end()
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
 " set mouse=nv                 " Disable mouse in command-line mode
 " set modeline                 " automatically setting options from modelines
@@ -76,8 +71,8 @@ set autoindent        " Use same indenting on new lines
 set autoread          " Read file automatically if changed outside of nvim
 " set shiftround      " Round indent to multiple of 'shiftwidth'
 
-" set ignorecase      " Search ignoring case
-" set smartcase       " Keep case when searching with *
+set ignorecase      " Search ignoring case
+set smartcase       " Keep case when searching with *
 " set infercase       " Adjust case in insert completion mode
 " set incsearch       " Incremental search
 " set hlsearch        " Highlight search results
@@ -88,11 +83,11 @@ set autoread          " Read file automatically if changed outside of nvim
 " set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 
 :set number relativenumber
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+" :augroup numbertoggle
+" :  autocmd!
+" :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+" :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+" :augroup END
 " set nowrap                      " No wrap by default
 " set linebreak                   " Break long lines at 'breakat'
 " set breakat=\ \	;:,!?           " Long lines break chars
@@ -158,7 +153,8 @@ if has('termguicolors')
   set termguicolors
 endif
 
-colorscheme challenger_deep
+" colors deus
+colors challenger_deep
 " colorscheme neuromancer
 " color dracula
 
@@ -169,8 +165,6 @@ let mapleader = "\<Space>"
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>pf :<C-u>GFiles<CR>
-nnoremap <Leader>s :<C-u>CtrlSq<CR>
 
 "" Clean highlight
 nnoremap <silent> <leader><space> :noh<cr>
@@ -212,6 +206,9 @@ noremap <Leader>me :<C-u>LspNextError<CR>
 noremap <Leader>mw :<C-u>LspNextWarning<CR>
 
 
+"" Autocomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+
 "" Git
 noremap <Leader>gw :<C-u>Gwrite<CR>
 noremap <Leader>gc :<C-u>Gcommit<CR>
@@ -227,10 +224,14 @@ noremap <Leader>gr :<C-u>Gremove<CR>
 "" Set working directory
 nnoremap <leader>d :cd %:p:h<CR>
 
+"" Nerdtree
+map <C-e> :NERDTreeToggle<CR>
+
 
 "" Ctrl-P
 nnoremap <Leader>sf :<C-u>FZF<cr>
 nnoremap <Leader>pf :<C-u>GFiles<cr>
+nnoremap <Leader>pm :<C-u>GFiles?<cr>
 nnoremap <Leader>rg :<C-u>Rg<cr>
 
 nnoremap <Leader>ss :<C-u>Snippets<cr>
