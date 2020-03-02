@@ -232,7 +232,7 @@ map <C-e> :NERDTreeToggle<CR>
 nnoremap <Leader>sf :<C-u>FZF<cr>
 nnoremap <Leader>pf :<C-u>GFiles<cr>
 nnoremap <Leader>pm :<C-u>GFiles?<cr>
-nnoremap <Leader>rg :<C-u>Rg<cr>
+nnoremap <Leader>sl :<C-u>Rg<cr>
 
 nnoremap <Leader>ss :<C-u>Snippets<cr>
 nnoremap <Leader>sc :<C-u>Commits<cr>
