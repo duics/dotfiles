@@ -30,7 +30,8 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'sheerun/vim-polyglot'
 
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'duics/vim-snippets'
 
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
