@@ -22,10 +22,13 @@ Plug 'mattn/emmet-vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plug 'wellle/tmux-complete.vim'
+
 Plug 'mattn/vim-lsp-settings'
 Plug 'sheerun/vim-polyglot'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
@@ -208,6 +211,37 @@ noremap <Leader>mw :<C-u>LspNextWarning<CR>
 
 "" Autocomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+if has('python3')
+    let g:UltiSnipsExpandTrigger="<c-s>"
+    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+        \ 'name': 'ultisnips',
+        \ 'whitelist': ['*'],
+        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+        \ }))
+
+let g:tmuxcomplete#asyncomplete_source_options = {
+        \ 'name':      'tmuxcomplete',
+        \ 'whitelist': ['*'],
+        \ 'config': {
+        \     'splitmode':      'words',
+        \     'filter_prefix':   1,
+        \     'show_incomplete': 1,
+        \     'sort_candidates': 0,
+        \     'scrollback':      0,
+        \     'truncate':        0
+        \     }
+        \ }
+endif
 
 "" Git
 noremap <Leader>gw :<C-u>Gwrite<CR>
