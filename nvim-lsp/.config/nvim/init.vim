@@ -199,6 +199,7 @@ noremap <Leader>bb :<C-u>Buffers<CR>
 
 "" LSP
 noremap <Leader>mf :<C-u>LspDocumentFormat<CR>
+noremap <Leader>ml :<C-u>LspDocumentDiagnostics<CR>
 noremap <Leader>mr :<C-u>LspReferences<CR>
 noremap <Leader>mR :<C-u>LspRename<CR>
 noremap <Leader>ms :<C-u>LspStatus<CR>
@@ -206,8 +207,7 @@ noremap <Leader>md :<C-u>LspDefinition<CR>
 noremap <Leader>mD :<C-u>LspDeclaration<CR>
 noremap <Leader>mm :<C-u>LspCodeAction<CR>
 noremap <Leader>mi :<C-u>LspHover<CR>
-noremap <Leader>me :<C-u>LspNextError<CR>
-noremap <Leader>mw :<C-u>LspNextWarning<CR>
+noremap <Leader>mn :<C-u>LspNextDiagnostic<CR>
 
 
 "" Autocomplete
@@ -300,22 +300,4 @@ endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.readonly = ''
-
-let g:airline#extensions#quickfix#quickfix_text = 'QF'
-let g:airline#extensions#quickfix#location_text = 'LL'
-
-" disable unused extensions (performance)
-let g:airline#extensions#ctrlp#color_template = 'insert'
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#capslock#enabled   = 0
-let g:airline#extensions#csv#enabled        = 0
-let g:airline#extensions#ctrlspace#enabled  = 0
-let g:airline#extensions#eclim#enabled      = 1
-let g:airline#extensions#hunks#enabled      = 0
-let g:airline#extensions#nrrwrgn#enabled    = 0
-let g:airline#extensions#promptline#enabled = 0
-let g:airline#extensions#syntastic#enabled  = 0
-let g:airline#extensions#taboo#enabled      = 0
-let g:airline#extensions#tagbar#enabled     = 0
-let g:airline#extensions#virtualenv#enabled = 0
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#lsp#enabled = 1
