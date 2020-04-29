@@ -163,8 +163,7 @@ endif
 colors challenger_deep
 " colorscheme neuromancer
 " color dracula
-
-" map <C-e> :NERDTreeToggle<CR>
+highlight Comment cterm=italic
 
 "" Map leader to space
 let mapleader = "\<Space>"
