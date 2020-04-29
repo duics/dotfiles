@@ -266,6 +266,7 @@ nnoremap <leader>d :cd %:p:h<CR>
 
 "" Nerdtree
 map <C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 
 "" Ctrl-P
