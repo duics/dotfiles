@@ -287,7 +287,7 @@ font:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/local/bin/fish
+  program: /usr/bin/fish
   args:
     - --login
     - --command=tmux attach; or tmux new -s work
