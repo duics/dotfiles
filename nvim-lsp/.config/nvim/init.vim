@@ -255,6 +255,10 @@ noremap <Leader>gb :<C-u>Twiggy<CR>
 noremap <Leader>g! :<C-u>Gblame<CR>
 noremap <Leader>gd :<C-u>Gvdiff<CR>
 noremap <Leader>gr :<C-u>Gremove<CR>
+nmap <Leader>gn <Plug>(GitGutterNextHunk)
+nmap <Leader>gp <Plug>(GitGutterNextHunk)
+nmap <Leader>ghs <Plug>(GitGutterStageHunk)
+nmap <Leader>ghu <Plug>(GitGutterUndoHunk)
 " noremap <Leader>gs :Magit<CR>
 
 "" Set working directory
