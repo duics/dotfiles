@@ -39,6 +39,8 @@ Plug 'dyng/ctrlsf.vim'
 " Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'editorconfig/editorconfig-vim'
 
