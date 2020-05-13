@@ -103,19 +103,19 @@
 font:
   # Normal (roman) font face
   normal:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Italic font face
   bold:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
   italic:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
@@ -528,3 +528,8 @@ shell:
   #- { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+
+# Temporary fix to workspace switching (patched in 0.4.2)
+key_bindings:
+  - { key: Up, mods: Control|Alt, action: None }
+  - { key: Down, mods: Control|Alt, action: None }
