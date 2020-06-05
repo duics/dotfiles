@@ -8,11 +8,13 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-sleuth'
 
 " Git
-Plug 'sodapopcan/vim-twiggy'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
+Plug 'jreybert/vimagit'
+
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
@@ -26,12 +28,15 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'wellle/tmux-complete.vim'
+Plug 'w0rp/ale'
 
 Plug 'mattn/vim-lsp-settings'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'SirVer/ultisnips'
 Plug 'duics/vim-snippets'
+
+Plug 'prettier/vim-prettier'
 
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -210,6 +215,22 @@ noremap <Leader>mm :<C-u>LspCodeAction<CR>
 noremap <Leader>mi :<C-u>LspHover<CR>
 noremap <Leader>mn :<C-u>LspNextDiagnostic<CR>
 
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signs_error = {'text': '✖'}
+let g:lsp_signs_warning = {'text': '⚠'} " icons require GUI
+let g:lsp_signs_hint = {'text': '??'}
+
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+let g:ale_fix_on_save = 1
+
 
 "" Autocomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -250,16 +271,16 @@ noremap <Leader>gw :<C-u>Gwrite<CR>
 noremap <Leader>gc :<C-u>Gcommit<CR>
 noremap <Leader>gsh :<C-u>Gpush<CR>
 noremap <Leader>gll :<C-u>Gpull<CR>
-noremap <Leader>gs :<C-u>Gstatus<CR>
-noremap <Leader>gb :<C-u>Twiggy<CR>
+noremap <Leader>gs :<C-u>Magit<CR>
 noremap <Leader>g! :<C-u>Gblame<CR>
 noremap <Leader>gd :<C-u>Gvdiff<CR>
 noremap <Leader>gr :<C-u>Gremove<CR>
+noremap <Leader>gla :<C-u>GV<CR>
+noremap <Leader>glf :<C-u>GV!<CR>
 nmap <Leader>gn <Plug>(GitGutterNextHunk)
 nmap <Leader>gp <Plug>(GitGutterNextHunk)
 nmap <Leader>ghs <Plug>(GitGutterStageHunk)
 nmap <Leader>ghu <Plug>(GitGutterUndoHunk)
-" noremap <Leader>gs :Magit<CR>
 
 "" Set working directory
 nnoremap <leader>d :cd %:p:h<CR>
@@ -273,7 +294,7 @@ let NERDTreeShowHidden=1
 nnoremap <Leader>sf :<C-u>FZF<cr>
 nnoremap <Leader>pf :<C-u>GFiles<cr>
 nnoremap <Leader>pm :<C-u>GFiles?<cr>
-nnoremap <Leader>sl :<C-u>Rg<cr>
+nnoremap <Leader>sp :<C-u>Rg<cr>
 
 nnoremap <Leader>ss :<C-u>Snippets<cr>
 nnoremap <Leader>sc :<C-u>Commits<cr>
@@ -292,7 +313,14 @@ set laststatus=2 " always show status line
 set showtabline=2 " always show tabline
 set noshowmode " hide default mode text (e.g. INSERT) as airline already displays it
 
-" airline config
+
+" Prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
+let g:prettier#quickfix_enabled = 0
+
+"" airline config
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1  " buffers at the top as tabs
 " let g:airline#extensions#tabline#show_tabs=0
