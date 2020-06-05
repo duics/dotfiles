@@ -82,6 +82,7 @@ set autoindent        " Use same indenting on new lines
 set autoread          " Read file automatically if changed outside of nvim
 " set shiftround      " Round indent to multiple of 'shiftwidth'
 
+set confirm
 set ignorecase      " Search ignoring case
 set smartcase       " Keep case when searching with *
 " set infercase       " Adjust case in insert completion mode
@@ -277,6 +278,7 @@ noremap <Leader>gd :<C-u>Gvdiff<CR>
 noremap <Leader>gr :<C-u>Gremove<CR>
 noremap <Leader>gla :<C-u>GV<CR>
 noremap <Leader>glf :<C-u>GV!<CR>
+noremap <Leader>gg :<C-u>G 
 nmap <Leader>gn <Plug>(GitGutterNextHunk)
 nmap <Leader>gp <Plug>(GitGutterNextHunk)
 nmap <Leader>ghs <Plug>(GitGutterStageHunk)
@@ -294,6 +296,8 @@ let NERDTreeShowHidden=1
 nnoremap <Leader>sf :<C-u>FZF<cr>
 nnoremap <Leader>pf :<C-u>GFiles<cr>
 nnoremap <Leader>pm :<C-u>GFiles?<cr>
+"" Don't rg filenames
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <Leader>sp :<C-u>Rg<cr>
 
 nnoremap <Leader>ss :<C-u>Snippets<cr>
