@@ -43,9 +43,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 " Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-renderer-devicons.vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -288,9 +291,13 @@ nmap <Leader>ghu <Plug>(GitGutterUndoHunk)
 nnoremap <leader>d :cd %:p:h<CR>
 
 "" Nerdtree
-map <C-e> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
+" map <C-e> :NERDTreeToggle<CR>
+" let NERDTreeShowHidden=1
+"
 
+map <C-e> :Fern . -drawer -toggle<CR>
+let g:fern#renderer = "devicons"
+nnoremap <Leader>ff :<C-u>:Fern . -reveal=% -drawer<cr>
 
 "" Ctrl-P
 nnoremap <Leader>sf :<C-u>FZF<cr>
@@ -323,6 +330,7 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_enabled = 0
+nnoremap <Leader>pp :<C-u>PrettierAsync<cr>
 
 "" airline config
 let g:airline_powerline_fonts=1
