@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: describe
-# key: describe
-# uuid: describe
+# name: desc
+# key: desc
+# uuid: desc
 # --
 describe('${1:`%`}', () => {
 $0
