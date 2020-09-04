@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: storiesOf
+# key: story
+# uuid: story
+# --
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { host } from 'storybook-host';
+
+storiesOf('${1:component}', module)
+  .addDecorator(
+    host({
+      align: 'center middle',
+      width: 900,
+      height: '50vh',
+      cropMarks: false
+    })
+  )
+  .add('${2:story}', () => {
+    $0
+    return element;
+  })
