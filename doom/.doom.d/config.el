@@ -40,6 +40,7 @@
 ;; Zero delay suggestions
 (setq which-key-idle-delay 0.3)
 
+(setq magit-list-refs-sortby "-committerdate") ; Sort branches by last commit
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
