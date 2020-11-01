@@ -68,3 +68,22 @@
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   ;; force update evil keymaps after git-timemachine-mode loaded
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
+
+(defun make-juutuub-link (youtube-id)
+  (browse-url (concat "http://ww.youtube.com/embed" youtube-id)))
+
+(after! org
+  (org-add-link-type "juutuub" #'make-juutuub-link)
+  (setq
+   org-directory "~/Sync/Org/"
+   org-todo-keywords '((sequence "TODO(t)" "WIP(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+   org-todo-keyword-faces '(("TODO" :foreground "#20c997" :weight normal :underline t)
+                            ("WAITING" :foreground "#9f7efe" :weight normal :underline t)
+                            ("WIP" :foreground "#0098dd" :weight normal :underline t)
+                            ("DONE" :foreground "#50a14f" :weight normal :underline t)
+                            ("CANCELLED" :foreground "#ff6480" :weight normal :underline t)
+                            )
+   org-log-done 'time
+   org-agenda-files (list "~/Sync/Org/" "~/Sync/Org/smartly")
+   )
+  )
