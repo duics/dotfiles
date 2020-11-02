@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Component props typing
+# key: props
+# uuid: props
+# --
+type Props = {
+  $0
+}

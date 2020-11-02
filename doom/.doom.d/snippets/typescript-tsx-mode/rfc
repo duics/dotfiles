@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: React functional component
+# key: rfc
+# uuid: rfc
+# --
+import * as React from 'react';
+
+export function ${1:component}(${2:params}) {
+  $0
+}
