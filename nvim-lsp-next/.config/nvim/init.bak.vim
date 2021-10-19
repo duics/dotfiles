@@ -3,6 +3,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'itchyny/lightline.vim'
   Plug 'itchyny/vim-gitbranch'
+  Plug 'szw/vim-maximizer'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'kassio/neoterm'
+  Plug 'tpope/vim-commentary'
+  Plug 'sbdchd/neoformat'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " default options
@@ -48,3 +57,30 @@ let g:lightline = {
       \   'gitbranch': 'gitbranch#name'
       \ },
       \ }
+
+" szw/vim-maximizer
+nnoremap <silent> <C-w>m :MaximizerToggle!<CR>
+
+" kassio/neoterm
+let g:neoterm_default_mod = 'vertical'
+" let g:neoterm_size = 100
+let g:neoterm_autoinsert = 1
+let g:neoterm_autoscroll = 1
+let g:neoterm_term_per_tab = 1
+nnoremap <c-y> :Ttoggle<CR>
+inoremap <c-y> <Esc>:Ttoggle<CR>
+tnoremap <c-y> <c-\><c-n>:Ttoggle<CR>
+nnoremap <leader>x :TREPLSendLine<CR>
+vnoremap <leader>x :TREPLSendSelection<CR>
+if has('nvim')
+  au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+endif
+
+nnoremap <leader>F :Neoformat prettier<CR>
+
+
+" junegunn/fzf.vim
+nnoremap <leader><space> :Gfiles<CR>
+nnoremap <leader> ff :Rg<CR>
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fdfind')
+
