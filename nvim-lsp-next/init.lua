@@ -1,0 +1,7 @@
+require('config.basics')
+require('config.packages')
+require('config.keybindings')
+require('config.treesitter')
+require('config.rooter')
+require('config.lualine')
+require('config.nvim-tree')
