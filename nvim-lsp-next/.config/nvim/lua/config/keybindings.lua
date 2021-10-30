@@ -24,10 +24,13 @@ end)
 -- Search
 
 vimp.nnoremap('<leader>sc', ':nohl<CR>')
+vimp.nnoremap('<leader><leader>', ':nohl<CR>')
 
 -- telescope.nvim
 
 vimp.nnoremap('<leader>ff', telescope.find_files)
+vimp.nnoremap('<leader>fg', telescope.git_files)
+vimp.nnoremap('<C-p>', telescope.git_files)
 vimp.nnoremap('<leader>sb', telescope.buffers)
 -- vimp.nnoremap('<leader>fs', telescope.grep_string)
 vimp.nnoremap('<leader>ss', telescope.live_grep)
