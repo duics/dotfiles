@@ -33,6 +33,10 @@ opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
 
+-- visualize whitespace
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+
 opt.guifont = 'mononoki Nerd Font:h13'
 
 -- remove whitespace on save
@@ -81,7 +85,7 @@ cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
 
 -- IndentLine
 --g.indentLine_setColors = 0  -- set indentLine color
-g.indentLine_char = '|'       -- set indentLine character
+-- g.indentLine_char = '|'       -- set indentLine character
 
 -- disable IndentLine for markdown files (avoid concealing)
 cmd [[autocmd FileType markdown let g:indentLine_enabled=0]]
