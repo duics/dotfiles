@@ -7,9 +7,11 @@ require('packer').startup(function(use)
   use 'airblade/vim-rooter'
   use 'svermeulen/vimpeccable'
   use 'sbdchd/neoformat'
+  use 'matze/vim-move'
   use 'szw/vim-maximizer'
   use 'kassio/neoterm'
   use 'tanvirtin/monokai.nvim'
+  use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use {
     'nvim-lualine/lualine.nvim',
