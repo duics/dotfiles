@@ -1,3 +1,7 @@
+vim.g.coq_settings = {
+  auto_start = true and 'shut-up'
+}
+
 local coq = require('coq')
 local lsp_installer = require("nvim-lsp-installer")
 
