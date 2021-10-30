@@ -33,4 +33,8 @@ require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
     config = function() require'neogit'.setup {} end }
   use 'AndrewRadev/splitjoin.vim'
+  use {
+    { 'ms-jpq/coq_nvim', branch = 'coq' },
+    { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+  }
 end)
