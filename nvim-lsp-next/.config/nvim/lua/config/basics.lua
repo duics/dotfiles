@@ -33,6 +33,8 @@ opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
 
+opt.guifont = 'mononoki Nerd Font:h13'
+
 -- remove whitespace on save
 cmd [[au BufWritePre * :%s/\s\+$//e]]
 
