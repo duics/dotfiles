@@ -66,10 +66,10 @@ opt.shiftwidth = 2        -- shift 4 spaces when tab
 opt.tabstop = 2           -- 1 tab == 4 spaces
 opt.smartindent = true    -- autoindent new lines
 
--- don't auto commenting new lines
+-- don't auto comment new lines
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
--- remove line lenght marker for selected filetypes
+-- remove line length marker for selected filetypes
 cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
 
 -- 2 spaces for selected filetypes
