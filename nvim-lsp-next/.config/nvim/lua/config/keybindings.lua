@@ -25,6 +25,7 @@ end)
 
 vimp.nnoremap('<leader>sc', ':nohl<CR>')
 vimp.nnoremap('<leader><leader>', ':nohl<CR>')
+vimp.nnoremap('<leader>sr', ':%s/')
 
 -- telescope.nvim
 
