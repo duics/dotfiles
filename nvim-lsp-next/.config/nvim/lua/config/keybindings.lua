@@ -5,7 +5,9 @@ local telescope = require('telescope.builtin')
 
 vim.g.mapleader = ' '
 
--- reload configs
+-- configs
+
+vimp.nnoremap('<leader>ec', ':vsp $MYVIMRC<CR>')
 
 vimp.nnoremap('<leader>r', function()
   -- Remove all previously added vimpeccable maps
