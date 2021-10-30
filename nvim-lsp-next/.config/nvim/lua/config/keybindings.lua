@@ -80,7 +80,7 @@ vimp.nnoremap('<leader>cf', vim.lsp.buf.formatting)
 
 vimp.nnoremap('<C-l>D', vim.lsp.buf.declaration)
 vimp.nnoremap('<C-l>d', vim.lsp.buf.definition)
-vimp.nnoremap('<C-l>k', vim.lsp.buf.hover)
+vimp.nnoremap('K', vim.lsp.buf.hover)
 vimp.nnoremap('<C-l>i', vim.lsp.buf.implementation)
 vimp.nnoremap('<C-l>h', vim.lsp.buf.signature_help)
 vimp.nnoremap('<C-l>wa', vim.lsp.buf.add_workspace_folder)
