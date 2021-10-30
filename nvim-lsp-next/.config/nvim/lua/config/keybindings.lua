@@ -55,3 +55,23 @@ vimp.nnoremap('<leader>op', ':NvimTreeToggle<CR>')
 local neogit = require('neogit')
 
 vimp.nnoremap('<leader>gs', neogit.open)
+
+-- LSP
+
+vimp.nnoremap('<leader>cD', vim.lsp.buf.declaration)
+vimp.nnoremap('<leader>cd', vim.lsp.buf.definition)
+vimp.nnoremap('<leader>ck', vim.lsp.buf.hover)
+vimp.nnoremap('<leader>ci', vim.lsp.buf.implementation)
+vimp.nnoremap('<leader>ch', vim.lsp.buf.signature_help)
+vimp.nnoremap('<leader>lwa', vim.lsp.buf.add_workspace_folder)
+vimp.nnoremap('<leader>lwr', vim.lsp.buf.remove_workspace_folder)
+vimp.nnoremap('<leader>lwl', vim.lsp.buf.list_workspace_folders)
+vimp.nnoremap('<leader>ct', vim.lsp.buf.type_definition)
+vimp.nnoremap('<leader>cr', vim.lsp.buf.rename)
+vimp.nnoremap('<leader>ca', vim.lsp.buf.code_action)
+vimp.nnoremap('<leader>cR', vim.lsp.buf.references)
+vimp.nnoremap('<leader>ce', vim.lsp.diagnostic.show_line_diagnostics)
+vimp.nnoremap('<leader>ep', vim.lsp.diagnostic.goto_prev)
+vimp.nnoremap('<leader>en', vim.lsp.diagnostic.goto_next)
+vimp.nnoremap('<leader>lq', vim.lsp.diagnostic.set_loclist)
+vimp.nnoremap('<leader>cf', vim.lsp.buf.formatting)

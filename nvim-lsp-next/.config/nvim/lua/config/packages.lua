@@ -10,6 +10,7 @@ require('packer').startup(function(use)
   use 'matze/vim-move'
   use 'szw/vim-maximizer'
   use 'kassio/neoterm'
+  use 'mhinz/vim-signify'
   use 'tanvirtin/monokai.nvim'
   use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
