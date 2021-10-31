@@ -8,3 +8,6 @@ require('config.nvim-tree')
 require('config.lsp')
 require('config.dap')
 require('config.indent_blankline')
+
+-- Initializers
+require('gitsigns').setup({})
