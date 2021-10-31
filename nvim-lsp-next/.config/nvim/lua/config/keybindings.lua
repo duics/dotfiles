@@ -52,11 +52,18 @@ vimp.nnoremap('<leader>fb', telescope.file_browser)
 vimp.nnoremap('<leader>ft', ':NvimTreeToggle<CR>')
 vimp.nnoremap('<leader>op', ':NvimTreeToggle<CR>')
 
--- Neogit
+-- Git
 
 local neogit = require('neogit')
+local gitsigns = require('gitsigns')
 
-vimp.nnoremap('<leader>gs', neogit.open)
+vimp.nnoremap('<leader>gg', neogit.open)
+vimp.nnoremap('<leader>gc', function () neogit.open({ 'commit' }) end)
+vimp.nnoremap('<leader>gsh', gitsigns.stage_hunk)
+vimp.nnoremap('<leader>guh', gitsigns.undo_stage_hunk)
+vimp.vnoremap('<leader>gsh', function() gitsigns.stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end)
+vimp.vnoremap('<leader>guh', function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end)
+
 
 -- LSP
 
