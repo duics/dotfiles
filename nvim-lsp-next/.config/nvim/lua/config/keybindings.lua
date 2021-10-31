@@ -69,6 +69,7 @@ vimp.vnoremap('<leader>guh', function() gitsigns.undo_stage_hunk({vim.fn.line(".
 
 vimp.nnoremap('<leader>mD', telescope.lsp_references)
 vimp.nnoremap('<leader>md', telescope.lsp_definitions)
+vimp.nnoremap('<leader>ld', vim.lsp.buf.definition)
 vimp.nnoremap('<leader>ck', vim.lsp.buf.hover)
 vimp.nnoremap('<leader>ci', telescope.lsp_implementations)
 vimp.nnoremap('<leader>ch', vim.lsp.buf.signature_help)
@@ -76,6 +77,7 @@ vimp.nnoremap('<leader>lwa', vim.lsp.buf.add_workspace_folder)
 vimp.nnoremap('<leader>lwr', vim.lsp.buf.remove_workspace_folder)
 vimp.nnoremap('<leader>lwl', vim.lsp.buf.list_workspace_folders)
 vimp.nnoremap('<leader>ct', telescope.lsp_type_definitions)
+vimp.nnoremap('<leader>lt', vim.lsp.buf.type_definition)
 vimp.nnoremap('<leader>cR', vim.lsp.buf.rename)
 vimp.nnoremap('<leader>ca', function() require("code_action_menu").open_code_action_menu() end)
 vimp.nnoremap('<leader>cr', telescope.lsp_references)
@@ -121,3 +123,46 @@ vimp.nnoremap('<A-d>B', function () dap.set_breakpoint(vim.fn.input('Breakpoint 
 vimp.nnoremap('<A-d>L', function () dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vimp.nnoremap('<A-d>r', dap.repl.open)
 vimp.nnoremap('<A-d>p', dap.run_last)
+
+-- Trouble
+
+vimp.nnoremap('<C-e>t', ':TroubleToggle<CR>')
+vimp.nnoremap('<C-e>w', ':TroubleToggle lsp_workspace_diagnostics<CR>')
+vimp.nnoremap('<C-e>d', ':TroubleToggle lsp_document_diagnostics<CR>')
+vimp.nnoremap('<C-e>q', ':TroubleToggle quickfix<CR>')
+vimp.nnoremap('<C-e>l', ':TroubleToggle loclist<CR>')
+vimp.nnoremap('<C-e>r', ':TroubleToggle lsp_references<CR>')
+
+-- Barbar
+
+-- Move to previous/next
+vimp.nnoremap('<A-,>', ':BufferPrevious<CR>')
+vimp.nnoremap('<A-.>', ':BufferNext<CR>')
+-- Re-order to previous/next
+vimp.nnoremap('<A-<>', ':BufferMovePrevious<CR>')
+vimp.nnoremap('<A->>', ' :BufferMoveNext<CR>')
+-- Goto buffer in position...
+vimp.nnoremap('<A-1>', ':BufferGoto 1<CR>')
+vimp.nnoremap('<A-2>', ':BufferGoto 2<CR>')
+vimp.nnoremap('<A-3>', ':BufferGoto 3<CR>')
+vimp.nnoremap('<A-4>', ':BufferGoto 4<CR>')
+vimp.nnoremap('<A-5>', ':BufferGoto 5<CR>')
+vimp.nnoremap('<A-6>', ':BufferGoto 6<CR>')
+vimp.nnoremap('<A-7>', ':BufferGoto 7<CR>')
+vimp.nnoremap('<A-8>', ':BufferGoto 8<CR>')
+vimp.nnoremap('<A-9>', ':BufferGoto 9<CR>')
+vimp.nnoremap('<A-0>', ':BufferLast<CR>')
+-- Close buffer
+vimp.nnoremap('<A-c>', ':BufferClose<CR>')
+-- Wipeout buffer
+--                 :BufferWipeout<CR>
+-- Close commands
+--                 :BufferCloseAllButCurrent<CR>
+--                 :BufferCloseBuffersLeft<CR>
+--                 :BufferCloseBuffersRight<CR>
+-- Magic buffer-picking mode
+vimp.nnoremap('<C-t>', ':BufferPick<CR>')
+-- Sort automatically by...
+vimp.nnoremap('<leader>bsn', ':BufferOrderByBufferNumber<CR>')
+vimp.nnoremap('<leader>bsd', ':BufferOrderByDirectory<CR>')
+vimp.nnoremap('<leader>bsl', ':BufferOrderByLanguage<CR>')

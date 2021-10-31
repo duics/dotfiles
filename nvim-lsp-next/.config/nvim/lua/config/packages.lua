@@ -10,6 +10,7 @@ require('packer').startup(function(use)
   use 'matze/vim-move'
   use 'szw/vim-maximizer'
   use 'kassio/neoterm'
+  use 'romgrk/barbar.nvim'
   use {
     'lewis6991/gitsigns.nvim',
     requires = {
