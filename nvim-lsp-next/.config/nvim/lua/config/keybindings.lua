@@ -154,6 +154,7 @@ vimp.nnoremap('<A-9>', ':BufferGoto 9<CR>')
 vimp.nnoremap('<A-0>', ':BufferLast<CR>')
 -- Close buffer
 vimp.nnoremap('<A-c>', ':BufferClose<CR>')
+vimp.nnoremap('<A-x>', ':BufferClose<CR>')
 -- Wipeout buffer
 --                 :BufferWipeout<CR>
 -- Close commands
