@@ -35,7 +35,7 @@ opt.linebreak = true          -- wrap on word boundary
 
 -- visualize whitespace
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
+-- vim.opt.listchars:append("space:⋅")
 
 opt.guifont = 'mononoki Nerd Font:h13'
 
@@ -70,7 +70,7 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 -- Change the "hint" color to the "orange" color, and make the "error" color bright red
 -- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
-cmd [[colorscheme tokyonight]]
+cmd [[colorscheme catppuccino]]
 
 -----------------------------------------------------------
 -- Tabs, indent

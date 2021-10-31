@@ -12,6 +12,16 @@ require('packer').startup(function(use)
   use 'kassio/neoterm'
   use 'romgrk/barbar.nvim'
   use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup { }
+    end
+  }
+  use {
+    "luukvbaal/stabilize.nvim",
+    config = function() require("stabilize").setup() end
+  }
+  use {
     'lewis6991/gitsigns.nvim',
     requires = {
       'nvim-lua/plenary.nvim'
@@ -22,6 +32,7 @@ require('packer').startup(function(use)
   }
   use 'tanvirtin/monokai.nvim'
   use 'folke/tokyonight.nvim'
+  use "Pocco81/Catppuccino.nvim"
   use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use {
