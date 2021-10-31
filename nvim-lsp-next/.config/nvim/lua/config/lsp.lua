@@ -2,6 +2,8 @@ vim.g.coq_settings = {
   auto_start = true and 'shut-up'
 }
 
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+
 local coq = require('coq')
 local lsp_installer = require("nvim-lsp-installer")
 

@@ -42,6 +42,10 @@ require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
   }
+  use 'kosayoda/nvim-lightbulb'
+  use {
+    'weilbith/nvim-code-action-menu',
+  }
   use {
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
