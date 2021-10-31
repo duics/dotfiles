@@ -29,7 +29,7 @@ vimp.nnoremap('<leader>sc', ':nohl<CR>')
 vimp.nnoremap('<leader><leader>', ':nohl<CR>')
 vimp.nnoremap('<leader>sr', ':%s/')
 
--- telescope.nvim
+-- -- telescope.nvim
 
 vimp.nnoremap('<leader>ff', telescope.find_files)
 vimp.nnoremap('<leader>fg', telescope.git_files)
@@ -67,8 +67,8 @@ vimp.vnoremap('<leader>guh', function() gitsigns.undo_stage_hunk({vim.fn.line(".
 
 -- LSP
 
-vimp.nnoremap('<leader>cD', telescope.references)
-vimp.nnoremap('<leader>cd', telescope.definitions)
+vimp.nnoremap('<leader>mD', telescope.lsp_references)
+vimp.nnoremap('<leader>md', telescope.lsp_definitions)
 vimp.nnoremap('<leader>ck', vim.lsp.buf.hover)
 vimp.nnoremap('<leader>ci', telescope.lsp_implementations)
 vimp.nnoremap('<leader>ch', vim.lsp.buf.signature_help)
@@ -86,19 +86,20 @@ vimp.nnoremap('<leader>ej', vim.lsp.diagnostic.goto_next)
 vimp.nnoremap('<leader>lq', vim.lsp.diagnostic.set_loclist)
 vimp.nnoremap('<leader>cf', vim.lsp.buf.formatting)
 
-vimp.nnoremap('<C-l>D', vim.lsp.buf.declaration)
-vimp.nnoremap('<C-l>d', vim.lsp.buf.definition)
+vimp.nnoremap('<C-l>D', telescope.lsp_references)
+vimp.nnoremap('<C-l>d', telescope.lsp_definitions)
 vimp.nnoremap('K', vim.lsp.buf.hover)
-vimp.nnoremap('<C-l>i', vim.lsp.buf.implementation)
+vimp.nnoremap('<C-l>i', telescope.lsp_implementations)
 vimp.nnoremap('<C-l>h', vim.lsp.buf.signature_help)
 vimp.nnoremap('<C-l>wa', vim.lsp.buf.add_workspace_folder)
 vimp.nnoremap('<C-l>wr', vim.lsp.buf.remove_workspace_folder)
 vimp.nnoremap('<C-l>wl', vim.lsp.buf.list_workspace_folders)
-vimp.nnoremap('<C-l>t', vim.lsp.buf.type_definition)
+vimp.nnoremap({'override'}, '<C-l>t', telescope.lsp_type_definition)
 vimp.nnoremap('<C-l>r', vim.lsp.buf.rename)
 vimp.nnoremap('<C-l>a', function() require("code_action_menu").open_code_action_menu() end)
-vimp.nnoremap('<C-l>R', vim.lsp.buf.references)
-vimp.nnoremap('<C-l>e', vim.lsp.diagnostic.show_line_diagnostics)
+vimp.nnoremap('<C-l>R', telescope.lsp_references)
+vimp.nnoremap('<C-l>e', telescope.lsp_document_diagnostics)
+vimp.nnoremap('<C-l>E', telescope.lsp_workspace_diagnostics)
 vimp.nnoremap('<C-l>k', vim.lsp.diagnostic.goto_prev)
 vimp.nnoremap('<C-l>j', vim.lsp.diagnostic.goto_next)
 vimp.nnoremap('<C-l>q', vim.lsp.diagnostic.set_loclist)
