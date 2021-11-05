@@ -11,6 +11,7 @@ require('packer').startup(function(use)
   use 'szw/vim-maximizer'
   use 'kassio/neoterm'
   use 'romgrk/barbar.nvim'
+  use 'christoomey/vim-tmux-navigator'
   use {
     "folke/which-key.nvim",
     config = function()
@@ -63,10 +64,7 @@ require('packer').startup(function(use)
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
   }
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
+  use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'}
   use {
     "lukas-reineke/indent-blankline.nvim",
   }

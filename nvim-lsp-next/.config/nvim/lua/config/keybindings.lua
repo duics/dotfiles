@@ -49,8 +49,13 @@ vimp.nnoremap('<leader>fb', telescope.file_browser)
 
 -- nvim-tree
 
-vimp.nnoremap('<leader>ft', ':NvimTreeToggle<CR>')
-vimp.nnoremap('<leader>op', ':NvimTreeToggle<CR>')
+-- vimp.nnoremap('<leader>ft', ':NvimTreeToggle<CR>')
+-- vimp.nnoremap('<leader>op', ':NvimTreeToggle<CR>')
+
+-- CHAD-tree
+
+vimp.nnoremap('<leader>ft', '<cmd>CHADopen<CR>')
+vimp.nnoremap('<leader>op', '<cmd>CHADopen<CR>')
 
 -- Git
 
@@ -88,24 +93,24 @@ vimp.nnoremap('<leader>ej', vim.lsp.diagnostic.goto_next)
 vimp.nnoremap('<leader>lq', vim.lsp.diagnostic.set_loclist)
 vimp.nnoremap('<leader>cf', vim.lsp.buf.formatting)
 
-vimp.nnoremap('<C-l>D', telescope.lsp_references)
-vimp.nnoremap('<C-l>d', telescope.lsp_definitions)
+vimp.nnoremap('<C-m>D', telescope.lsp_references)
+vimp.nnoremap('<C-m>d', telescope.lsp_definitions)
 vimp.nnoremap('K', vim.lsp.buf.hover)
-vimp.nnoremap('<C-l>i', telescope.lsp_implementations)
-vimp.nnoremap('<C-l>h', vim.lsp.buf.signature_help)
-vimp.nnoremap('<C-l>wa', vim.lsp.buf.add_workspace_folder)
-vimp.nnoremap('<C-l>wr', vim.lsp.buf.remove_workspace_folder)
-vimp.nnoremap('<C-l>wl', vim.lsp.buf.list_workspace_folders)
-vimp.nnoremap('<C-l>t', telescope.lsp_type_definitions)
-vimp.nnoremap('<C-l>r', vim.lsp.buf.rename)
-vimp.nnoremap('<C-l>a', function() require("code_action_menu").open_code_action_menu() end)
-vimp.nnoremap('<C-l>R', telescope.lsp_references)
-vimp.nnoremap('<C-l>e', telescope.lsp_document_diagnostics)
-vimp.nnoremap('<C-l>E', telescope.lsp_workspace_diagnostics)
-vimp.nnoremap('<C-l>k', vim.lsp.diagnostic.goto_prev)
-vimp.nnoremap('<C-l>j', vim.lsp.diagnostic.goto_next)
-vimp.nnoremap('<C-l>q', vim.lsp.diagnostic.set_loclist)
-vimp.nnoremap('<C-l>f', vim.lsp.buf.formatting)
+vimp.nnoremap('<C-m>i', telescope.lsp_implementations)
+vimp.nnoremap('<C-m>h', vim.lsp.buf.signature_help)
+vimp.nnoremap('<C-m>wa', vim.lsp.buf.add_workspace_folder)
+vimp.nnoremap('<C-m>wr', vim.lsp.buf.remove_workspace_folder)
+vimp.nnoremap('<C-m>wl', vim.lsp.buf.list_workspace_folders)
+vimp.nnoremap('<C-m>t', telescope.lsp_type_definitions)
+vimp.nnoremap('<C-m>r', vim.lsp.buf.rename)
+vimp.nnoremap('<C-m>a', function() require("code_action_menu").open_code_action_menu() end)
+vimp.nnoremap('<C-m>R', telescope.lsp_references)
+vimp.nnoremap('<C-m>e', telescope.lsp_document_diagnostics)
+vimp.nnoremap('<C-m>E', telescope.lsp_workspace_diagnostics)
+vimp.nnoremap('<C-m>k', vim.lsp.diagnostic.goto_prev)
+vimp.nnoremap('<C-m>j', vim.lsp.diagnostic.goto_next)
+vimp.nnoremap('<C-m>q', vim.lsp.diagnostic.set_loclist)
+vimp.nnoremap('<C-m>f', vim.lsp.buf.formatting)
 
 -- Debug
 
@@ -148,22 +153,7 @@ vimp.nnoremap('<A-3>', ':BufferGoto 3<CR>')
 vimp.nnoremap('<A-4>', ':BufferGoto 4<CR>')
 vimp.nnoremap('<A-5>', ':BufferGoto 5<CR>')
 vimp.nnoremap('<A-6>', ':BufferGoto 6<CR>')
-vimp.nnoremap('<A-7>', ':BufferGoto 7<CR>')
-vimp.nnoremap('<A-8>', ':BufferGoto 8<CR>')
-vimp.nnoremap('<A-9>', ':BufferGoto 9<CR>')
-vimp.nnoremap('<A-0>', ':BufferLast<CR>')
--- Close buffer
-vimp.nnoremap('<A-c>', ':BufferClose<CR>')
-vimp.nnoremap('<A-x>', ':BufferClose<CR>')
--- Wipeout buffer
---                 :BufferWipeout<CR>
--- Close commands
---                 :BufferCloseAllButCurrent<CR>
---                 :BufferCloseBuffersLeft<CR>
---                 :BufferCloseBuffersRight<CR>
--- Magic buffer-picking mode
-vimp.nnoremap('<C-t>', ':BufferPick<CR>')
--- Sort automatically by...
-vimp.nnoremap('<leader>bsn', ':BufferOrderByBufferNumber<CR>')
-vimp.nnoremap('<leader>bsd', ':BufferOrderByDirectory<CR>')
-vimp.nnoremap('<leader>bsl', ':BufferOrderByLanguage<CR>')
+
+-- Maximizer
+
+vimp.nnoremap('<C-w>m', ':MaximizerToggle!<CR>')
