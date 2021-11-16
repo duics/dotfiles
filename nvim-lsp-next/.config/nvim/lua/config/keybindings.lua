@@ -29,6 +29,10 @@ vimp.nnoremap('<leader>sc', ':nohl<CR>')
 vimp.nnoremap('<leader><leader>', ':nohl<CR>')
 vimp.nnoremap('<leader>sr', ':%s/')
 
+-- Terminal
+
+vimp.tnoremap('<Esc>', '<C-\\><C-n>')
+
 -- -- telescope.nvim
 
 vimp.nnoremap('<leader>ff', telescope.find_files)
