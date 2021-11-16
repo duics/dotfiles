@@ -69,10 +69,10 @@ local gitsigns = require('gitsigns')
 vimp.nnoremap('<leader>gg', neogit.open)
 vimp.nnoremap('<leader>gs', neogit.open)
 vimp.nnoremap('<leader>gc', function () neogit.open({ 'commit' }) end)
-vimp.nnoremap('<leader>gsh', gitsigns.stage_hunk)
-vimp.nnoremap('<leader>guh', gitsigns.undo_stage_hunk)
-vimp.vnoremap('<leader>gsh', function() gitsigns.stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end)
-vimp.vnoremap('<leader>guh', function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end)
+vimp.nnoremap('<leader>ghs', gitsigns.stage_hunk)
+vimp.nnoremap('<leader>ghu', gitsigns.undo_stage_hunk)
+vimp.vnoremap('<leader>ghs', function() gitsigns.stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end)
+vimp.vnoremap('<leader>ghu', function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end)
 
 
 -- LSP
