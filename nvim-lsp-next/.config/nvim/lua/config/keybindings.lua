@@ -67,6 +67,7 @@ local neogit = require('neogit')
 local gitsigns = require('gitsigns')
 
 vimp.nnoremap('<leader>gg', neogit.open)
+vimp.nnoremap('<leader>gs', neogit.open)
 vimp.nnoremap('<leader>gc', function () neogit.open({ 'commit' }) end)
 vimp.nnoremap('<leader>gsh', gitsigns.stage_hunk)
 vimp.nnoremap('<leader>guh', gitsigns.undo_stage_hunk)
@@ -157,6 +158,9 @@ vimp.nnoremap('<A-3>', ':BufferGoto 3<CR>')
 vimp.nnoremap('<A-4>', ':BufferGoto 4<CR>')
 vimp.nnoremap('<A-5>', ':BufferGoto 5<CR>')
 vimp.nnoremap('<A-6>', ':BufferGoto 6<CR>')
+
+vimp.nnoremap('<A-c>', ':BufferClose<CR>')
+vimp.nnoremap('<A-x>', ':BufferClose<CR>')
 
 -- Maximizer
 
