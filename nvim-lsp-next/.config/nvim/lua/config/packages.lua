@@ -12,6 +12,7 @@ require('packer').startup(function(use)
   use 'kassio/neoterm'
   use 'romgrk/barbar.nvim'
   use 'christoomey/vim-tmux-navigator'
+  use 'vim-test/vim-test'
   use {
     "folke/which-key.nvim",
     config = function()

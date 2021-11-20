@@ -39,6 +39,7 @@ vimp.nnoremap('<leader>ff', telescope.find_files)
 vimp.nnoremap('<leader>fg', telescope.git_files)
 vimp.nnoremap('<C-p>', telescope.git_files)
 vimp.nnoremap('<leader>sb', telescope.buffers)
+vimp.nnoremap('<leader>bb', telescope.buffers)
 -- vimp.nnoremap('<leader>fs', telescope.grep_string)
 vimp.nnoremap('<leader>ss', telescope.live_grep)
 
@@ -165,3 +166,11 @@ vimp.nnoremap('<A-x>', ':BufferClose<CR>')
 -- Maximizer
 
 vimp.nnoremap('<C-w>m', ':MaximizerToggle!<CR>')
+
+-- Tests
+
+vimp.nnoremap('<leader>tf', ':TestFile<CR>')
+vimp.nnoremap('<leader>tn', ':TestNearest<CR>')
+vimp.nnoremap('<leader>ts', ':TestSuite<CR>')
+vimp.nnoremap('<leader>tt', ':TestLast<CR>')
+vimp.nnoremap('<leader>tg', ':TestLast<CR>')
