@@ -80,6 +80,8 @@ vimp.vnoremap('<leader>ghu', function() gitsigns.undo_stage_hunk({vim.fn.line(".
 
 vimp.nnoremap('<leader>mD', telescope.lsp_references)
 vimp.nnoremap('<leader>md', telescope.lsp_definitions)
+vimp.nnoremap('<leader>cD', telescope.lsp_references)
+vimp.nnoremap('<leader>cd', telescope.lsp_definitions)
 vimp.nnoremap('<leader>ld', vim.lsp.buf.definition)
 vimp.nnoremap('<leader>ck', vim.lsp.buf.hover)
 vimp.nnoremap('<leader>ci', telescope.lsp_implementations)
