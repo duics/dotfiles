@@ -1,5 +1,5 @@
-require('config.basics')
 require('config.packages')
+require('config.basics')
 require('config.keybindings')
 require('config.treesitter')
 require('config.rooter')
