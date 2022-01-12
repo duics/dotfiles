@@ -51,7 +51,7 @@ vimp.nnoremap('<leader>sl', telescope.lsp_document_symbols)
 
 vimp.nnoremap('<leader>sx', telescope.commands)
 
-vimp.nnoremap('<leader>fb', telescope.file_browser)
+-- vimp.nnoremap('<leader>fb', telescope.file_browser)
 
 -- nvim-tree
 
