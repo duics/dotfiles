@@ -20,6 +20,8 @@ opt.mouse = 'a'               -- enable mouse support
 opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 opt.swapfile = false          -- don't use swapfile
 
+opt.timeoutlen = 0            -- No timeout for instant which-key popup
+
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
