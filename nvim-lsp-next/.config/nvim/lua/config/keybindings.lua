@@ -49,6 +49,10 @@ local neogit = require('neogit')
 local gitsigns = require('gitsigns')
 
 wk.register({
+  e = {
+    name = "edit",
+    c = { ':vsp $MYVIMRC<CR>', "Neovim configuration" }
+  },
   f = {
     name = "file",
     f = { telescope.find_files, "Find File" },
@@ -93,9 +97,21 @@ wk.register({
   },
   c = {
     name = "code",
+    a = { function() require("code_action_menu").open_code_action_menu() end, "Code action" },
     f = { vim.lsp.buf.formatting, "Format" },
+    d = { telescope.lsp_definitions, "Definitions" },
+    D = { telescope.lsp_references, "References" },
+    e = { '<cmd>TroubleToggle<CR>', "Errors" },
+    h = { vim.lsp.buf.signature_help, "Help" },
   },
-  r = { reload, "Reload configuration" }
+  r = { reload, "Reload configuration" },
+  t = {
+    name = "test",
+    f = { '<cmd>TestFile<CR>', 'Test file' },
+    n = { '<cmd>TestNearest<CR>', 'Test nearest' },
+    s = { '<cmd>TestSuite<CR>', 'Test suite' },
+    t = { '<cmd>TestLast<CR>', 'Test last' },
+  }
 }, { prefix = "<leader>" })
 
 wk.register({
@@ -103,7 +119,7 @@ wk.register({
   u = { function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, "Unstage hunk" }
 }, { prefix = "<leader>", mode = "v" })
 
--- vimp.nnoremap('<C-p>', telescope.git_files)
+vimp.nnoremap('<C-p>', telescope.git_files)
 
 -- vimp.nnoremap('<leader>sl', telescope.lsp_document_symbols)
 -- vimp.nnoremap('<leader>sx', telescope.commands)
@@ -139,7 +155,7 @@ wk.register({
 
 -- vimp.nnoremap('<C-m>D', telescope.lsp_references)
 -- vimp.nnoremap('<C-m>d', telescope.lsp_definitions)
--- vimp.nnoremap('K', vim.lsp.buf.hover)
+vimp.nnoremap('K', vim.lsp.buf.hover)
 -- vimp.nnoremap('<C-m>i', telescope.lsp_implementations)
 -- vimp.nnoremap('<C-m>h', vim.lsp.buf.signature_help)
 -- vimp.nnoremap('<C-m>wa', vim.lsp.buf.add_workspace_folder)
@@ -190,25 +206,25 @@ wk.register({
 -- -- Barbar
 
 -- -- Move to previous/next
--- vimp.nnoremap('<A-,>', ':BufferPrevious<CR>')
--- vimp.nnoremap('<A-.>', ':BufferNext<CR>')
+vimp.nnoremap('<A-,>', ':BufferPrevious<CR>')
+vimp.nnoremap('<A-.>', ':BufferNext<CR>')
 -- -- Re-order to previous/next
--- vimp.nnoremap('<A-<>', ':BufferMovePrevious<CR>')
--- vimp.nnoremap('<A->>', ' :BufferMoveNext<CR>')
+vimp.nnoremap('<A-<>', ':BufferMovePrevious<CR>')
+vimp.nnoremap('<A->>', ' :BufferMoveNext<CR>')
 -- -- Goto buffer in position...
--- vimp.nnoremap('<A-1>', ':BufferGoto 1<CR>')
--- vimp.nnoremap('<A-2>', ':BufferGoto 2<CR>')
--- vimp.nnoremap('<A-3>', ':BufferGoto 3<CR>')
--- vimp.nnoremap('<A-4>', ':BufferGoto 4<CR>')
--- vimp.nnoremap('<A-5>', ':BufferGoto 5<CR>')
--- vimp.nnoremap('<A-6>', ':BufferGoto 6<CR>')
+vimp.nnoremap('<A-1>', ':BufferGoto 1<CR>')
+vimp.nnoremap('<A-2>', ':BufferGoto 2<CR>')
+vimp.nnoremap('<A-3>', ':BufferGoto 3<CR>')
+vimp.nnoremap('<A-4>', ':BufferGoto 4<CR>')
+vimp.nnoremap('<A-5>', ':BufferGoto 5<CR>')
+vimp.nnoremap('<A-6>', ':BufferGoto 6<CR>')
 
--- vimp.nnoremap('<A-c>', ':BufferClose<CR>')
--- vimp.nnoremap('<A-x>', ':BufferClose<CR>')
+vimp.nnoremap('<A-c>', ':BufferClose<CR>')
+vimp.nnoremap('<A-x>', ':BufferClose<CR>')
 
 -- -- Maximizer
 
--- vimp.nnoremap('<C-w>m', ':MaximizerToggle!<CR>')
+vimp.nnoremap('<C-w>m', ':MaximizerToggle!<CR>')
 
 -- -- Tests
 
