@@ -27,10 +27,11 @@ require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     requires = {
       'nvim-lua/plenary.nvim'
-    },
-    config = function()
-      require('gitsigns').setup({})
-    end
+    }
+  }
+  use {
+    'ruifm/gitlinker.nvim',
+    requires = 'nvim-lua/plenary.nvim'
   }
   use 'tanvirtin/monokai.nvim'
   use 'folke/tokyonight.nvim'

@@ -63,9 +63,7 @@ wk.register({
   },
   s = {
     name = "search",
-    s = { telescope.grep_string, "Grep string" },
-    l = { telescope.live_grep, "Live grep" },
-    g = { telescope.live_grep, "Live grep" },
+    s = { telescope.live_grep, "Live grep" },
   },
   b = {
     name = "buffers",
@@ -88,7 +86,10 @@ wk.register({
     b = {
       name = "blame",
       b = { function () gitsigns.blame_line{full=true} end, "Blame line" },
-    }
+    },
+    y = {
+      function () require"gitlinker".get_buf_range_url("n") end, "Yank github url"
+    },
   },
   o = {
     name = "open",
@@ -101,7 +102,7 @@ wk.register({
     f = { vim.lsp.buf.formatting, "Format" },
     d = { telescope.lsp_definitions, "Definitions" },
     D = { telescope.lsp_references, "References" },
-    e = { '<cmd>TroubleToggle<CR>', "Errors" },
+    e = { '<cmd>TroubleToggle lsp_document_diagnostics<CR>', "Errors" },
     h = { vim.lsp.buf.signature_help, "Help" },
   },
   r = { reload, "Reload configuration" },
