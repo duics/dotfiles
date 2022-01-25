@@ -48,6 +48,8 @@ local wk = require("which-key")
 local neogit = require('neogit')
 local gitsigns = require('gitsigns')
 
+local opts = { path_display = { "truncate" } }
+
 wk.register({
   e = {
     name = "edit",
@@ -55,8 +57,8 @@ wk.register({
   },
   f = {
     name = "file",
-    f = { telescope.find_files, "Find File" },
-    g = { telescope.git_files, "Find File (git)" },
+    f = { function () telescope.find_files(opts) end, "Find File" },
+    g = { function () telescope.git_files(opts) end, "Find File (git)" },
     t = { "<cmd>CHADopen<CR>", "File tree" },
     n = { "New File" },
     e = "Edit File",
@@ -121,7 +123,7 @@ wk.register({
   u = { function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, "Unstage hunk" }
 }, { prefix = "<leader>", mode = "v" })
 
-vimp.nnoremap('<C-p>', telescope.git_files)
+vimp.nnoremap('<C-p>', function() telescope.git_files(opts) end)
 
 -- vimp.nnoremap('<leader>sl', telescope.lsp_document_symbols)
 -- vimp.nnoremap('<leader>sx', telescope.commands)
