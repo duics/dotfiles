@@ -95,6 +95,7 @@ wk.register({
     name = "open",
     p = { "<cmd>CHADopen<CR>", "File tree" },
     c = { ":vsp $MYVIMRC<CR>", "Editor configuration" },
+    f = { "<cmd>Vista nvim_lsp<CR>", "Tag bar" },
   },
   c = {
     name = "code",
