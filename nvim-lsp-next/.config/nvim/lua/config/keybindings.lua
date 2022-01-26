@@ -65,7 +65,7 @@ wk.register({
   },
   s = {
     name = "search",
-    s = { telescope.live_grep, "Live grep" },
+    s = { function() telescope.live_grep({ path_display = { "smart" } }) end, "Live grep" },
   },
   b = {
     name = "buffers",
