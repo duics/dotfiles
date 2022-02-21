@@ -12,3 +12,5 @@ require('config.coq')
 -- Initializers
 require('gitsigns').setup({})
 require('gitlinker').setup({ mappings = nil })
+require('fidget').setup{}
+vim.cmd [[let test#strategy = "floaterm"]]

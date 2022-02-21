@@ -105,7 +105,7 @@ wk.register({
     f = { vim.lsp.buf.formatting, "Format" },
     d = { telescope.lsp_definitions, "Definitions" },
     D = { telescope.lsp_references, "References" },
-    e = { '<cmd>TroubleToggle lsp_document_diagnostics<CR>', "Errors" },
+    e = { '<cmd>TroubleToggle document_diagnostics<CR>', "Errors" },
     h = { vim.lsp.buf.signature_help, "Help" },
   },
   r = { reload, "Reload configuration" },
