@@ -107,14 +107,19 @@ wk.register({
     D = { telescope.lsp_references, "References" },
     e = { '<cmd>TroubleToggle document_diagnostics<CR>', "Errors" },
     h = { vim.lsp.buf.signature_help, "Help" },
+    r = { vim.lsp.buf.rename, "Rename" },
+    i = { vim.lsp.buf.implementation, "Implementation" },
   },
   r = { reload, "Reload configuration" },
   t = {
     name = "test",
-    f = { '<cmd>TestFile<CR>', 'Test file' },
-    n = { '<cmd>TestNearest<CR>', 'Test nearest' },
-    s = { '<cmd>TestSuite<CR>', 'Test suite' },
-    t = { '<cmd>TestLast<CR>', 'Test last' },
+    f = { '<cmd>Ultest<CR>', 'Test file' },
+    F = { '<cmd>UltestDebug<CR>', 'Test file (debug)' },
+    n = { '<cmd>UltestNearest<CR>', 'Test nearest' },
+    N = { '<cmd>UltestDebugNearest<CR>', 'Test nearest (Debug)' },
+    t = { '<cmd>UltestLast<CR>', 'Test last' },
+    s = { '<cmd>UltestSummary<CR>', 'Test summary' },
+    l = { '<cmd>UltestOutput<CR>', 'Test output' },
   }
 }, { prefix = "<leader>" })
 

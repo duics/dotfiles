@@ -13,4 +13,6 @@ require('config.coq')
 require('gitsigns').setup({})
 require('gitlinker').setup({ mappings = nil })
 require('fidget').setup{}
-vim.cmd [[let test#strategy = "floaterm"]]
+vim.notify = require("notify")
+vim.cmd([[ let g:ultest_use_pty = 1 ]])
+

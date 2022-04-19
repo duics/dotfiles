@@ -15,6 +15,7 @@ require('packer').startup(function(use)
   use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
   use 'vim-test/vim-test'
+  use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
   use {
     "folke/which-key.nvim",
     config = function()
@@ -85,4 +86,5 @@ require('packer').startup(function(use)
     { 'ms-jpq/coq_nvim', branch = 'coq' },
     { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
   }
+  use 'rcarriga/nvim-notify'
 end)
