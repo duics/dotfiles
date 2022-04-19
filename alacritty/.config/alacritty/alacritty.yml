@@ -120,7 +120,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 14.0
+  size: 10.0
 
 
   # Thin stroke font rendering (macOS only)
