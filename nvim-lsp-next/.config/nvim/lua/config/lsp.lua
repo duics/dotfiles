@@ -1,6 +1,6 @@
-vim.g.coq_settings = {
-  auto_start = true and 'shut-up'
-}
+-- vim.g.coq_settings = {
+--   auto_start = true and 'shut-up'
+-- }
 
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 
@@ -26,9 +26,9 @@ lsp_installer.on_server_ready(function(server)
     -- end
 
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    server:setup {
+    server:setup({
       capabilities = capabilities
-    }
+    })
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
 

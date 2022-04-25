@@ -31,7 +31,7 @@ dap.configurations.javascript = {
 dap.configurations.typescript = {
   {
 		type = 'node2',
-		name = 'Node attach',
+		name = 'Attach',
 		request = 'attach',
 		port = 9229,
     program = '${file}',
@@ -42,5 +42,33 @@ dap.configurations.typescript = {
 		-- smartStep = true,
 		-- outFiles = { vim.fn.getcwd() .. "/dist" },
 		-- trace = true,
+  },
+  {
+		type = 'node2',
+		name = 'Attach (9230)',
+		request = 'attach',
+		port = 9230,
+    program = '${file}',
+    processId = require'dap.utils'.pick_process,
+		-- remoteRoot = "/home/node/app",
+		localRoot = vim.fn.getcwd(),
+		-- restart = true,
+		sourceMaps = true,
+		-- smartStep = true,
+		-- outFiles = { vim.fn.getcwd() .. "/dist" },
+		-- trace = true,
+    cwd = vim.fn.getcwd();
+    localRoot = vim.fn.getcwd();
+    -- remoteRoot = '/usr/src/app';
+    sourceMaps = true;
+    remoteRoot = "/app/";
+    skipFiles = {
+      '**/node_modules/**',
+      '<node_internals>/**/*.js',
+    };
+    protocol = 'inspector';
+    console = 'integratedTerminal';
+    -- outFiles = { '${workspaceFolder}/build/**/*.js', '!**/node_modules/**' };
+    restart = true;
   },
 }

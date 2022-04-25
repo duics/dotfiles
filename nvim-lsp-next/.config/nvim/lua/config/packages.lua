@@ -71,7 +71,7 @@ require('packer').startup(function(use)
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
   }
-  use {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp' }
+  use {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp', 'hrsh7th/cmp-vsnip', 'hrsh7th/vim-vsnip'  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
