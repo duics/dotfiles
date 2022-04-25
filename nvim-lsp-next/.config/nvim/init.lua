@@ -7,7 +7,6 @@ require('config.lualine')
 require('config.lsp')
 require('config.dap')
 require('config.indent_blankline')
-require('config.coq')
 
 -- Initializers
 require('gitsigns').setup({})

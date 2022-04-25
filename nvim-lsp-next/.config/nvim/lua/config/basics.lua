@@ -73,6 +73,7 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 -- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 cmd [[colorscheme kanagawa]]
+-- cmd [[colorscheme dayfox]]
 
 -----------------------------------------------------------
 -- Tabs, indent

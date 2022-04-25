@@ -59,7 +59,7 @@ wk.register({
     name = "file",
     f = { function () telescope.find_files(opts) end, "Find File" },
     g = { function () telescope.git_files(opts) end, "Find File (git)" },
-    t = { "<cmd>CHADopen<CR>", "File tree" },
+    t = { "<cmd>NvimTreeToggle<CR>", "File tree" },
     n = { "New File" },
     e = "Edit File",
   },
@@ -95,7 +95,7 @@ wk.register({
   },
   o = {
     name = "open",
-    p = { "<cmd>CHADopen<CR>", "File tree" },
+    p = { "<cmd>NvimTreeToggle<CR>", "File tree" },
     c = { ":vsp $MYVIMRC<CR>", "Editor configuration" },
     f = { "<cmd>Vista nvim_lsp<CR>", "Tag bar" },
   },

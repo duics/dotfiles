@@ -11,7 +11,6 @@ end
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
-local coq = require('coq')
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
@@ -26,8 +25,10 @@ lsp_installer.on_server_ready(function(server)
     --     opts.root_dir = function() ... end
     -- end
 
-    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-    server:setup(coq.lsp_ensure_capabilities(opts))
+    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    server:setup {
+      capabilities = capabilities
+    }
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
 

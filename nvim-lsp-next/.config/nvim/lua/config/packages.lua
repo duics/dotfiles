@@ -71,7 +71,13 @@ require('packer').startup(function(use)
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
   }
-  use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'}
+  use {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp' }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    }
+  }
   use {
     "lukas-reineke/indent-blankline.nvim",
   }
@@ -82,9 +88,5 @@ require('packer').startup(function(use)
       disable_commit_confirmation = true
     } end }
   use 'AndrewRadev/splitjoin.vim'
-  use {
-    { 'ms-jpq/coq_nvim', branch = 'coq' },
-    { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-  }
   use 'rcarriga/nvim-notify'
 end)
