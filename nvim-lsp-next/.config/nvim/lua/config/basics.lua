@@ -72,9 +72,15 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 -- Change the "hint" color to the "orange" color, and make the "error" color bright red
 -- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
--- cmd [[colorscheme dayfox]]
-cmd [[colorscheme kanagawa]]
--- cmd [[colorscheme dayfox]]
+-- cmd [[colorscheme kanagawa]]
+cmd [[colorscheme terafox]]
+
+-- Transparent background
+-- cmd [[
+-- highlight Normal     ctermbg=NONE guibg=NONE
+-- highlight LineNr     ctermbg=NONE guibg=NONE
+-- highlight SignColumn ctermbg=NONE guibg=NONE
+-- ]]
 
 -----------------------------------------------------------
 -- Tabs, indent
