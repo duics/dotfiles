@@ -29,12 +29,9 @@ lsp_config.elixirls.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.sumneko_lua.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.tsserver.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.eslint.setup(vim.tbl_extend("force", lsp_opts, {}))
-lsp_config.emmet_ls.setup(vim.tbl_extend("force", lsp_opts, {
-  filetypes = { "html", "css", "typescriptreact", "javascriptreact", "heex" }
-}))
-lsp_config.tailwindcss.setup(vim.tbl_extend("force", lsp_opts, {
-  filetypes = { "html", "css", "heex" }
-}))
+lsp_config.emmet_ls.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.tailwindcss.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.html.setup(vim.tbl_extend("force", lsp_opts, {}))
 
 
 -- vim-illuminate
