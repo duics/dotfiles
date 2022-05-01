@@ -1,7 +1,3 @@
--- vim.g.coq_settings = {
---   auto_start = true and 'shut-up'
--- }
-
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 
 for type, icon in pairs(signs) do
@@ -13,24 +9,33 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_li
 
 local lsp_installer = require("nvim-lsp-installer")
 
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-      on_attach = function (client)
-        require 'illuminate'.on_attach(client)
-      end
-    }
+require("nvim-lsp-installer").setup({
+    ensure_installed = { "sumneko_lua", "tsserver" },
+    automatic_installation = true,
+})
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+local lsp_config = require("lspconfig")
 
-    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    server:setup({
-      capabilities = capabilities
-    })
-    vim.cmd [[ do User LspAttachBuffers ]]
-end)
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local lsp_opts = {
+  on_attach = function (client)
+    require('illuminate').on_attach(client)
+  end,
+  capabilities = capabilities
+}
+
+lsp_config.elixirls.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.sumneko_lua.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.tsserver.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.eslint.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.emmet_ls.setup(vim.tbl_extend("force", lsp_opts, {
+  filetypes = { "html", "css", "typescriptreact", "javascriptreact", "heex" }
+}))
+lsp_config.tailwindcss.setup(vim.tbl_extend("force", lsp_opts, {
+  filetypes = { "html", "css", "heex" }
+}))
+
 
 -- vim-illuminate
 vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
