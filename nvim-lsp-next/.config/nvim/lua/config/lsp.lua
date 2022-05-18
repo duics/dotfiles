@@ -32,6 +32,7 @@ lsp_config.eslint.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.emmet_ls.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.tailwindcss.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.html.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.intelephense.setup(vim.tbl_extend("force", lsp_opts, {}))
 
 
 -- vim-illuminate
