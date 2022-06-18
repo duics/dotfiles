@@ -13,6 +13,7 @@ require('gitsigns').setup({})
 require('gitlinker').setup({ mappings = nil })
 require('fidget').setup{}
 require('nvim-tree').setup()
+require('nvim-autopairs').setup{}
 vim.notify = require("notify")
 vim.cmd([[ let g:ultest_use_pty = 1 ]])
 

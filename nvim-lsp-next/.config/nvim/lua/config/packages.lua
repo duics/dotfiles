@@ -4,6 +4,8 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
+  use 'mattn/emmet-vim'
+  use 'windwp/nvim-autopairs'
   use 'airblade/vim-rooter'
   use 'svermeulen/vimpeccable'
   use 'sbdchd/neoformat'
