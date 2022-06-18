@@ -17,7 +17,7 @@ local opt = vim.opt         	-- global/buffer/windows-scoped options
 -----------------------------------------------------------
 g.mapleader = ' '             -- change leader to a comma
 opt.mouse = 'a'               -- enable mouse support
-opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
+-- opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 opt.swapfile = false          -- don't use swapfile
 
 opt.timeoutlen = 0            -- No timeout for instant which-key popup
