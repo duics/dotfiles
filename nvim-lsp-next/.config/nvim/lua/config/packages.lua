@@ -17,8 +17,17 @@ require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
-  use 'vim-test/vim-test'
-  use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "vim-test/vim-test",
+      "nvim-neotest/neotest-vim-test",
+      "haydenmeade/neotest-jest"
+    }
+  }
   use {
     "folke/which-key.nvim",
     config = function()
@@ -75,6 +84,7 @@ require('packer').startup(function(use)
     'theHamsta/nvim-dap-virtual-text',
   }
   use {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp', 'hrsh7th/cmp-vsnip', 'hrsh7th/vim-vsnip'  }
+  use "rafamadriz/friendly-snippets"
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
