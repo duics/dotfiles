@@ -141,6 +141,19 @@ wk.register({
 
 vimp.nnoremap('<C-p>', function() telescope.git_files(opts) end)
 
+-- Vsnip
+vim.cmd [[
+  " Expand or jump
+  imap <expr> <C-s>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+  smap <expr> <C-s>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+  " Jump forward or backward
+  imap <expr> <C-j>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<C-j>'
+  smap <expr> <C-j>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<C-j>'
+  imap <expr> <C-k> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<C-k>'
+  smap <expr> <C-k> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<C-k>'
+]]
+
 -- vimp.nnoremap('<leader>sl', telescope.lsp_document_symbols)
 -- vimp.nnoremap('<leader>sx', telescope.commands)
 
