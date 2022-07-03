@@ -47,7 +47,7 @@ local wk = require("which-key")
 
 local neogit = require('neogit')
 local gitsigns = require('gitsigns')
-local neotests = require("neotest").run
+local neotest = require("neotest")
 
 local opts = { path_display = { "truncate" } }
 
@@ -121,15 +121,16 @@ wk.register({
   r = { reload, "Reload configuration" },
   t = {
     name = "test",
-    f = { function() neotests.run(vim.fn.expand('%')) end, 'Test file' },
-    F = { function() neotests.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
-    n = { function() neotests.run() end, 'Test nearest' },
-    N = { function() neotests.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
-    s = { function() neotests.stop() end, 'Stop test' },
-    a = { function() neotests.attach() end, 'Attach' }
-    -- t = { '<cmd>UltestLast<CR>', 'Test last' },
-    -- s = { '<cmd>UltestSummary<CR>', 'Test summary' },
-    -- l = { '<cmd>UltestOutput<CR>', 'Test output' },
+    f = { function() neotest.run.run(vim.fn.expand('%')) end, 'Test file' },
+    F = { function() neotest.run.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
+    n = { function() neotest.run.run() end, 'Test nearest' },
+    N = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
+    s = { function() neotest.run.stop() end, 'Stop test' },
+    a = { function() neotest.run.attach() end, 'Attach' },
+    o = { neotest.output, 'Output' },
+    s = { neotest.summary, 'Summary' },
+    d = { neotest.diagnistic, 'Diagnostics (in line)' },
+    D = { neotest.status, 'Diagnostics (checkmarks)' }
   }
 }, { prefix = "<leader>" })
 
