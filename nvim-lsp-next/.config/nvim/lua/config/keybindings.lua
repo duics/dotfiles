@@ -51,6 +51,13 @@ local gitsigns = require('gitsigns')
 local opts = { path_display = { "truncate" } }
 
 wk.register({
+  a = {
+    name = "alternate",
+    a = { ":A", "Jump to alternative" },
+    v = { ":AV", "Jump to alternative (vsplit)" },
+    s = { ":AS", "Jump to alternative (split)" },
+    t = { ":AT", "Jump to alternative (tab)" },
+  },
   e = {
     name = "edit",
     c = { ':vsp $MYVIMRC<CR>', "Neovim configuration" }
