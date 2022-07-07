@@ -5,6 +5,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use 'tpope/vim-projectionist'
+  use 'tpope/vim-abolish'
   use 'mattn/emmet-vim'
   use 'windwp/nvim-autopairs'
   use 'airblade/vim-rooter'
