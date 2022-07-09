@@ -35,6 +35,8 @@ opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
 
+opt.laststatus = 3            -- Use global statusline instead of per window
+
 -- visualize whitespace
 vim.opt.list = true
 -- vim.opt.listchars:append("space:⋅")
