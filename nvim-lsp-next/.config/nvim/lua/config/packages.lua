@@ -53,6 +53,7 @@ require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'rebelot/kanagawa.nvim'
   use "EdenEast/nightfox.nvim"
+  use 'xiyaowong/nvim-transparent'
   use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use {
