@@ -30,7 +30,18 @@ lsp_config.sumneko_lua.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.tsserver.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.eslint.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.emmet_ls.setup(vim.tbl_extend("force", lsp_opts, {}))
-lsp_config.tailwindcss.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.tailwindcss.setup({
+  capabilities = capabilities,
+  -- TODO: Figure out why lsp settings are not working
+  settings = {
+    emmetCompletions = true
+  },
+  init_options = {
+    userLanguages = {
+      heex = "html"
+    }
+  }
+})
 lsp_config.html.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.intelephense.setup(vim.tbl_extend("force", lsp_opts, {}))
 
