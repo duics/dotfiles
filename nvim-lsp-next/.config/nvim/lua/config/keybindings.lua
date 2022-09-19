@@ -54,10 +54,10 @@ local opts = { path_display = { "truncate" } }
 wk.register({
   a = {
     name = "alternate",
-    a = { ":A", "Jump to alternative" },
-    v = { ":AV", "Jump to alternative (vsplit)" },
-    s = { ":AS", "Jump to alternative (split)" },
-    t = { ":AT", "Jump to alternative (tab)" },
+    a = { "<cmd>A<CR>", "Jump to alternative" },
+    v = { "<cmd>AV<CR>", "Jump to alternative (vsplit)" },
+    s = { "<cmd>AS<CR>", "Jump to alternative (split)" },
+    t = { "<cmd>AT<CR>", "Jump to alternative (tab)" },
   },
   e = {
     name = "edit",
