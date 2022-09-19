@@ -15,6 +15,7 @@ require('packer').startup(function(use)
   use 'szw/vim-maximizer'
   use 'kassio/neoterm'
   use 'voldikss/vim-floaterm'
+  use 'kyazdani42/nvim-web-devicons'
   use 'romgrk/barbar.nvim'
   use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'

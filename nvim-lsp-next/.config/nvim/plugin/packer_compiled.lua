@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -99,10 +104,20 @@ _G.packer_plugins = {
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitlinker.nvim"] = {
     loaded = true,
@@ -150,10 +165,30 @@ _G.packer_plugins = {
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/neoterm",
     url = "https://github.com/kassio/neoterm"
   },
+  neotest = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/neotest",
+    url = "https://github.com/nvim-neotest/neotest"
+  },
+  ["neotest-jest"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/neotest-jest",
+    url = "https://github.com/haydenmeade/neotest-jest"
+  },
+  ["neotest-vim-test"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/neotest-vim-test",
+    url = "https://github.com/nvim-neotest/neotest-vim-test"
+  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -199,6 +234,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
+  },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -257,15 +297,15 @@ _G.packer_plugins = {
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
-  },
-  ["vim-elixir"] = {
-    loaded = true,
-    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-elixir",
-    url = "https://github.com/elixir-editors/vim-elixir"
   },
   ["vim-floaterm"] = {
     loaded = true,
@@ -287,6 +327,11 @@ _G.packer_plugins = {
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-move",
     url = "https://github.com/matze/vim-move"
   },
+  ["vim-projectionist"] = {
+    loaded = true,
+    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-projectionist",
+    url = "https://github.com/tpope/vim-projectionist"
+  },
   ["vim-rooter"] = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-rooter",
@@ -306,11 +351,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
-  },
-  ["vim-ultest"] = {
-    loaded = true,
-    path = "/home/maxsal/.local/share/nvim/site/pack/packer/start/vim-ultest",
-    url = "https://github.com/rcarriga/vim-ultest"
   },
   ["vim-vsnip"] = {
     loaded = true,
@@ -336,10 +376,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
+-- Config for: stabilize.nvim
+time([[Config for stabilize.nvim]], true)
+try_loadstring("\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
+time([[Config for stabilize.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
@@ -348,10 +388,10 @@ time([[Config for trouble.nvim]], false)
 time([[Config for neogit]], true)
 try_loadstring("\27LJ\2\2X\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1 disable_commit_confirmation\2\nsetup\vneogit\frequire\0", "config", "neogit")
 time([[Config for neogit]], false)
--- Config for: stabilize.nvim
-time([[Config for stabilize.nvim]], true)
-try_loadstring("\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
-time([[Config for stabilize.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
