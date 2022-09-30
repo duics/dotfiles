@@ -48,6 +48,7 @@ local wk = require("which-key")
 local neogit = require('neogit')
 local gitsigns = require('gitsigns')
 local neotest = require("neotest")
+local spectre = require('spectre')
 
 local opts = { path_display = { "truncate" } }
 
@@ -74,6 +75,9 @@ wk.register({
   s = {
     name = "search",
     s = { function() telescope.live_grep({ path_display = { "smart" } }) end, "Live grep" },
+    S = { spectre.open, "Open Spectre" },
+    w = { function() spectre.open_visual({select_word=true}) end, "Search word" },
+    f = { spectre.open_file_search, "Open Spectre (file)" },
   },
   b = {
     name = "buffers",

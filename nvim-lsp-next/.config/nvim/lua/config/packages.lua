@@ -58,6 +58,10 @@ require('packer').startup(function(use)
   use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use {
+    'windwp/nvim-spectre',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+  use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
