@@ -37,10 +37,6 @@ require('packer').startup(function(use)
     end
   }
   use {
-    "luukvbaal/stabilize.nvim",
-    config = function() require("stabilize").setup() end
-  }
-  use {
     'lewis6991/gitsigns.nvim',
     requires = {
       'nvim-lua/plenary.nvim'
