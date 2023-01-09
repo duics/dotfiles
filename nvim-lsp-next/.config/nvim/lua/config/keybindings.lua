@@ -97,7 +97,7 @@ wk.register({
       s = { gitsigns.stage_hunk, "Stage hunk" },
       u = { gitsigns.undo_stage_hunk, "Unstage hunk" },
     },
-    b = {
+    B = {
       name = "blame",
       b = { function () gitsigns.blame_line{full=true} end, "Blame line" },
     },
@@ -132,10 +132,10 @@ wk.register({
     s = { function() neotest.run.stop() end, 'Stop test' },
     a = { function() neotest.run.attach() end, 'Attach' },
     o = { neotest.output, 'Output' },
-    s = { neotest.summary, 'Summary' },
+    S = { neotest.summary, 'Summary' },
     d = { neotest.diagnistic, 'Diagnostics (in line)' },
     D = { neotest.status, 'Diagnostics (checkmarks)' }
-  }
+  },
 }, { prefix = "<leader>" })
 
 wk.register({

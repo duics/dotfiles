@@ -95,7 +95,7 @@ opt.tabstop = 2           -- 1 tab == 4 spaces
 opt.smartindent = true    -- autoindent new lines
 
 -- don't auto comment new lines
-cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+-- cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- remove line length marker for selected filetypes
 cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
@@ -111,6 +111,10 @@ cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
 
 -- disable IndentLine for markdown files (avoid concealing)
 cmd [[autocmd FileType markdown let g:indentLine_enabled=0]]
+
+cmd [[
+  set formatoptions+=r
+]]
 
 -----------------------------------------------------------
 -- Autocompletion
