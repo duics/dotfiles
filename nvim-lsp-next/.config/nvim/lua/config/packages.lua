@@ -20,6 +20,10 @@ require('packer').startup(function(use)
   use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
   use {
+    'nvim-treesitter/nvim-treesitter',
+    'JoosepAlviste/nvim-ts-context-commentstring'
+  }
+  use {
     "nvim-neotest/neotest",
     requires = {
       "nvim-lua/plenary.nvim",
