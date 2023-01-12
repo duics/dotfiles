@@ -7,11 +7,10 @@ end
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
-local lsp_installer = require("nvim-lsp-installer")
-
-require("nvim-lsp-installer").setup({
-    ensure_installed = { "sumneko_lua", "tsserver" },
-    automatic_installation = true,
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "sumneko_lua", "tsserver" },
+  automatic_installation = true,
 })
 
 local lsp_config = require("lspconfig")
@@ -26,7 +25,15 @@ local lsp_opts = {
 }
 
 lsp_config.elixirls.setup(vim.tbl_extend("force", lsp_opts, {}))
-lsp_config.sumneko_lua.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.sumneko_lua.setup(vim.tbl_extend("force", lsp_opts, {
+  settings = {
+    Lua = {
+      completion = {
+        callSnippet = "Replace"
+      }
+    }
+  }
+}))
 lsp_config.tsserver.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.eslint.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.emmet_ls.setup(vim.tbl_extend("force", lsp_opts, {}))

@@ -80,8 +80,9 @@ require('packer').startup(function(use)
     end
   }
   use {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
     'j-hui/fidget.nvim'
   }
   use 'kosayoda/nvim-lightbulb'
