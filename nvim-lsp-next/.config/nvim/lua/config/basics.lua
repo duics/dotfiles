@@ -116,23 +116,3 @@ cmd [[
   set formatoptions+=r
 ]]
 
------------------------------------------------------------
--- Autocompletion
------------------------------------------------------------
--- Not used here, option defined on /plugins/nvim-cmp.lua
---opt.completeopt = 'menuone,noselect,noinsert'
-
------------------------------------------------------------
--- Terminal
------------------------------------------------------------
--- open a terminal pane on the right using :Term
--- cmd [[command Term :botright vsplit term://$SHELL]]
-
--- Terminal visual tweaks
---- enter insert mode when switching to terminal
---- close terminal buffer on process exit
-cmd [[
-    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-    autocmd TermOpen * startinsert
-    autocmd BufLeave term://* stopinsert
-]]
