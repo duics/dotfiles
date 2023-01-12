@@ -111,6 +111,7 @@ wk.register({
     c = { ":vsp $MYVIMRC<CR>", "Editor configuration" },
     f = { "<cmd>Vista nvim_lsp<CR>", "Tag bar" },
   },
+  p = { function() require("telescope").extensions.projects.projects({}) end, "Projects" },
   c = {
     name = "code",
     a = { function() require("code_action_menu").open_code_action_menu() end, "Code action" },
