@@ -26,10 +26,17 @@ require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    'JoosepAlviste/nvim-ts-context-commentstring'
-  }
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function()
+  --     local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+  --     ts_update()
+  --   end,
+  -- }
+  -- use {
+  --   'JoosepAlviste/nvim-ts-context-commentstring',
+  --   requires = { 'nvim/treesitter/nvim-treesitter' }
+  -- }
   use {
     "nvim-neotest/neotest",
     requires = {

@@ -1,7 +1,7 @@
 require('config.packages')
 require('config.basics')
 require('config.keybindings')
-require('config.treesitter')
+-- require('config.treesitter')
 require('config.lualine')
 require('config.lsp')
 require('config.dap')
