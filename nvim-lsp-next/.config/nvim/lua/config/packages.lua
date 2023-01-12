@@ -8,7 +8,14 @@ require('packer').startup(function(use)
   use 'tpope/vim-abolish'
   use 'mattn/emmet-vim'
   use 'windwp/nvim-autopairs'
-  use 'airblade/vim-rooter'
+  use {
+    'ahmedkhalf/project.nvim',
+    config = function ()
+      require("project_nvim").setup {
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".root" },
+      }
+    end
+  }
   use 'svermeulen/vimpeccable'
   use 'sbdchd/neoformat'
   use 'matze/vim-move'
