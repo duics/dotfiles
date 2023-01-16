@@ -106,6 +106,13 @@ require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     'j-hui/fidget.nvim'
   }
+  use {
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          require('lspsaga').setup({})
+      end,
+  }
   use 'kosayoda/nvim-lightbulb'
   use {
     'weilbith/nvim-code-action-menu',
