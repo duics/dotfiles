@@ -84,6 +84,7 @@ require('packer').startup(function(use)
   -- use 'xiyaowong/nvim-transparent'
   use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     'windwp/nvim-spectre',
     requires = 'nvim-lua/plenary.nvim'
