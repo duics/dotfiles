@@ -47,10 +47,10 @@ local wk = require("which-key")
 
 local neogit = require('neogit')
 local gitsigns = require('gitsigns')
--- local neotest = require("neotest")
+local neotest = require("neotest")
 local spectre = require('spectre')
 
-local opts = { path_display = { "truncate" } }
+local opts = { path_display = { "truncate" }, layout_strategy = 'vertical' }
 
 wk.register({
   a = {
@@ -125,17 +125,17 @@ wk.register({
     i = { vim.lsp.buf.implementation, "Implementation" },
   },
   r = { reload, "Reload configuration" },
-  -- t = {
-  --   name = "test",
-  --   f = { function() neotest.run.run(vim.fn.expand('%')) end, 'Test file' },
-  --   F = { function() neotest.run.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
-  --   n = { function() neotest.run.run() end, 'Test nearest' },
-  --   N = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
-  --   s = { function() neotest.run.stop() end, 'Stop test' },
-  --   a = { function() neotest.run.attach() end, 'Attach' },
-  --   o = { function() neotest.output_panel.toggle() end, 'Output' },
-  --   S = { function() neotest.summary.toggle() end, 'Summary' },
-  -- },
+  t = {
+    name = "test",
+    f = { function() neotest.run.run(vim.fn.expand('%')) end, 'Test file' },
+    F = { function() neotest.run.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
+    n = { function() neotest.run.run() end, 'Test nearest' },
+    N = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
+    s = { function() neotest.run.stop() end, 'Stop test' },
+    a = { function() neotest.run.attach() end, 'Attach' },
+    o = { function() neotest.output_panel.toggle() end, 'Output' },
+    S = { function() neotest.summary.toggle() end, 'Summary' },
+  },
 }, { prefix = "<leader>" })
 
 wk.register({
@@ -222,7 +222,7 @@ wk.register({
     J = { dap.step_over, "Step over" },
     l = { dap.step_into, "Step into" },
     h = { dap.step_out, "Step out" },
-    b = { dap.toggle_breakpoing, "Toggle breakpoint" },
+    b = { dap.toggle_breakpoint, "Toggle breakpoint" },
     r = { dap.repl.open, "Open repl" },
     p = { dap.run_last, "Run previous configuration" },
     B = { function () dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "Toggle breakpoint (condition)" },
