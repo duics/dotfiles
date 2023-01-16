@@ -1,9 +1,6 @@
 require("neotest").setup({
+  log_level = vim.log.levels.DEBUG,
   adapters = {
-    -- require("neotest-python")({
-    --   dap = { justMyCode = false },
-    -- }),
-    -- require("neotest-plenary"),
     require('neotest-jest')({
       jestCommand = "npm test --",
       env = { CI = true },
@@ -11,8 +8,9 @@ require("neotest").setup({
         return vim.fn.getcwd()
       end,
     }),
-    -- require("neotest-vim-test")({
-    --   ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
-    -- }),
   },
+  output = {
+    enabled = true,
+    open_on_run = true,
+  }
 })

@@ -128,13 +128,13 @@ wk.register({
   t = {
     name = "test",
     f = { function() neotest.run.run(vim.fn.expand('%')) end, 'Test file' },
-    F = { function() neotest.run.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
-    n = { function() neotest.run.run() end, 'Test nearest' },
-    N = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
-    s = { function() neotest.run.stop() end, 'Stop test' },
+    F = { function() neotest.run.run({ vim.fn.expand('%'), strategy = "dap" }) end, 'Test file (debug)' },
+    t = { function() neotest.run.run() end, 'Test nearest' },
+    T = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
+    S = { function() neotest.run.stop() end, 'Stop test' },
     a = { function() neotest.run.attach() end, 'Attach' },
     o = { function() neotest.output_panel.toggle() end, 'Output' },
-    S = { function() neotest.summary.toggle() end, 'Summary' },
+    s = { function() neotest.summary.toggle() end, 'Summary' },
   },
 }, { prefix = "<leader>" })
 
@@ -226,6 +226,7 @@ wk.register({
     r = { dap.repl.open, "Open repl" },
     p = { dap.run_last, "Run previous configuration" },
     B = { function () dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "Toggle breakpoint (condition)" },
+    S = { function() require"osv".launch({port = 8086}) end, 'Start nvim debug session' },
     L = { function () dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, "Toggle logpoint (with message)" },
   }
 }, { prefix = "<leader>" })

@@ -5,8 +5,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = { "sumneko_lua", "tsserver" },

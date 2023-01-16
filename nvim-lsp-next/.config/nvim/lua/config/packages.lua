@@ -7,14 +7,14 @@ require('packer').startup(function(use)
   use 'tpope/vim-projectionist'
   use 'tpope/vim-abolish'
   use 'mattn/emmet-vim'
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup({
-        disable_filetype = { "TelescopePrompt", "vim" }
-      })
-    end
-  }
+  -- use {
+  --   'windwp/nvim-autopairs',
+  --   config = function()
+  --     require('nvim-autopairs').setup({
+  --       disable_filetype = { "TelescopePrompt", "vim" }
+  --     })
+  --   end
+  -- }
   use {
     'ahmedkhalf/project.nvim',
     config = function ()
@@ -119,6 +119,7 @@ require('packer').startup(function(use)
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
   }
+  use 'jbyuki/one-small-step-for-vimkind'
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -130,14 +131,14 @@ require('packer').startup(function(use)
       'hrsh7th/cmp-vsnip',
       'windwp/nvim-autopairs',
     },
-    config = function()
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      local cmp = require('cmp')
-      cmp.event:on(
-        'confirm_done',
-        cmp_autopairs.on_confirm_done()
-      )
-    end
+    -- config = function()
+    --   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    --   local cmp = require('cmp')
+    --   cmp.event:on(
+    --     'confirm_done',
+    --     cmp_autopairs.on_confirm_done()
+    --   )
+    -- end
   }
   use "rafamadriz/friendly-snippets"
   use {
