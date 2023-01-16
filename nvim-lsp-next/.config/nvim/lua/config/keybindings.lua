@@ -118,7 +118,7 @@ wk.register({
     f = { vim.lsp.buf.formatting, "Format" },
     -- d = { function() telescope.lsp_definitions(opts) end, "Definitions" },
     -- D = { function() telescope.lsp_references(opts) end, "References" },
-    c = { '<cmd>Lspsaga lsp_finder<CR>', "Find references" },
+    d = { '<cmd>Lspsaga lsp_finder<CR>', "Find references" },
     e = { '<cmd>TroubleToggle document_diagnostics<CR>', "Errors" },
     h = { '<cmd>Lspsaga outline<CR>', "Help" },
     r = { '<cmd>Lspsaga rename<CR>', "Rename" },
@@ -192,7 +192,7 @@ vim.cmd [[
 
 -- vimp.nnoremap('<C-m>D', telescope.lsp_references)
 -- vimp.nnoremap('<C-m>d', telescope.lsp_definitions)
-vimp.nnoremap('K', vim.lsp.buf.hover)
+vimp.nnoremap('K', '<cmd>Lspsaga hover_doc<CR>')
 -- vimp.nnoremap('<C-m>i', telescope.lsp_implementations)
 -- vimp.nnoremap('<C-m>h', vim.lsp.buf.signature_help)
 -- vimp.nnoremap('<C-m>wa', vim.lsp.buf.add_workspace_folder)
