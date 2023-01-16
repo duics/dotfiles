@@ -31,13 +31,14 @@ require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   run = function()
-  --     local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-  --     ts_update()
-  --   end,
-  -- }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
+  -- mrjones2014/nvim-ts-rainbow
   -- use {
   --   'JoosepAlviste/nvim-ts-context-commentstring',
   --   requires = { 'nvim/treesitter/nvim-treesitter' }
@@ -112,10 +113,6 @@ require('packer').startup(function(use)
       config = function()
           require('lspsaga').setup({})
       end,
-  }
-  use 'kosayoda/nvim-lightbulb'
-  use {
-    'weilbith/nvim-code-action-menu',
   }
   use {
     'mfussenegger/nvim-dap',
