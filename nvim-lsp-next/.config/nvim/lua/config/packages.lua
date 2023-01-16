@@ -24,11 +24,9 @@ require('packer').startup(function(use)
     end
   }
   use 'svermeulen/vimpeccable'
-  use 'sbdchd/neoformat'
-  use 'matze/vim-move'
-  use 'szw/vim-maximizer'
-  use 'kassio/neoterm'
-  use 'voldikss/vim-floaterm'
+  -- use 'sbdchd/neoformat'
+  -- use 'matze/vim-move'
+  -- use 'voldikss/vim-floaterm'
   use 'kyazdani42/nvim-web-devicons'
   use 'romgrk/barbar.nvim'
   use 'liuchengxu/vista.vim'
@@ -50,10 +48,18 @@ require('packer').startup(function(use)
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
-      "vim-test/vim-test",
-      "nvim-neotest/neotest-vim-test",
+      -- "vim-test/vim-test",
+      -- "nvim-neotest/neotest-vim-test",
       "haydenmeade/neotest-jest"
     }
+  }
+  use {
+    'folke/neodev.nvim',
+    config = function()
+      require("neodev").setup({
+        library = { plugins = { "neotest" }, types = true },
+      })
+    end
   }
   use {
     "folke/which-key.nvim",
@@ -75,7 +81,7 @@ require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'rebelot/kanagawa.nvim'
   use "EdenEast/nightfox.nvim"
-  use 'xiyaowong/nvim-transparent'
+  -- use 'xiyaowong/nvim-transparent'
   use 'RRethy/vim-illuminate'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use {
@@ -145,5 +151,5 @@ require('packer').startup(function(use)
       disable_commit_confirmation = true
     } end }
   use 'AndrewRadev/splitjoin.vim'
-  use 'rcarriga/nvim-notify'
+  -- use 'rcarriga/nvim-notify'
 end)

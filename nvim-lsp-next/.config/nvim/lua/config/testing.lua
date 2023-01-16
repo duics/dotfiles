@@ -5,10 +5,14 @@ require("neotest").setup({
     -- }),
     -- require("neotest-plenary"),
     require('neotest-jest')({
-      jestCommand = "npm test --"
+      jestCommand = "npm test --",
+      env = { CI = true },
+      cwd = function(path)
+        return vim.fn.getcwd()
+      end,
     }),
-    require("neotest-vim-test")({
-      ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
-    }),
+    -- require("neotest-vim-test")({
+    --   ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
+    -- }),
   },
 })

@@ -47,7 +47,7 @@ local wk = require("which-key")
 
 local neogit = require('neogit')
 local gitsigns = require('gitsigns')
-local neotest = require("neotest")
+-- local neotest = require("neotest")
 local spectre = require('spectre')
 
 local opts = { path_display = { "truncate" } }
@@ -124,19 +124,17 @@ wk.register({
     i = { vim.lsp.buf.implementation, "Implementation" },
   },
   r = { reload, "Reload configuration" },
-  t = {
-    name = "test",
-    f = { function() neotest.run.run(vim.fn.expand('%')) end, 'Test file' },
-    F = { function() neotest.run.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
-    n = { function() neotest.run.run() end, 'Test nearest' },
-    N = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
-    s = { function() neotest.run.stop() end, 'Stop test' },
-    a = { function() neotest.run.attach() end, 'Attach' },
-    o = { neotest.output, 'Output' },
-    S = { neotest.summary, 'Summary' },
-    d = { neotest.diagnistic, 'Diagnostics (in line)' },
-    D = { neotest.status, 'Diagnostics (checkmarks)' }
-  },
+  -- t = {
+  --   name = "test",
+  --   f = { function() neotest.run.run(vim.fn.expand('%')) end, 'Test file' },
+  --   F = { function() neotest.run.run(vim.fn.expand('%'), { strategy = "dap" }) end, 'Test file (debug)' },
+  --   n = { function() neotest.run.run() end, 'Test nearest' },
+  --   N = { function() neotest.run.run({ strategy = "dap" }) end, 'Test nearest (Debug)' },
+  --   s = { function() neotest.run.stop() end, 'Stop test' },
+  --   a = { function() neotest.run.attach() end, 'Attach' },
+  --   o = { function() neotest.output_panel.toggle() end, 'Output' },
+  --   S = { function() neotest.summary.toggle() end, 'Summary' },
+  -- },
 }, { prefix = "<leader>" })
 
 wk.register({
@@ -259,10 +257,6 @@ vimp.nnoremap('<A-6>', ':BufferGoto 6<CR>')
 
 vimp.nnoremap('<A-c>', ':BufferClose<CR>')
 vimp.nnoremap('<A-x>', ':BufferClose<CR>')
-
--- -- Maximizer
-
-vimp.nnoremap('<C-w>m', ':MaximizerToggle!<CR>')
 
 -- -- Tests
 
