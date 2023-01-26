@@ -7,12 +7,12 @@ require('config.lsp')
 require('config.dap')
 require('config.indent_blankline')
 require('config.testing')
+require('config.nvim-tree')
 
 -- Initializers
 require('gitsigns').setup({})
 require('gitlinker').setup({ mappings = nil })
 require('fidget').setup{}
-require('nvim-tree').setup()
 require('nvim-autopairs').setup{}
 -- vim.notify = require("notify")
 vim.cmd([[ let g:ultest_use_pty = 1 ]])
