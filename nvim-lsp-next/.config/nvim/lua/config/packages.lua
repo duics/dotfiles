@@ -7,14 +7,14 @@ require('packer').startup(function(use)
   use 'tpope/vim-projectionist'
   use 'tpope/vim-abolish'
   use 'mattn/emmet-vim'
-  -- use {
-  --   'windwp/nvim-autopairs',
-  --   config = function()
-  --     require('nvim-autopairs').setup({
-  --       disable_filetype = { "TelescopePrompt", "vim" }
-  --     })
-  --   end
-  -- }
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup({
+        disable_filetype = { "TelescopePrompt", "vim" }
+      })
+    end
+  }
   use {
     'ahmedkhalf/project.nvim',
     config = function ()
@@ -25,12 +25,22 @@ require('packer').startup(function(use)
   }
   use 'svermeulen/vimpeccable'
   -- use 'sbdchd/neoformat'
-  -- use 'matze/vim-move'
+  use 'matze/vim-move'
   -- use 'voldikss/vim-floaterm'
   use 'kyazdani42/nvim-web-devicons'
   use 'romgrk/barbar.nvim'
-  use 'liuchengxu/vista.vim'
+  -- use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
+  -- use 'shortcuts/no-neck-pain.nvim'
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+      }
+    end
+  }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -39,10 +49,10 @@ require('packer').startup(function(use)
     end,
   }
   -- mrjones2014/nvim-ts-rainbow
-  -- use {
-  --   'JoosepAlviste/nvim-ts-context-commentstring',
-  --   requires = { 'nvim/treesitter/nvim-treesitter' }
-  -- }
+  use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    requires = { 'nvim/treesitter/nvim-treesitter' }
+  }
   use {
     "nvim-neotest/neotest",
     requires = {
@@ -131,14 +141,14 @@ require('packer').startup(function(use)
       'hrsh7th/cmp-vsnip',
       'windwp/nvim-autopairs',
     },
-    -- config = function()
-    --   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-    --   local cmp = require('cmp')
-    --   cmp.event:on(
-    --     'confirm_done',
-    --     cmp_autopairs.on_confirm_done()
-    --   )
-    -- end
+    config = function()
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      local cmp = require('cmp')
+      cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+      )
+    end
   }
   use "rafamadriz/friendly-snippets"
   use {
