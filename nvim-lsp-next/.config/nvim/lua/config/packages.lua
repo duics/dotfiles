@@ -32,15 +32,15 @@ require('packer').startup(function(use)
   -- use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
   -- use 'shortcuts/no-neck-pain.nvim'
-  use {
-    'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-      }
-    end
-  }
+  -- use {
+  --   'rmagatti/auto-session',
+  --   config = function()
+  --     require("auto-session").setup {
+  --       log_level = "error",
+  --       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+  --     }
+  --   end
+  -- }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
