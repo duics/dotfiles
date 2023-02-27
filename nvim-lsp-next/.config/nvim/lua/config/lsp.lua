@@ -7,7 +7,7 @@ end
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "tsserver" },
+  ensure_installed = { "lua_ls", "tsserver" },
   automatic_installation = true,
 })
 
@@ -23,7 +23,7 @@ local lsp_opts = {
 }
 
 lsp_config.elixirls.setup(vim.tbl_extend("force", lsp_opts, {}))
-lsp_config.sumneko_lua.setup(vim.tbl_extend("force", lsp_opts, {
+lsp_config.lua_ls.setup(vim.tbl_extend("force", lsp_opts, {
   settings = {
     Lua = {
       completion = {
