@@ -26,21 +26,11 @@ require('packer').startup(function(use)
   use 'svermeulen/vimpeccable'
   -- use 'sbdchd/neoformat'
   use 'matze/vim-move'
-  -- use 'voldikss/vim-floaterm'
   use 'kyazdani42/nvim-web-devicons'
   use 'romgrk/barbar.nvim'
   -- use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
   -- use 'shortcuts/no-neck-pain.nvim'
-  -- use {
-  --   'rmagatti/auto-session',
-  --   config = function()
-  --     require("auto-session").setup {
-  --       log_level = "error",
-  --       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-  --     }
-  --   end
-  -- }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()

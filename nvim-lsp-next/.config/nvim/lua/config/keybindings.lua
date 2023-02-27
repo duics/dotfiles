@@ -74,7 +74,7 @@ wk.register({
   },
   s = {
     name = "search",
-    s = { function() telescope.live_grep({ path_display = { "smart" } }) end, "Live grep" },
+    s = { function() telescope.live_grep({ path_display = { "truncate" } }) end, "Live grep" },
     S = { spectre.open, "Open Spectre" },
     w = { function() spectre.open_visual({select_word=true}) end, "Search word" },
     f = { spectre.open_file_search, "Open Spectre (file)" },
@@ -109,17 +109,23 @@ wk.register({
     name = "open",
     p = { "<cmd>NvimTreeFindFileToggle<CR>", "File tree" },
     c = { ":vsp $MYVIMRC<CR>", "Editor configuration" },
-    t = { "<cmd>Vista nvim_lsp<CR>", "Tag bar" },
+    t = { "<cmd>Lspsaga term_toggle<CR>", "Terminal" },
   },
   p = { function() require("telescope").extensions.projects.projects({}) end, "Projects" },
+  w = {
+    name = "Window",
+    c = { '<cmd>NoNeckPain<CR>', 'Center' }
+  },
   c = {
     name = "code",
     a = { '<cmd>Lspsaga code_action<CR>', "Code action" },
     f = { vim.lsp.buf.formatting, "Format" },
     -- d = { function() telescope.lsp_definitions(opts) end, "Definitions" },
     -- D = { function() telescope.lsp_references(opts) end, "References" },
-    d = { '<cmd>Lspsaga lsp_finder<CR>', "Find references" },
+    d = { '<cmd>Lspsaga goto_definition<CR>', "Go to definition" },
+    D = { '<cmd>Lspsaga goto_type_definition<CR>', "Go to type defintion" },
     e = { '<cmd>TroubleToggle document_diagnostics<CR>', "Errors" },
+    c = { '<cmd>Lspsaga lsp_finder<CR>', "Find references" },
     h = { '<cmd>Lspsaga outline<CR>', "Help" },
     r = { '<cmd>Lspsaga rename<CR>', "Rename" },
     i = { vim.lsp.buf.implementation, "Implementation" },
@@ -143,7 +149,7 @@ wk.register({
   u = { function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, "Unstage hunk" }
 }, { prefix = "<leader>", mode = "v" })
 
-vimp.nnoremap('<C-p>', function() telescope.git_files(opts) end)
+vimp.nnoremap('<C-p>', function() telescope.find_files(opts) end)
 
 -- Vsnip
 vim.cmd [[
