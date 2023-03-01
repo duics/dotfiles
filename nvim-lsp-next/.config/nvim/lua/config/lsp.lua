@@ -16,9 +16,6 @@ local lsp_config = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lsp_opts = {
-  on_attach = function (client)
-    require('illuminate').on_attach(client)
-  end,
   capabilities = capabilities
 }
 
@@ -50,9 +47,3 @@ lsp_config.tailwindcss.setup({
 lsp_config.html.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.intelephense.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.solargraph.setup(vim.tbl_extend("force", lsp_opts, {}))
-
-
--- vim-illuminate
-vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
