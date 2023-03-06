@@ -1,6 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"typescript", "tsx", "php", "javascript", "html", "json", "elixir", "eex", "heex"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  -- Disabled markdown, markdown_inline for now
+  ensure_installed = {"typescript", "tsx", "php", "javascript", "html", "json", "elixir", "eex", "heex", "markdown", "markdown_inline"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = { }, -- List of parsers to ignore installing
   highlight = {
     enable = true,
