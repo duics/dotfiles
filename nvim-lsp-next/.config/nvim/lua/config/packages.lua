@@ -107,6 +107,7 @@ require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     'j-hui/fidget.nvim'
   }
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   use {
       "glepnir/lspsaga.nvim",
       branch = "main",
