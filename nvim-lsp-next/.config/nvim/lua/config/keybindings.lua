@@ -151,6 +151,8 @@ wk.register({
 
 vimp.nnoremap('<C-p>', function() telescope.find_files(opts) end)
 
+vimp.nnoremap('<A-s>', require('treesj').toggle)
+
 -- Vsnip
 vim.cmd [[
   " Expand or jump
