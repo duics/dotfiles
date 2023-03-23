@@ -50,7 +50,7 @@ local gitsigns = require('gitsigns')
 local neotest = require("neotest")
 local spectre = require('spectre')
 
-local opts = { path_display = { "truncate" }, layout_strategy = 'vertical' }
+local opts = { path_display = { "truncate" } }
 
 wk.register({
   a = {
