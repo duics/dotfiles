@@ -20,6 +20,14 @@ vim.cmd([[ let g:ultest_use_pty = 1 ]])
 local cmp = require'cmp'
 local lspkind = require('lspkind')
 
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local luasnip = require("luasnip")
+
 cmp.setup({
   formatting = {
     format = lspkind.cmp_format({
@@ -30,7 +38,8 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   window = {
@@ -38,20 +47,28 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = ({
-    ['<tab>'] = function(fallback)
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+      -- they way you will only jump inside the snippet region
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
       else
-        fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
+        fallback()
       end
-    end,
-    ['<S-tab>'] = function(fallback)
+    end, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
-        fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
+        fallback()
       end
-    end,
+    end, { "i", "s" }),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -60,7 +77,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
+    { name = 'luasnip' },
   }, {
     { name = 'buffer' },
   })

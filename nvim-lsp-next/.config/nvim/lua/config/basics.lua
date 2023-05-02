@@ -45,6 +45,9 @@ vim.opt.list = true
 
 opt.guifont = 'mononoki Nerd Font:h13'
 
+-- Snippet location
+g.vsnip_snippet_dir = '~/Sync/snippets'
+
 -- remove whitespace on save
 cmd [[au BufWritePre * :%s/\s\+$//e]]
 
