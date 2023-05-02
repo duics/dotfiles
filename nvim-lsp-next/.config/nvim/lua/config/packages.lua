@@ -3,7 +3,6 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-projectionist'
   use 'tpope/vim-abolish'
   use 'mattn/emmet-vim'
@@ -42,6 +41,14 @@ require('packer').startup(function(use)
   use {
     'JoosepAlviste/nvim-ts-context-commentstring',
     requires = { 'nvim/treesitter/nvim-treesitter' }
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup({
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      })
+    end
   }
   use {
     "nvim-neotest/neotest",
