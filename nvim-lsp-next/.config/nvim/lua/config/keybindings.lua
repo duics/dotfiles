@@ -129,6 +129,7 @@ wk.register({
     h = { '<cmd>Lspsaga outline<CR>', "Help" },
     r = { '<cmd>Lspsaga rename<CR>', "Rename" },
     i = { vim.lsp.buf.implementation, "Implementation" },
+    E = { require("lsp_lines").toggle, "Toggle LSP inline errors" },
   },
   r = { reload, "Reload configuration" },
   t = {
