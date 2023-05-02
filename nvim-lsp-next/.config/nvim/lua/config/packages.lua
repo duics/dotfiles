@@ -29,6 +29,12 @@ require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   -- use 'liuchengxu/vista.vim'
   use 'christoomey/vim-tmux-navigator'
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
   -- use 'shortcuts/no-neck-pain.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
