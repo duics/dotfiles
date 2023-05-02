@@ -37,6 +37,7 @@ require('packer').startup(function(use)
       ts_update()
     end,
   }
+  use 'windwp/nvim-ts-autotag'
   -- mrjones2014/nvim-ts-rainbow
   use {
     'JoosepAlviste/nvim-ts-context-commentstring',
