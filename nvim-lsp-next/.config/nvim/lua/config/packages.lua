@@ -138,6 +138,7 @@ require('packer').startup(function(use)
       'hrsh7th/vim-vsnip',
       'hrsh7th/cmp-vsnip',
       'windwp/nvim-autopairs',
+      'onsails/lspkind.nvim'
     },
     config = function()
       local cmp_autopairs = require('nvim-autopairs.completion.cmp')
