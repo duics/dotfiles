@@ -117,9 +117,15 @@ require('packer').startup(function(use)
   }
   use {
     'williamboman/mason.nvim',
+    'jay-babu/mason-nvim-dap.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
     'j-hui/fidget.nvim'
+  }
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   use {
@@ -133,8 +139,39 @@ require('packer').startup(function(use)
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
+    "mxsdev/nvim-dap-vscode-js"
   }
   use 'jbyuki/one-small-step-for-vimkind'
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  }
+  use {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function ()
+      require('copilot').setup({
+        suggestion = {
+          enabled = false,
+          auto_trigger = false,
+          panel = { enabled = false },
+          -- debounce = 75,
+          keymap = {
+            accept = "<a-a><a-a>",
+            accept_line = "<a-a><a-l>",
+            accept_word = "<a-a><a-w>",
+            next = "<a-a><a-n>",
+            prev = "<a-a><a-p>",
+            dismiss = "<a-a><a-c>",
+          },
+        }
+      })
+    end
+  }
   use {
     'hrsh7th/nvim-cmp',
     requires = {
