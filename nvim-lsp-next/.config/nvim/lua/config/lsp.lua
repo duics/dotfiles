@@ -6,6 +6,7 @@ for type, icon in pairs(signs) do
 end
 
 require("mason").setup()
+require("mason-nvim-dap").setup()
 require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "tsserver" },
   automatic_installation = true,
