@@ -110,3 +110,5 @@ cmp.setup.cmdline(':', {
   })
 })
 
+local neogit = require('neogit')
+neogit.setup { disable_commit_confirmation = true }

@@ -111,17 +111,14 @@ require('packer').startup(function(use)
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {}
-    end
   }
   use {
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
-    'j-hui/fidget.nvim'
   }
+  use {'j-hui/fidget.nvim', tag = 'legacy'}
   use {
     "microsoft/vscode-js-debug",
     opt = true,
@@ -215,9 +212,7 @@ require('packer').startup(function(use)
   use {
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
-    config = function() require'neogit'.setup {
-      disable_commit_confirmation = true
-    } end }
+  }
   use {
     'Wansmer/treesj',
     requires = { 'nvim-treesitter' },
