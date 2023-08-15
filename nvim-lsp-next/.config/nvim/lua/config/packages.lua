@@ -126,7 +126,7 @@ require('packer').startup(function(use)
   }
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   use {
-      "glepnir/lspsaga.nvim",
+      "nvimdev/lspsaga.nvim",
       branch = "main",
       config = function()
           require('lspsaga').setup({})
@@ -136,7 +136,7 @@ require('packer').startup(function(use)
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
-    "mxsdev/nvim-dap-vscode-js"
+    'mxsdev/nvim-dap-vscode-js'
   }
   use 'jbyuki/one-small-step-for-vimkind'
   use {
