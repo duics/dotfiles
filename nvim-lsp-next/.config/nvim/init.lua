@@ -34,6 +34,7 @@ cmp.setup({
       mode = 'symbol_text', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      symbol_map = { Copilot = "" }
     })
   },
   snippet = {
@@ -49,10 +50,10 @@ cmp.setup({
   mapping = ({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_next_item()
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
       -- they way you will only jump inside the snippet region
-      elseif luasnip.expand_or_jumpable() then
+      elseif luasnip.expand_or_jumpable() and has_words_before() then
         luasnip.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
@@ -76,8 +77,10 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = 'copilot', group_index = 2 },
+    { name = 'nvim_lsp', group_index = 2 },
+    { name = 'path', group_index = 2 },
+    { name = 'luasnip', group_index = 2 },
   }, {
     { name = 'buffer' },
   })
