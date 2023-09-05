@@ -8,6 +8,7 @@ require('config.dap')
 require('config.indent_blankline')
 require('config.testing')
 require('config.nvim-tree')
+require('config.telescope')
 
 -- Initializers
 require('gitsigns').setup({})
