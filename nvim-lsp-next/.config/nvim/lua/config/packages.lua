@@ -133,13 +133,14 @@ require('packer').startup(function(use)
     'mxsdev/nvim-dap-vscode-js'
   }
   use 'jbyuki/one-small-step-for-vimkind'
-  use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function ()
-      require("copilot_cmp").setup()
-    end
-  }
+  -- use {
+  --   "zbirenbaum/copilot-cmp",
+  --   after = { "copilot.lua" },
+  --   config = function ()
+  --     require("copilot_cmp").setup()
+  --   end
+  -- }
+  use 'onsails/lspkind.nvim'
   use {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
@@ -147,8 +148,8 @@ require('packer').startup(function(use)
     config = function ()
       require('copilot').setup({
         suggestion = {
-          enabled = false,
-          auto_trigger = false,
+          enabled = true,
+          auto_trigger = true,
           panel = { enabled = false },
           -- debounce = 75,
           keymap = {
