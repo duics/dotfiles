@@ -125,13 +125,7 @@ require('packer').startup(function(use)
     run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
-  use {
-      "nvimdev/lspsaga.nvim",
-      branch = "main",
-      config = function()
-          require('lspsaga').setup({})
-      end,
-  }
+  use { "nvimdev/lspsaga.nvim", branch = "main" }
   use {
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',

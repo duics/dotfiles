@@ -12,6 +12,14 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
+require('lspsaga').setup({
+  lightbulb = {
+    enable = true;
+    sign = false;
+    virtual_text = true;
+  };
+})
+
 local lsp_config = require("lspconfig")
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
