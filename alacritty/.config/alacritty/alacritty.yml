@@ -12,7 +12,8 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: xterm-256color
 
-#window:
+window:
+  opacity: 0.9
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -102,22 +103,23 @@
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
+    # family: Mononoki Nerd Font Mono
+    # family: ShureTechMono Nerd Font Mono
   normal:
-    family: ShureTechMono Nerd Font
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
+    family: ShureTechMono Nerd Font Mono
+    style: Regular
 
-  # Italic font face
   bold:
-    family: ShureTechMono Nerd Font
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+    family: ShureTechMono Nerd Font Mono
+    style: Bold
 
-  # Italic font face
   italic:
-    family: ShureTechMono Nerd Font
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
+    family: ShureTechMono Nerd Font Mono
+    style: Italic
+
+  bold_italic:
+    family: ShureTechMono Nerd Font Mono
+    style: Bold Italic
 
   # Point size
   size: 10.0
