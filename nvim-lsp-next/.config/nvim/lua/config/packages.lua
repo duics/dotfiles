@@ -98,7 +98,7 @@ require('packer').startup(function(use)
   use "EdenEast/nightfox.nvim"
   -- use 'xiyaowong/nvim-transparent'
   use 'RRethy/vim-illuminate'
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim'} } }
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     'windwp/nvim-spectre',
@@ -177,12 +177,6 @@ require('packer').startup(function(use)
       'onsails/lspkind.nvim'
     },
     config = function()
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      local cmp = require('cmp')
-      cmp.event:on(
-        'confirm_done',
-        cmp_autopairs.on_confirm_done()
-      )
     end
   }
   use {

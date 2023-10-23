@@ -15,7 +15,7 @@ require('gitsigns').setup({})
 require('gitlinker').setup({ mappings = nil })
 require('fidget').setup{}
 require('nvim-autopairs').setup{}
--- vim.notify = require("notify")
+
 vim.cmd([[ let g:ultest_use_pty = 1 ]])
 
 local cmp = require'cmp'
@@ -86,6 +86,12 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
+
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
