@@ -13,10 +13,6 @@ require'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,
   },
-  context_commentstring = {
-    enable = true,
-    enable_autocommand = false,
-  },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -27,3 +23,7 @@ require'nvim-treesitter.configs'.setup {
     },
   }
 }
+
+require('ts_context_commentstring').setup({
+  enable_autocmd = false,
+})
