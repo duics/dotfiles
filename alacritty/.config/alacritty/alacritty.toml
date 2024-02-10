@@ -1,0 +1,35 @@
+[font]
+size = 10.0
+
+[font.bold]
+family = "ShureTechMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "ShureTechMono Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "ShureTechMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "ShureTechMono Nerd Font Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Up"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Down"
+mods = "Control|Alt"
+
+[shell]
+args = ["--login", "--command=tmux attach; or tmux new -s work"]
+program = "/usr/bin/fish"
+
+[window]
+opacity = 0.9
