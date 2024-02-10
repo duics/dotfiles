@@ -1,2 +1,3 @@
 .init.vim-rplugin~
 autoload/
+fish_variables
