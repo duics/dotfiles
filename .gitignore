@@ -1,3 +1,4 @@
 .init.vim-rplugin~
 autoload/
 fish_variables
+packer_compiled.lua
