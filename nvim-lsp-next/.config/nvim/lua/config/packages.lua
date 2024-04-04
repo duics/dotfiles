@@ -60,6 +60,7 @@ require('packer').startup(function(use)
   use {
     "nvim-neotest/neotest",
     requires = {
+      "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
@@ -200,6 +201,7 @@ require('packer').startup(function(use)
   }
   use {
     'TimUntersberger/neogit',
+    branch = 'nightly',
     requires = 'nvim-lua/plenary.nvim',
   }
   use {
