@@ -40,6 +40,9 @@ require("dap-vscode-js").setup({
   -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
 })
 
+require("dap-ruby").setup()
+
+
 for _, language in ipairs({ "typescript", "javascript" }) do
   require("dap").configurations[language] = {
     ... -- see below

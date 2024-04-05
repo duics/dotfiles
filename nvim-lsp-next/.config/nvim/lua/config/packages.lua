@@ -66,7 +66,8 @@ require('packer').startup(function(use)
       "antoinemadec/FixCursorHold.nvim",
       -- "vim-test/vim-test",
       -- "nvim-neotest/neotest-vim-test",
-      "haydenmeade/neotest-jest"
+      "haydenmeade/neotest-jest",
+      "olimorris/neotest-rspec"
     }
   }
   use {
@@ -131,7 +132,8 @@ require('packer').startup(function(use)
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
-    'mxsdev/nvim-dap-vscode-js'
+    'mxsdev/nvim-dap-vscode-js',
+    'suketa/nvim-dap-ruby'
   }
   use 'jbyuki/one-small-step-for-vimkind'
   -- use {

@@ -55,7 +55,7 @@ lsp_config.tailwindcss.setup({
 })
 lsp_config.html.setup(vim.tbl_extend("force", lsp_opts, {}))
 lsp_config.intelephense.setup(vim.tbl_extend("force", lsp_opts, {}))
-lsp_config.solargraph.setup(vim.tbl_extend("force", lsp_opts, {}))
+lsp_config.ruby_ls.setup(vim.tbl_extend("force", lsp_opts, {}))
 
 vim.diagnostic.config({
   virtual_text = false,

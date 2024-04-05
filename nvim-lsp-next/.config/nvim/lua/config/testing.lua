@@ -10,6 +10,7 @@ require("neotest").setup({
         return vim.fn.getcwd()
       end,
     }),
+    require("neotest-rspec"),
   },
   discovery = {
     -- Must be disabled with jest_test_discovery
