@@ -5,6 +5,24 @@ if not present then
 end
 
 local default = {
+    -- pickers = {
+    --     find_files = {
+    --         hidden = true,
+    --         theme = 'dropdown'
+    --     },
+    --     live_grep = {
+    --         theme = 'dropdown'
+    --     },
+    --     lsp_references = {
+    --         theme = 'dropdown'
+    --     },
+    --     diagnostics = {
+    --         theme = 'dropdown'
+    --     },
+    --     current_buffer_fuzzy_find = {
+    --         theme = 'dropdown'
+    --     }
+    -- },
    defaults = {
       -- vimgrep_arguments = {
       --    "rg",
@@ -20,11 +38,11 @@ local default = {
       -- entry_prefix = "  ",
       -- initial_mode = "insert",
       -- selection_strategy = "reset",
-      sorting_strategy = "ascending",
+      -- sorting_strategy = "ascending",
       -- layout_strategy = "horizontal",
       layout_config = {
          horizontal = {
-            prompt_position = "top",
+            prompt_position = "bottom",
             preview_width = 0.55,
             results_width = 0.8,
          },
