@@ -120,7 +120,7 @@ require('packer').startup(function(use)
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
   }
-  use {'j-hui/fidget.nvim', tag = 'legacy'}
+  use 'j-hui/fidget.nvim'
   use {
     "microsoft/vscode-js-debug",
     opt = true,
@@ -203,7 +203,6 @@ require('packer').startup(function(use)
   }
   use {
     'TimUntersberger/neogit',
-    branch = 'nightly',
     requires = 'nvim-lua/plenary.nvim',
   }
   use {
