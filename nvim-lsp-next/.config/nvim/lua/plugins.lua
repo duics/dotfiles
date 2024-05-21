@@ -13,11 +13,27 @@ return {
     end
   },
   {
-    'ahmedkhalf/project.nvim',
-    config = function ()
-      require("project_nvim").setup {
-        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".root" },
-      }
+    "LintaoAmons/cd-project.nvim",
+    config = function()
+      require("cd-project").setup({
+        projects_config_filepath = vim.fs.normalize(vim.fn.stdpath("config") .. "/cd-project.nvim.json"),
+        project_dir_pattern = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".root" },
+        choice_format = "both",
+        projects_picker = "telescope",
+        auto_register_project = true,
+        hooks = {
+          {
+            callback = function(dir)
+              vim.notify("switched to dir: " .. dir)
+            end,
+          },
+          {
+            callback = function(_)
+              vim.cmd("Telescope find_files")
+            end,
+          },
+        },
+      })
     end
   },
   'svermeulen/vimpeccable',
@@ -37,35 +53,35 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ":TSUpdate",
-    config = function ()
+    config = function()
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = {"typescript", "tsx", "php", "javascript", "html", "json", "elixir", "eex", "heex", "markdown", "markdown_inline", "lua"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-          sync_install = false,
-          highlight = {
-            enable = true,
-            -- disable = { "markdown" },  -- list of language that will be disabled
-            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-            -- Using this option may slow down your editor, and you may see some duplicate highlights.
-            -- Instead of true it can also be a list of languages
-            -- additional_vim_regex_highlighting = false,
+        ensure_installed = { "typescript", "tsx", "php", "javascript", "html", "json", "elixir", "eex", "heex", "markdown", "markdown_inline", "lua" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+        sync_install = false,
+        highlight = {
+          enable = true,
+          -- disable = { "markdown" },  -- list of language that will be disabled
+          -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+          -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+          -- Using this option may slow down your editor, and you may see some duplicate highlights.
+          -- Instead of true it can also be a list of languages
+          -- additional_vim_regex_highlighting = false,
+        },
+        indent = { enable = true },
+        autotag = {
+          enable = true,
+        },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<CR>",
+            node_incremental = "<CR>",
+            scope_incremental = "<TAB>",
+            node_decremental = "<S-TAB>",
           },
-          indent = { enable = true },
-          autotag = {
-            enable = true,
-          },
-          incremental_selection = {
-            enable = true,
-            keymaps = {
-              init_selection = "<CR>",
-              node_incremental = "<CR>",
-              scope_incremental = "<TAB>",
-              node_decremental = "<S-TAB>",
-            },
-          }
-        })
+        }
+      })
     end
   },
   'windwp/nvim-ts-autotag',
@@ -123,15 +139,14 @@ return {
   'EdenEast/nightfox.nvim',
   -- 'xiyaowong/nvim-transparent',
   'RRethy/vim-illuminate',
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { {'nvim-lua/plenary.nvim'} } },
-  {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-project.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } } },
   {
     'windwp/nvim-spectre',
     dependencies = 'nvim-lua/plenary.nvim',
   },
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = {'kyazdani42/nvim-web-devicons', lazy = true},
+    dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
   },
   {
     "folke/trouble.nvim",
@@ -150,7 +165,7 @@ return {
     build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   },
   'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-  { "nvimdev/lspsaga.nvim", branch = "main" },
+  { "nvimdev/lspsaga.nvim",          branch = "main" },
   {
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
@@ -171,7 +186,7 @@ return {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     event = 'InsertEnter',
-    config = function ()
+    config = function()
       require('copilot').setup({
         panel = { enabled = false },
         suggestion = {
@@ -211,11 +226,11 @@ return {
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-  --  config = {
-  --    require("luasnip.loaders.from_vscode").lazy_load();
-  --    require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/Sync/scripts" } });
-  --    require("luasnip").filetype_extend("typescript", { "javascript" })
-  --  },
+    --  config = {
+    --    require("luasnip.loaders.from_vscode").lazy_load();
+    --    require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/Sync/scripts" } });
+    --    require("luasnip").filetype_extend("typescript", { "javascript" })
+    --  },
   },
   {
     'nvim-tree/nvim-tree.lua',
@@ -239,4 +254,3 @@ return {
   },
   -- 'rcarriga/nvim-notify',
 }
-

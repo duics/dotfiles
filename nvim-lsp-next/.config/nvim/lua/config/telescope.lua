@@ -73,4 +73,4 @@ local default = {
 
 telescope.setup(default)
 telescope.load_extension('fzf')
-telescope.load_extension('projects')
+telescope.load_extension('project')
