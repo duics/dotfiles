@@ -1,3 +1,5 @@
+require('config.basics')
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -11,7 +13,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('config.basics')
+require("lazy").setup({{import = "plugins"}})
+
+vim.cmd [[colorscheme terafox]]
+
 require('config.keybindings')
 require('config.treesitter')
 require('config.lualine')
@@ -23,7 +28,6 @@ require('config.nvim-tree')
 require('config.telescope')
 
 -- Initializers
-require("lazy").setup("plugins")
 require('gitsigns').setup({})
 require('gitlinker').setup({ mappings = nil })
 require('fidget').setup{}

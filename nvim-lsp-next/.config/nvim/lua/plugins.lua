@@ -45,12 +45,12 @@ return {
           sync_install = false,
           highlight = {
             enable = true,
-            disable = { "markdown" },  -- list of language that will be disabled
+            -- disable = { "markdown" },  -- list of language that will be disabled
             -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
             -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
             -- Using this option may slow down your editor, and you may see some duplicate highlights.
             -- Instead of true it can also be a list of languages
-            additional_vim_regex_highlighting = false,
+            -- additional_vim_regex_highlighting = false,
           },
           indent = { enable = true },
           autotag = {
@@ -210,11 +210,12 @@ return {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
-    config = {
-      require("luasnip.loaders.from_vscode").lazy_load();
-      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/Sync/scripts" } });
-      require("luasnip").filetype_extend("typescript", { "javascript" })
-    },
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+  --  config = {
+  --    require("luasnip.loaders.from_vscode").lazy_load();
+  --    require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/Sync/scripts" } });
+  --    require("luasnip").filetype_extend("typescript", { "javascript" })
+  --  },
   },
   {
     'nvim-tree/nvim-tree.lua',
