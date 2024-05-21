@@ -7,7 +7,7 @@
 -----------------------------------------------------------
 --local map = vim.api.nvim_set_keymap  -- set global keymap
 local cmd = vim.cmd 		-- execute Vim commands
-local exec = vim.api.nvim_exec 	-- execute Vimscript
+local exec = vim.api.nvim_exec2 	-- execute Vimscript
 local fn = vim.fn       	-- call Vim functions
 local g = vim.g         	-- global variables
 local opt = vim.opt         	-- global/buffer/windows-scoped options
@@ -57,7 +57,7 @@ exec([[
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
   augroup end
-]], false)
+]], { output = false })
 
 -----------------------------------------------------------
 -- Memory, CPU
@@ -80,7 +80,6 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 -- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- cmd [[colorscheme kanagawa]]
-cmd [[colorscheme terafox]]
 
 -- Transparent background
 -- cmd [[
