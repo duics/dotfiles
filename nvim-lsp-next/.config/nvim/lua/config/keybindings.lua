@@ -36,6 +36,7 @@ end
 -- -- telescope.nvim
 
 local wk = require("which-key")
+wk.setup { }
 -- As an example, we will create the following mappings:
 --  * <leader>ff find files
 --  * <leader>fr show recent files
