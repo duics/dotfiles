@@ -36,7 +36,7 @@ end
 -- -- telescope.nvim
 
 local wk = require("which-key")
-wk.setup { }
+wk.setup {}
 -- As an example, we will create the following mappings:
 --  * <leader>ff find files
 --  * <leader>fr show recent files
@@ -67,8 +67,8 @@ wk.register({
   },
   f = {
     name = "file",
-    f = { function () telescope.find_files(opts) end, "Find File" },
-    g = { function () telescope.git_files(opts) end, "Find File (git)" },
+    f = { function() telescope.find_files(opts) end, "Find File" },
+    g = { function() telescope.git_files(opts) end, "Find File (git)" },
     t = { "<cmd>NvimTreeToggle<CR>", "File tree" },
     n = { "New File" },
     e = "Edit File",
@@ -77,7 +77,7 @@ wk.register({
     name = "search",
     s = { function() telescope.live_grep({ path_display = { "truncate" } }) end, "Live grep" },
     S = { spectre.open, "Open Spectre" },
-    w = { function() spectre.open_visual({select_word=true}) end, "Search word" },
+    w = { function() spectre.open_visual({ select_word = true }) end, "Search word" },
     f = { spectre.open_file_search, "Open Spectre (file)" },
   },
   b = {
@@ -89,7 +89,7 @@ wk.register({
     b = { telescope.git_branches, "Find branch" },
     c = {
       name = "commit",
-      c = { function () neogit.open({ 'commit' }) end, "Do commit" },
+      c = { function() neogit.open({ 'commit' }) end, "Do commit" },
       f = { telescope.git_commits, "Find commit" }
     },
     s = { neogit.open, "Git status" },
@@ -100,11 +100,61 @@ wk.register({
     },
     B = {
       name = "blame",
-      b = { function () gitsigns.blame_line{full=true} end, "Blame line" },
+      b = { function() gitsigns.blame_line { full = true } end, "Blame line" },
     },
     y = {
-      function () require"gitlinker".get_buf_range_url("n") end, "Yank github url"
+      function() require "gitlinker".get_buf_range_url("n") end, "Yank github url"
     },
+  },
+  l = {
+    name = "LSP",
+    a = { function()
+      local actions = require("CopilotChat.actions")
+      require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+    end, "Help actions" },
+    p = {
+      function()
+        local actions = require("CopilotChat.actions")
+        require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+      end,
+      "Prompt actions",
+    },
+    c = {
+      function()
+        local input = vim.fn.input("Ask Copilot: ")
+        if input ~= "" then
+          vim.cmd("CopilotChat " .. input)
+        end
+      end,
+      "Ask copilot",
+    },
+    q = {
+      function()
+        local input = vim.fn.input("Quick Chat: ")
+        if input ~= "" then
+          vim.cmd("CopilotChatBuffer " .. input)
+        end
+      end,
+      "Quick chat",
+    },
+    -- Debug
+    d = {
+      name = "Debug",
+      i = { "<cmd>CopilotChatDebugInfo<cr>", "Debug Info" },
+      a = { "<cmd>CopilotChatFixDiagnostic<cr>", "Fix Diagnostic" },
+    },
+    D = { "<cmd>CopilotChatDocs<cr>", "Generate docs" },
+    e = { "<cmd>CopilotChatExplain<cr>", "Explain code" },
+    t = { "<cmd>CopilotChatTests<cr>", "Generate tests" },
+    R = { "<cmd>CopilotChatReview<cr>", "Review code" },
+    r = { "<cmd>CopilotChatRefactor<cr>", "Refactor code" },
+    n = { "<cmd>CopilotChatBetterNamings<cr>", "Better Naming" },
+    x = { "<cmd>CopilotChatReset<cr>", "Clear buffer and chat history" },
+    f = { "<cmd>CopilotChatFix<cr>", "Fix code" },
+    o = { "<cmd>CopilotChatOptimize<cr>", "Optimize code" },
+    l = { "<cmd>CopilotChatToggle<cr>", "Toggle copilot" },
+    v = { "<cmd>CopilotChatVisual<cr>", "Open in vertical split", },
+    i = { "<cmd>CopilotChatInline<cr>", "Open inline chat", },
   },
   o = {
     name = "open",
@@ -112,7 +162,12 @@ wk.register({
     c = { ":vsp $MYVIMRC<CR>", "Editor configuration" },
     t = { "<cmd>Lspsaga term_toggle<CR>", "Terminal" },
   },
-  p = { function() require("telescope").extensions.projects.projects({}) end, "Projects" },
+  p = {
+    name = "Projects",
+    a = { '<cmd>CdProjectAdd<CR>', 'Add project' },
+    p = { '<cmd>CdProject<CR>', 'Change project' },
+    b = { '<cmd>CdProjectBack<CR>', 'Previous project' },
+  },
   w = {
     name = "Window",
     c = { '<cmd>NoNeckPain<CR>', 'Center' }
@@ -147,8 +202,49 @@ wk.register({
 }, { prefix = "<leader>" })
 
 wk.register({
-  s = { function() gitsigns.stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, "Stage hunk" },
-  u = { function() gitsigns.undo_stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, "Unstage hunk" }
+  s = { function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, "Stage hunk" },
+  u = { function() gitsigns.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, "Unstage hunk" },
+  l = {
+    name = "LSP",
+    a = { function()
+      local actions = require("CopilotChat.actions")
+      require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+    end, "Help actions" },
+    p = {
+      function()
+        local actions = require("CopilotChat.actions")
+        require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+      end,
+      "Prompt actions",
+    },
+    c = {
+      function()
+        local input = vim.fn.input("Ask Copilot: ")
+        if input ~= "" then
+          vim.cmd("CopilotChat " .. input)
+        end
+      end,
+      "Ask copilot",
+    },
+    q = {
+      function()
+        local input = vim.fn.input("Quick Chat: ")
+        if input ~= "" then
+          vim.cmd("CopilotChatBuffer " .. input)
+        end
+      end,
+      "Quick chat",
+    },
+    d = { "<cmd>CopilotChatDocs<cr>", "Generate docs" },
+    e = { "<cmd>CopilotChatExplain<cr>", "Explain code" },
+    t = { "<cmd>CopilotChatTests<cr>", "Generate tests" },
+    R = { "<cmd>CopilotChatReview<cr>", "Review code" },
+    r = { "<cmd>CopilotChatRefactor<cr>", "Refactor code" },
+    n = { "<cmd>CopilotChatBetterNamings<cr>", "Better Naming" },
+    x = { "<cmd>CopilotChatReset<cr>", "Clear buffer and chat history" },
+    f = { "<cmd>CopilotChatFix<cr>", "Fix code" },
+    o = { "<cmd>CopilotChatOptimize<cr>", "Optimize code" },
+  },
 }, { prefix = "<leader>", mode = "v" })
 
 vimp.nnoremap('<C-p>', function() telescope.find_files(opts) end)
@@ -249,9 +345,9 @@ wk.register({
     b = { dap.toggle_breakpoint, "Toggle breakpoint" },
     r = { dap.repl.open, "Open repl" },
     p = { dap.run_last, "Run previous configuration" },
-    B = { function () dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "Toggle breakpoint (condition)" },
-    S = { function() require"osv".launch({port = 8086}) end, 'Start nvim debug session' },
-    L = { function () dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, "Toggle logpoint (with message)" },
+    B = { function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "Toggle breakpoint (condition)" },
+    S = { function() require "osv".launch({ port = 8086 }) end, 'Start nvim debug session' },
+    L = { function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, "Toggle logpoint (with message)" },
   }
 }, { prefix = "<leader>" })
 
