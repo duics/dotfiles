@@ -112,7 +112,14 @@ wk.register({
       local actions = require("CopilotChat.actions")
       require("CopilotChat.integrations.telescope").pick(actions.help_actions())
     end, "Help actions" },
-    p = {
+    p = { name = "Copilot panel",
+      a = { function() require("copilot.panel").accept() end, "Accept suggestion"  },
+      n = { function() require("copilot.panel").jump_next() end, "Next suggestion"  },
+      p = { function() require("copilot.panel").jump_prev() end, "Previous suggestion"  },
+      r = { function() require("copilot.panel").refresh() end, "Refresh"  },
+      o = { function() require("copilot.panel").open({"bottom", 0.3}) end, "Copilot panel"  },
+    },
+    P = {
       function()
         local actions = require("CopilotChat.actions")
         require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
