@@ -88,7 +88,7 @@ return {
   -- mrjones2014/nvim-ts-rainbow
   {
     'JoosepAlviste/nvim-ts-context-commentstring',
-    dependencies = { 'nvim/treesitter/nvim-treesitter' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
   {
     'numToStr/Comment.nvim',
