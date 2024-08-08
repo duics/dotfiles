@@ -197,13 +197,14 @@ return {
           enabled = true,
           auto_trigger = true,
           -- debounce = 75,
+          -- f
           keymap = {
-            accept = "<a-a><a-a>",
-            accept_line = "<a-a><a-l>",
-            accept_word = "<a-a><a-w>",
-            next = "<a-a><a-n>",
-            prev = "<a-a><a-p>",
-            dismiss = "<a-a><a-c>",
+            accept = "<a-a>",
+            accept_line = "<a-A>",
+            accept_word = "<a-w>",
+            next = "<a-n>",
+            prev = "<a-p>",
+            dismiss = "<a-c>",
           },
         },
       })
