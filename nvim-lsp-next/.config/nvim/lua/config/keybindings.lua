@@ -53,7 +53,8 @@ local spectre = require('spectre')
 
 local opts = { path_display = { "truncate" } }
 
-wk.register({
+wk.add({
+  mode = { "n" },
   { "<leader>a",   group = "alternate" },
   { "<leader>aa",  "<cmd>A<CR>",                                              desc = "Jump to alternative" },
   { "<leader>as",  "<cmd>AS<CR>",                                             desc = "Jump to alternative (split)" },
@@ -175,9 +176,9 @@ wk.register({
   { "<leader>tt", function() neotest.run.run() end,                                         desc = "Test nearest" },
   { "<leader>w",  group = "Window" },
   { "<leader>wc", "<cmd>NoNeckPain<CR>",                                                    desc = "Center" },
-}, { prefix = "<leader>" })
+})
 
-wk.register({
+wk.add({
   mode = { "v" },
   { "<leader>l",  group = "LSP" },
   { "<leader>lR", "<cmd>CopilotChatReview<cr>", desc = "Review code" },
@@ -227,7 +228,7 @@ wk.register({
   { "<leader>lx", "<cmd>CopilotChatReset<cr>",                                                     desc = "Clear buffer and chat history" },
   { "<leader>s",  function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end,      desc = "Stage hunk" },
   { "<leader>u",  function() gitsigns.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "Unstage hunk" },
-}, { prefix = "<leader>", mode = "v" })
+})
 
 vimp.nnoremap('<C-p>', function() telescope.find_files(opts) end)
 
@@ -316,7 +317,8 @@ vimp.nnoremap('K', '<cmd>Lspsaga hover_doc<CR>')
 local dap = require('dap')
 local dapui = require('dapui')
 
-wk.register({
+wk.add({
+  mode = { "n" },
   { "<leader>d",  group = "Debug" },
   { "<leader>dB", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,        desc = "Toggle breakpoint (condition)" },
   { "<leader>dJ", dap.step_over,                                                                    desc = "Step over" },
@@ -329,7 +331,7 @@ wk.register({
   { "<leader>dp", dap.run_last,                                                                     desc = "Run previous configuration" },
   { "<leader>dr", dap.repl.open,                                                                    desc = "Open repl" },
   { "<leader>dt", dapui.toggle,                                                                     desc = "Toggle dapui" },
-}, { prefix = "<leader>" })
+})
 
 
 -- -- Trouble
