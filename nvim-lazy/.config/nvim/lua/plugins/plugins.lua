@@ -16,32 +16,32 @@ return {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        panel = {
-          enabled = true,
-          auto_refresh = true,
-          keymap = {},
-        },
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          -- debounce = 75,
-          -- f
-          keymap = {
-            accept = "<a-a>",
-            accept_line = "<a-A>",
-            accept_word = "<a-w>",
-            next = "<a-n>",
-            prev = "<a-p>",
-            dismiss = "<a-c>",
-          },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       panel = {
+  --         enabled = true,
+  --         auto_refresh = true,
+  --         keymap = {},
+  --       },
+  --       suggestion = {
+  --         enabled = true,
+  --         auto_trigger = true,
+  --         -- debounce = 75,
+  --         -- f
+  --         keymap = {
+  --           accept = "<a-a>",
+  --           accept_line = "<a-A>",
+  --           accept_word = "<a-w>",
+  --           next = "<a-n>",
+  --           prev = "<a-p>",
+  --           dismiss = "<a-c>",
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
 }
