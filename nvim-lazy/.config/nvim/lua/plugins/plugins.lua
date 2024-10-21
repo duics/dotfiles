@@ -29,6 +29,20 @@ return {
       { "<leader>gY", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
     },
   },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "ys",
+        delete = "ds",
+        find = "gsf",
+        find_left = "gsF",
+        highlight = "gsh",
+        replace = "cs",
+        update_n_lines = "csn",
+      },
+    },
+  },
   -- {
   --   "zbirenbaum/copilot.lua",
   --   cmd = "Copilot",
