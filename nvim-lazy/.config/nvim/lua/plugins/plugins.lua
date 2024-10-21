@@ -16,6 +16,10 @@ return {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+  {
+    "tpope/vim-projectionist",
+    keys = { { "<leader>a", "<cmd>Alternate<cr>", desc = "Alternative file" } },
+  },
   -- {
   --   "zbirenbaum/copilot.lua",
   --   cmd = "Copilot",
