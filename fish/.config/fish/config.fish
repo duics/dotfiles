@@ -11,3 +11,7 @@ fish_add_path ~/.cargo/bin
 
 # Created by `pipx` on 2024-04-08 06:49:42
 set PATH $PATH /home/maxsal/.local/bin
+
+# Ensure configs get loaded correctly on Mac
+set -x XDG_CONFIG_HOME $HOME/.config
+
