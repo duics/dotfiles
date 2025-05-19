@@ -15,3 +15,9 @@ set PATH $PATH /home/maxsal/.local/bin
 # Ensure configs get loaded correctly on Mac
 set -x XDG_CONFIG_HOME $HOME/.config
 
+# pnpm
+set -gx PNPM_HOME /Users/max/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
