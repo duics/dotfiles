@@ -44,29 +44,38 @@ return {
     },
   },
   {
-    "pasky/claude.vim",
-    cmd = {
-      "ClaudeImplement",
-      "ClaudeChat",
-    },
-    keys = {
-      { "<leader>ac", "<cmd>ClaudeChat<cr>", mode = { "n" }, desc = "Claude chat" },
-      { "<leader>ai", "<cmd>ClaudeImplement!<cr>", mode = { "v" }, desc = "Claude implement" },
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- Required for git operations
     },
     config = function()
-      local api_key
-      local file = io.open("/home/maxsal/.claude", "r")
-      if file then
-        api_key = file:read()
-        file:close()
-      end
-      if api_key then
-        vim.g.claude_api_key = api_key
-      else
-        vim.notify("API key not found from ~/.claude", vim.log.levels.WARN)
-      end
+      require("claude-code").setup()
     end,
   },
+  -- {
+  --   "pasky/claude.vim",
+  --   cmd = {
+  --     "ClaudeImplement",
+  --     "ClaudeChat",
+  --   },
+  --   keys = {
+  --     { "<leader>ac", "<cmd>ClaudeChat<cr>", mode = { "n" }, desc = "Claude chat" },
+  --     { "<leader>ai", "<cmd>ClaudeImplement!<cr>", mode = { "v" }, desc = "Claude implement" },
+  --   },
+  --   config = function()
+  --     local api_key
+  --     local file = io.open("/home/maxsal/.claude", "r")
+  --     if file then
+  --       api_key = file:read()
+  --       file:close()
+  --     end
+  --     if api_key then
+  --       vim.g.claude_api_key = api_key
+  --     else
+  --       vim.notify("API key not found from ~/.claude", vim.log.levels.WARN)
+  --     end
+  --   end,
+  -- },
   -- {
   --   "hrsh7th/nvim-cmp",
   --   opts = function(_, opts)
