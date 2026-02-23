@@ -21,3 +21,6 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# Created by `pipx` on 2025-09-19 06:05:29
+set PATH $PATH /Users/max/.local/bin
