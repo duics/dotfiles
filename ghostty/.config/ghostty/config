@@ -42,7 +42,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-command = /opt/homebrew/bin/fish --login --command=tmux attach; or tmux new -s work
+command = /opt/homebrew/bin/fish --command="tmux attach -t work; or tmux new -s work"
 
 macos-option-as-alt = left
 
