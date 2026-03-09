@@ -29,29 +29,29 @@ return {
       { "<leader>gY", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
     },
   },
-  {
-    "echasnovski/mini.surround",
-    opts = {
-      mappings = {
-        add = "ys",
-        delete = "ds",
-        find = "gsf",
-        find_left = "gsF",
-        highlight = "gsh",
-        replace = "cs",
-        update_n_lines = "csn",
-      },
-    },
-  },
-  {
-    "greggh/claude-code.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim", -- Required for git operations
-    },
-    config = function()
-      require("claude-code").setup()
-    end,
-  },
+  -- {
+  --   "echasnovski/mini.surround",
+  --   opts = {
+  --     mappings = {
+  --       add = "ys",
+  --       delete = "ds",
+  --       find = "gsf",
+  --       find_left = "gsF",
+  --       highlight = "gsh",
+  --       replace = "cs",
+  --       update_n_lines = "csn",
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "greggh/claude-code.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim", -- Required for git operations
+  --   },
+  --   config = function()
+  --     require("claude-code").setup()
+  --   end,
+  -- },
   -- {
   --   "pasky/claude.vim",
   --   cmd = {
