@@ -24,3 +24,7 @@ end
 
 # Created by `pipx` on 2025-09-19 06:05:29
 set PATH $PATH /Users/max/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
